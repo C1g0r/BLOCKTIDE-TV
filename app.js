@@ -43,7 +43,7 @@
     return (catalog.shorts || []).filter((v) => on.has(v.ch) && v.vertical === true && (v.sec || 0) > 0 && v.sec <= 180 && !/^pt-br$/i.test(v.lang || '')
       && (settings.shortsOtherLangs !== false || ['pt-PT', 'sem-dialogo'].includes(v.lang)));
   }
-  const LANG = { 'pt-PT': 'Português europeu', 'sem-dialogo': 'Sem diálogo', en: 'Inglês', es: 'Espanhol', fr: 'Francês' };
+  const LANG = { 'pt-PT': 'Português europeu', 'sem-dialogo': 'Sem diálogo', en: 'Inglês', es: 'Espanhol', fr: 'Francês', de: 'Alemão', it: 'Italiano', nl: 'Neerlandês' };
   const chOf = (v) => (v.ch === 'pais' ? { name: 'Escolhido pelos pais', cor: '#9a5424', tema: 'tudo' } : catalog.channels[v.ch] || { name: '', cor: '#888' });
   const thumb = (id) => `https://i.ytimg.com/vi/${encodeURIComponent(id)}/mqdefault.jpg`;
 
@@ -253,6 +253,11 @@
     feed.addEventListener('scroll', followDock, { passive: true });
     window.addEventListener('resize', followDock);
     $('#ssound').onclick = () => { shortsMuted = false; $('#ssound').hidden = true; try { sPlayer.unMute(); sPlayer.setVolume(100); sPlayer.playVideo(); } catch (_) { /* ignorar */ } };
+    // Tocar no Short pausa ou continua (o leitor deixa passar os toques para se poder deslizar)
+    feed.addEventListener('click', (e) => {
+      if (!sPlayer || !e.target.closest('.short')) return;
+      try { if (sPlayer.getPlayerState() === 1) sPlayer.pauseVideo(); else sPlayer.playVideo(); } catch (_) { /* ignorar */ }
+    });
     $('#splay').onclick = () => { $('#splay').hidden = true; try { sPlayer.playVideo(); } catch (_) { /* ignorar */ } };
     if (startId) { const el = feed.querySelector(`.short[data-id="${CSS.escape(startId)}"]`); if (el) el.scrollIntoView(); }
     feed.addEventListener('keydown', (e) => {

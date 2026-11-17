@@ -9,16 +9,21 @@ srv = http.server.ThreadingHTTPServer(('127.0.0.1', 0), functools.partial(H, dir
 threading.Thread(target=srv.serve_forever, daemon=True).start()
 URL = f'http://127.0.0.1:{srv.server_address[1]}/'
 # API do YouTube simulada: regista o que a app pede e deixa o teste mudar o estado do leitor
-YT_STUB = """window.__yt = { created: [] };
+YT_STUB = """window.__yt = { created: [], loaded: [], noAutoplay: false };
 window.YT = { Player: function (id, opts) {
   const el = document.getElementById(id); const f = document.createElement('iframe');
   f.src = 'about:blank'; f.dataset.video = opts.videoId; f.dataset.host = opts.host || ''; f.style.background = '#223';
   el.replaceWith(f); f.id = id;
   window.__yt.created.push({ videoId: opts.videoId, host: opts.host, vars: opts.playerVars });
-  const self = this; window.__yt.player = self; window.__yt.state = (s) => opts.events.onStateChange({ data: s, target: self });
-  this.destroy = () => { window.__yt.destroyed = (window.__yt.destroyed || 0) + 1; }; this.seekTo = () => {}; this.playVideo = () => window.__yt.state(1);
-  this.mute = () => { window.__yt.muted = true; }; this.unMute = () => { window.__yt.muted = false; }; this.pauseVideo = () => window.__yt.state(2);
-  setTimeout(() => window.__yt.state(1), 50);
+  const self = this; let st = -1; window.__yt.player = self;
+  window.__yt.state = (s) => { st = s; opts.events.onStateChange && opts.events.onStateChange({ data: s, target: self }); };
+  const autoplay = () => setTimeout(() => { if (!window.__yt.noAutoplay || window.__yt.muted) window.__yt.state(1); }, 50);
+  this.destroy = () => { window.__yt.destroyed = (window.__yt.destroyed || 0) + 1; }; this.seekTo = () => {};
+  this.playVideo = () => { if (!window.__yt.noAutoplay || window.__yt.muted || window.__yt.gesture) window.__yt.state(1); };
+  this.mute = () => { window.__yt.muted = true; }; this.unMute = () => { window.__yt.muted = false; }; this.setVolume = () => {};
+  this.pauseVideo = () => window.__yt.state(2); this.getPlayerState = () => st;
+  this.loadVideoById = (vid) => { window.__yt.loaded.push(vid); st = -1; autoplay(); };
+  setTimeout(() => { opts.events.onReady && opts.events.onReady({ target: self }); autoplay(); }, 30);
 } };
 setTimeout(() => window.onYouTubeIframeAPIReady && window.onYouTubeIframeAPIReady(), 10);"""
 PNG = base64.b64decode('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==')
@@ -73,13 +78,18 @@ with sync_playwright() as p:
   first = pg.evaluate('window.__yt.created[0]')
   check(f"Shorts: {pg.locator('.short').count()} vídeos; o primeiro toca sem som e sem controlos ({first['videoId']}, mute={first['vars']['mute']})", pg.locator('.short').count() == 30 and first['vars']['mute'] == 1 and first['vars']['controls'] == 0)
   pg.screenshot(path=str(OUT / '45-tv-shorts.png'))
-  pg.click('.short:first-child .sound'); pg.wait_for_timeout(200)
+  pg.click('#ssound'); pg.wait_for_timeout(200)
   check('«Toca para ouvir» liga o som', pg.evaluate('window.__yt.muted') is False)
   pg.evaluate("document.querySelectorAll('.short')[1].scrollIntoView()"); pg.wait_for_timeout(900)
-  ids = [c['videoId'] for c in pg.evaluate('window.__yt.created')]
-  check(f"ao deslizar, toca o Short seguinte com som ({ids[-1]}, mute={pg.evaluate('window.__yt.created.at(-1).vars.mute')}) e o anterior é fechado", len(ids) == 2 and ids[1] != ids[0] and pg.evaluate('window.__yt.created.at(-1).vars.mute') == 0 and pg.evaluate('window.__yt.destroyed') >= 1)
+  check(f"ao deslizar, o MESMO leitor muda de vídeo (leitores criados: {len(pg.evaluate('window.__yt.created'))}, carregados: {pg.evaluate('window.__yt.loaded')})", len(pg.evaluate('window.__yt.created')) == 1 and len(pg.evaluate('window.__yt.loaded')) == 1 and pg.evaluate('window.__yt.loaded[0]') != first['videoId'])
+  check('o som ligado mantém-se no Short seguinte', pg.evaluate('window.__yt.muted') is False)
   pg.evaluate('window.__yt.state(0)'); pg.wait_for_timeout(1200)
-  check('no fim de um Short passa sozinho ao seguinte', len(pg.evaluate('window.__yt.created')) == 3)
+  check('no fim de um Short passa sozinho ao seguinte', len(pg.evaluate('window.__yt.loaded')) == 2)
+  # Simular iPhone: sem som não há autorização para arrancar → a app volta a tentar sem som e mostra «Toca para ouvir»
+  pg.evaluate('window.__yt.noAutoplay = true')
+  pg.evaluate("document.querySelectorAll('.short')[4].scrollIntoView()"); pg.wait_for_timeout(2200)
+  check(f"se não arrancar com som, recomeça sem som e mostra «Toca para ouvir» (estado {pg.evaluate('window.__yt.player.getPlayerState()')})", pg.evaluate('window.__yt.player.getPlayerState()') == 1 and pg.evaluate('window.__yt.muted') is True and pg.locator('#ssound:not([hidden])').count() == 1)
+  pg.evaluate('window.__yt.noAutoplay = false')
   check('todos os Shorts são verticais e até 3 minutos', all(v.get('vertical') and 0 < v.get('sec', 0) <= 180 for v in pg.evaluate("fetch('catalog.json').then(r => r.json()).then(c => c.shorts)")))
   check('nenhum Short em PT-BR no catálogo', all((v.get('lang') or '').lower() != 'pt-br' for v in pg.evaluate("fetch('catalog.json').then(r => r.json()).then(c => c.shorts)")))
   # Pesquisa só no catálogo

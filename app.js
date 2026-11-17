@@ -148,6 +148,9 @@
   function stopPlayer() {
     clearInterval(tick); tick = null; clearInterval(countdown); countdown = null;
     if (feedObs) { feedObs.disconnect(); feedObs = null; }
+    clearTimeout(sWatch); cancelAnimationFrame(dockRaf); window.removeEventListener('resize', followDock);
+    if (sPlayer && sPlayer.destroy) { try { sPlayer.destroy(); } catch (_) { /* ignorar */ } }
+    sPlayer = null; sReady = null;
     activeShort = null; document.body.classList.remove('in-shorts');
     if (player && player.destroy) { try { player.destroy(); } catch (_) { /* ignorar */ } }
     player = null;
@@ -219,15 +222,26 @@
   // ---------------------------------------------------------------------------
   // Shorts: deslizar na vertical; um leitor de cada vez (o do Short visível)
   // ---------------------------------------------------------------------------
-  let feedObs = null, shortsMuted = true, activeShort = null;
+  // Um único leitor para todos os Shorts: muda de vídeo (loadVideoById) e acompanha o Short visível.
+  // No iPhone, a autorização de som dada com um toque fica com esse leitor; leitores novos voltariam a ficar parados.
+  let feedObs = null, shortsMuted = true, activeShort = null, sPlayer = null, sReady = null, sWatch = null, dockRaf = 0;
   function shortsPage() {
     const list = shortsList();
     if (!list.length) return `<div class="empty">${settings.shortsOn === false ? 'Os Shorts estão desligados na área dos pais.' : 'Ainda não há Shorts.'}</div>`;
     return `<div class="feed" id="feed">${list.map((v) => { const ch = chOf(v); return `<section class="short" data-id="${esc(v.id)}">
       <div class="sframe"><img class="sposter" src="https://i.ytimg.com/vi/${encodeURIComponent(v.id)}/hqdefault.jpg" alt="">
-        <div class="sinfo"><span class="badge-pt">${v.lang === 'pt-PT' ? '✓ ' : ''}${esc(LANG[v.lang] || v.lang || '')}</span><b>${esc(v.title)}</b><span><i style="background:${esc(ch.cor)}"></i>${esc(ch.name)}</span></div>
-        <button class="sound" hidden>🔇 Toca para ouvir</button></div></section>`; }).join('')}</div>`;
+        <div class="sinfo"><span class="badge-pt">${v.lang === 'pt-PT' ? '✓ ' : ''}${esc(LANG[v.lang] || v.lang || '')}</span><b>${esc(v.title)}</b><span><i style="background:${esc(ch.cor)}"></i>${esc(ch.name)}</span></div></div></section>`; }).join('')}</div>
+      <div class="sdock" id="sdock"><div id="sp"></div>
+        <button class="sound" id="ssound" hidden>🔇 Toca para ouvir</button>
+        <button class="splay" id="splay" hidden aria-label="Tocar">▶</button></div>`;
   }
+  // O leitor fica por cima do Short ativo e segue-o enquanto se desliza
+  function placeDock() {
+    const dock = $('#sdock'); if (!dock || !activeShort) return;
+    const f = activeShort.querySelector('.sframe'); const r = f.getBoundingClientRect(); const b = f.clientTop || 0;
+    Object.assign(dock.style, { top: `${r.top + b}px`, left: `${r.left + b}px`, width: `${r.width - 2 * b}px`, height: `${r.height - 2 * b}px` });
+  }
+  function followDock() { cancelAnimationFrame(dockRaf); dockRaf = requestAnimationFrame(placeDock); }
   function bindShorts(startId) {
     const feed = $('#feed'); if (!feed) return;
     document.body.classList.add('in-shorts');
@@ -236,6 +250,10 @@
       for (const e of entries) if (e.isIntersecting && e.intersectionRatio >= 0.6) playShort(e.target);
     }, { root: feed, threshold: [0.6] });
     feed.querySelectorAll('.short').forEach((el) => feedObs.observe(el));
+    feed.addEventListener('scroll', followDock, { passive: true });
+    window.addEventListener('resize', followDock);
+    $('#ssound').onclick = () => { shortsMuted = false; $('#ssound').hidden = true; try { sPlayer.unMute(); sPlayer.setVolume(100); sPlayer.playVideo(); } catch (_) { /* ignorar */ } };
+    $('#splay').onclick = () => { $('#splay').hidden = true; try { sPlayer.playVideo(); } catch (_) { /* ignorar */ } };
     if (startId) { const el = feed.querySelector(`.short[data-id="${CSS.escape(startId)}"]`); if (el) el.scrollIntoView(); }
     feed.addEventListener('keydown', (e) => {
       if (!activeShort) return;
@@ -244,36 +262,57 @@
     });
     feed.tabIndex = 0; feed.focus({ preventScroll: true });
   }
+  function createShortsPlayer(firstId) {
+    sReady = new Promise((resolve) => {
+      sPlayer = new window.YT.Player('sp', {
+        host: 'https://www.youtube-nocookie.com', videoId: firstId,
+        playerVars: { autoplay: 1, mute: 1, playsinline: 1, controls: 0, rel: 0, modestbranding: 1, iv_load_policy: 3, cc_lang_pref: 'pt', hl: 'pt-PT' },
+        events: {
+          onReady: (e) => { e.target.mute(); e.target.playVideo(); resolve(); },
+          onStateChange: (e) => {
+            if (e.data === 1) { startTick(); $('#splay') && ($('#splay').hidden = true); } else { clearInterval(tick); tick = null; }
+            if (e.data === 0 && activeShort) { // acabou: passar ao Short seguinte (ou repetir o último)
+              const next = activeShort.nextElementSibling;
+              if (next) next.scrollIntoView({ behavior: 'smooth' }); else { try { e.target.seekTo(0); e.target.playVideo(); } catch (_) { /* ignorar */ } }
+            }
+          },
+          onError: () => { const next = activeShort && activeShort.nextElementSibling; if (next) next.scrollIntoView({ behavior: 'smooth' }); },
+        },
+      });
+    });
+    return sReady;
+  }
+  // Se o vídeo não arrancar sozinho (iPhone com som, modo de poupança de energia), tentar sem som; se nem assim, mostrar ▶
+  function watchStart() {
+    clearTimeout(sWatch);
+    sWatch = setTimeout(() => {
+      let st = -1; try { st = sPlayer.getPlayerState(); } catch (_) { /* ignorar */ }
+      if (st === 1 || st === 3) return;
+      try { sPlayer.mute(); sPlayer.playVideo(); } catch (_) { /* ignorar */ }
+      shortsMuted = true; const snd = $('#ssound'); if (snd) snd.hidden = false;
+      sWatch = setTimeout(() => {
+        let st2 = -1; try { st2 = sPlayer.getPlayerState(); } catch (_) { /* ignorar */ }
+        if (st2 !== 1 && st2 !== 3 && $('#splay')) $('#splay').hidden = false;
+      }, 1500);
+    }, 1500);
+  }
   async function playShort(el) {
     if (activeShort === el) return;
     const v = shortsList().find((x) => x.id === el.dataset.id); if (!v) return;
     clearInterval(tick); tick = null;
-    if (player && player.destroy) { try { player.destroy(); } catch (_) { /* ignorar */ } player = null; }
-    document.querySelectorAll('.short .splayer').forEach((n) => n.remove());
-    activeShort = el; current = v;
+    activeShort = el; current = v; placeDock();
     const r = stopReason(); if (r) { stopPlayer(); view.innerHTML = stopScreen(r); return; }
     await loadYT();
     if (activeShort !== el) return;
-    const holder = document.createElement('div'); holder.className = 'splayer'; holder.id = 'sp-' + v.id;
-    el.querySelector('.sframe').appendChild(holder);
-    const sound = el.querySelector('.sound');
-    sound.hidden = !shortsMuted;
-    sound.onclick = (e) => { e.stopPropagation(); shortsMuted = false; sound.hidden = true; try { player.unMute(); player.playVideo(); } catch (_) { /* ignorar */ } };
-    player = new window.YT.Player(holder.id, {
-      host: 'https://www.youtube-nocookie.com', videoId: v.id,
-      playerVars: { autoplay: 1, mute: shortsMuted ? 1 : 0, playsinline: 1, controls: 0, rel: 0, modestbranding: 1, iv_load_policy: 3, cc_lang_pref: 'pt', hl: 'pt-PT' },
-      events: {
-        onReady: (e) => { if (shortsMuted) e.target.mute(); e.target.playVideo(); },
-        onStateChange: (e) => {
-          if (e.data === 1) startTick(); else { clearInterval(tick); tick = null; }
-          if (e.data === 0) { // acabou: passar ao Short seguinte (ou voltar ao primeiro)
-            const next = el.nextElementSibling || el.parentElement.firstElementChild;
-            if (next && next !== el) next.scrollIntoView({ behavior: 'smooth' }); else { try { e.target.seekTo(0); e.target.playVideo(); } catch (_) { /* ignorar */ } }
-          }
-        },
-        onError: () => { const next = el.nextElementSibling; if (next) next.scrollIntoView({ behavior: 'smooth' }); },
-      },
-    });
+    $('#splay').hidden = true;
+    $('#ssound').hidden = !shortsMuted;
+    if (!sPlayer) await createShortsPlayer(v.id);
+    else {
+      await sReady;
+      if (activeShort !== el) return;
+      try { if (shortsMuted) sPlayer.mute(); else sPlayer.unMute(); sPlayer.loadVideoById(v.id); } catch (_) { /* ignorar */ }
+    }
+    watchStart();
   }
 
   // ---------------------------------------------------------------------------

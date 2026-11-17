@@ -16,7 +16,8 @@ window.YT = { Player: function (id, opts) {
   el.replaceWith(f); f.id = id;
   window.__yt.created.push({ videoId: opts.videoId, host: opts.host, vars: opts.playerVars });
   const self = this; window.__yt.player = self; window.__yt.state = (s) => opts.events.onStateChange({ data: s, target: self });
-  this.destroy = () => {}; this.seekTo = () => {}; this.playVideo = () => window.__yt.state(1);
+  this.destroy = () => { window.__yt.destroyed = (window.__yt.destroyed || 0) + 1; }; this.seekTo = () => {}; this.playVideo = () => window.__yt.state(1);
+  this.mute = () => { window.__yt.muted = true; }; this.unMute = () => { window.__yt.muted = false; }; this.pauseVideo = () => window.__yt.state(2);
   setTimeout(() => window.__yt.state(1), 50);
 } };
 setTimeout(() => window.onYouTubeIframeAPIReady && window.onYouTubeIframeAPIReady(), 10);"""
@@ -37,7 +38,7 @@ with sync_playwright() as p:
   pg.on('pageerror', lambda e: errs.append(str(e))); pg.on('console', lambda m: errs.append(m.text) if m.type == 'error' else None)
   pg.goto(URL); pg.wait_for_selector('.card')
   n_cards = pg.locator('.rail .card').count(); rows = pg.locator('section.row').count()
-  check(f'início: {rows} canais e {n_cards} vídeos', rows == 6 and n_cards == 42)
+  check(f'início: {rows} filas (6 canais + Shorts) e {n_cards} cartões', rows == 7 and n_cards == 52)
   pg.screenshot(path=str(OUT / '40-tv-inicio.png'))
   pg.click('[data-tema="musica"]'); pg.wait_for_timeout(200)
   names = pg.locator('section.row h2').all_inner_texts()
@@ -64,6 +65,22 @@ with sync_playwright() as p:
   t0 = time.time()
   while time.time() - t0 < 9 and 'xOIsbH2-fkI' in pg.url: pg.wait_for_timeout(250)
   check(f'passou sozinho ao seguinte ao fim de ~6 s ({pg.url.split("#")[-1]})', 'xOIsbH2-fkI' not in pg.url and '#ver-' in pg.url)
+  # Shorts: deslizar na vertical, um leitor de cada vez
+  pg.goto(URL + '#inicio'); pg.wait_for_selector('.card')
+  check('fila de Shorts no início', pg.locator('.shorts-rail .scard').count() == 10)
+  pg.evaluate('window.__yt.created = []')
+  pg.goto(URL + '#shorts'); pg.wait_for_function('window.__yt.created.length > 0')
+  first = pg.evaluate('window.__yt.created[0]')
+  check(f"Shorts: {pg.locator('.short').count()} vídeos; o primeiro toca sem som e sem controlos ({first['videoId']}, mute={first['vars']['mute']})", pg.locator('.short').count() == 10 and first['vars']['mute'] == 1 and first['vars']['controls'] == 0)
+  pg.screenshot(path=str(OUT / '45-tv-shorts.png'))
+  pg.click('.short:first-child .sound'); pg.wait_for_timeout(200)
+  check('«Toca para ouvir» liga o som', pg.evaluate('window.__yt.muted') is False)
+  pg.evaluate("document.querySelectorAll('.short')[1].scrollIntoView()"); pg.wait_for_timeout(900)
+  ids = [c['videoId'] for c in pg.evaluate('window.__yt.created')]
+  check(f"ao deslizar, toca o Short seguinte com som ({ids[-1]}, mute={pg.evaluate('window.__yt.created.at(-1).vars.mute')}) e o anterior é fechado", len(ids) == 2 and ids[1] != ids[0] and pg.evaluate('window.__yt.created.at(-1).vars.mute') == 0 and pg.evaluate('window.__yt.destroyed') >= 1)
+  pg.evaluate('window.__yt.state(0)'); pg.wait_for_timeout(1200)
+  check('no fim de um Short passa sozinho ao seguinte', len(pg.evaluate('window.__yt.created')) == 3)
+  check('nenhum Short em PT-BR no catálogo', all((v.get('lang') or '').lower() != 'pt-br' for v in pg.evaluate("fetch('catalog.json').then(r => r.json()).then(c => c.shorts)")))
   # Pesquisa só no catálogo
   pg.goto(URL + '#procurar'); pg.fill('#q', 'astronauta'); pg.wait_for_timeout(200)
   res = pg.locator('#results .card .t').all_inner_texts()
@@ -78,8 +95,13 @@ with sync_playwright() as p:
   check('canais por confirmar aparecem na área dos pais, desligados', pg.locator('.seg[data-key="pch:cartoonito"] button.on[data-v="off"]').count() == 1)
   pg.click('.seg[data-key="pch:cartoonito"] button[data-v="on"]'); pg.wait_for_timeout(200)
   pg.fill('#au', 'https://youtu.be/dQw4w9WgXcQ'); pg.fill('#at', 'Vídeo da família'); pg.click('#addv'); pg.wait_for_timeout(200)
+  pg.click('.seg[data-key="shortsOn"] button[data-v="false"]'); pg.wait_for_timeout(200)
   pg.goto(URL + '#inicio'); pg.wait_for_selector('.card')
   heads = pg.locator('section.row h2').all_inner_texts()
+  check('pais desligam os Shorts: sai a fila do início', 'Shorts' not in heads)
+  pg.goto(URL + '#shorts'); pg.wait_for_timeout(300)
+  check('e a página de Shorts explica que estão desligados', 'desligados' in pg.inner_text('#view'))
+  pg.goto(URL + '#inicio'); pg.wait_for_selector('.card')
   check(f'canal desligado sai do início e vídeo dos pais aparece: {heads}', 'Canal Panda' not in heads and 'Escolhidos pelos pais' in heads)
   check('canal por confirmar ligado pelos pais aparece no início', 'Cartoonito Portugal' in heads and 'Moonbug Portugal' not in heads)
   # Limite diário

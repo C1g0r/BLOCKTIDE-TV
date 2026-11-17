@@ -128,6 +128,10 @@ input:focus { outline: none; border-color: var(--blue); }
   .stage { margin: 0 -6px; border-radius: 14px; border-width: 3px; }
 }
 @media (max-width: 520px) {
+  .iconbtn { width: 40px; height: 40px; border-radius: 12px; }
+  .actions { gap: 7px; }
+  .brand img { width: 34px; height: 34px; }
+  .brand .tv { font-size: 13px; }
   .cover { gap: 8px; padding: 10px; }
   .cover h2 { font-size: 18px; }
   .cover .next { padding: 6px 10px 6px 6px; gap: 9px; border-radius: 12px; }
@@ -141,3 +145,22 @@ input:focus { outline: none; border-color: var(--blue); }
   h1 { font-size: 26px; }
   .upnext .card { grid-template-columns: 132px 1fr; }
 }
+
+/* Shorts: deslizar na vertical, um vídeo por ecrã */
+.thumb.vert { aspect-ratio: 9 / 16; }
+.shorts-rail { grid-auto-columns: minmax(130px, 160px); }
+body.in-shorts { overflow: hidden; }
+body.in-shorts main { padding: 0; max-width: none; }
+.feed { height: calc(100dvh - var(--hdr, 70px)); overflow-y: auto; scroll-snap-type: y mandatory; overscroll-behavior: contain; scrollbar-width: none; outline: none; background: #0b1b33; }
+.feed::-webkit-scrollbar { display: none; }
+.short { height: 100%; scroll-snap-align: start; scroll-snap-stop: always; display: grid; place-items: center; padding: 10px; }
+.sframe { position: relative; height: 100%; max-width: 100%; aspect-ratio: 9 / 16; background: #000; border-radius: 20px; overflow: hidden; border: 4px solid #fff; box-shadow: 0 6px 0 rgba(0, 0, 0, .35); }
+.sposter { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: brightness(.75); }
+.splayer, .sframe iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.sinfo { position: absolute; left: 0; right: 0; bottom: 0; z-index: 3; display: flex; flex-direction: column; gap: 6px; align-items: flex-start; padding: 40px 14px 14px; color: #fff; pointer-events: none;
+  background: linear-gradient(transparent, rgba(0, 0, 0, .75)); }
+.sinfo b { font-size: 17px; text-shadow: 0 1px 2px rgba(0, 0, 0, .6); }
+.sinfo span:last-child { display: flex; align-items: center; gap: 6px; font-weight: 800; font-size: 13px; }
+.sinfo i { width: 10px; height: 10px; border-radius: 3px; display: inline-block; }
+.sound { white-space: nowrap; position: absolute; top: 12px; left: 50%; transform: translateX(-50%); z-index: 4; border: 0; border-radius: 999px; padding: 10px 16px; font-weight: 900; background: var(--yellow); color: var(--ink); box-shadow: inset 0 -3px 0 var(--yellow-dark); }
+@media (min-width: 700px) { .short { padding: 18px; } }

@@ -362,5 +362,78 @@
    "title": "Blippi e Meekah entram num concurso de talentos",
    "dur": ""
   }
+ ],
+ "shorts_rule": "Shorts: só conteúdo infantil; nunca português do Brasil. lang: pt-PT, sem-dialogo ou o código de outro idioma (en, es, ...).",
+ "shorts": [
+  {
+   "id": "MwFO3_4JeUM",
+   "ch": "panda",
+   "title": "Toca a Aprender | Com Peso e Medida",
+   "dur": "0:26",
+   "lang": "pt-PT"
+  },
+  {
+   "id": "yz2nShwFFAI",
+   "ch": "panda",
+   "title": "Toca a Aprender | O Novo Ritmo",
+   "dur": "0:26",
+   "lang": "pt-PT"
+  },
+  {
+   "id": "UcYgeNNPscI",
+   "ch": "panda",
+   "title": "Patrulha Pata no Canal Panda",
+   "dur": "0:31",
+   "lang": "pt-PT"
+  },
+  {
+   "id": "ANjxIEhEFXU",
+   "ch": "panda",
+   "title": "Super Wings no Canal Panda",
+   "dur": "0:32",
+   "lang": "pt-PT"
+  },
+  {
+   "id": "wVsDqjKHcQA",
+   "ch": "panda",
+   "title": "Dinoster: Os Heróis Quânticos",
+   "dur": "0:35",
+   "lang": "pt-PT"
+  },
+  {
+   "id": "lYY-IAdcp9c",
+   "ch": "panda",
+   "title": "Dino Ranch no Canal Panda",
+   "dur": "0:38",
+   "lang": "pt-PT"
+  },
+  {
+   "id": "SbzVyglA2PY",
+   "ch": "panda",
+   "title": "Cinema Panda: Os Mundos de Mia",
+   "dur": "0:37",
+   "lang": "pt-PT"
+  },
+  {
+   "id": "rHRlSAj6o2Q",
+   "ch": "panda",
+   "title": "Especial Aventuras sem Limites",
+   "dur": "0:41",
+   "lang": "pt-PT"
+  },
+  {
+   "id": "ICPCtxnKq2c",
+   "ch": "xana",
+   "title": "10 anos de Xana Toc Toc!",
+   "dur": "0:56",
+   "lang": "pt-PT"
+  },
+  {
+   "id": "9u6tfWHF2ks",
+   "ch": "sonia",
+   "title": "Sónia e as Profissões",
+   "dur": "0:21",
+   "lang": "pt-PT"
+  }
  ]
 }

@@ -17,7 +17,7 @@
   // ---------------------------------------------------------------------------
   const load = (k, d) => { try { const v = JSON.parse(localStorage.getItem(k)); return v ?? d; } catch (_) { return d; } };
   const save = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch (_) { /* sem armazenamento: continua */ } };
-  const DEF = { disabled: [], enabled: [], dailyMin: 0, bedtime: { on: false, from: '21:00', to: '07:30' }, added: [], pin: null };
+  const DEF = { disabled: [], enabled: [], shortsOn: true, shortsOtherLangs: true, dailyMin: 0, bedtime: { on: false, from: '21:00', to: '07:30' }, added: [], pin: null };
   let settings = { ...DEF, ...load('btv.settings', {}) };
   if (!Array.isArray(settings.enabled)) settings.enabled = [];
   const saveSettings = () => save('btv.settings', settings);
@@ -35,6 +35,14 @@
     const added = settings.added.map((a) => ({ ...a, ch: 'pais' }));
     return [...catalog.videos.filter((v) => on.has(v.ch)), ...added];
   }
+  // Shorts: só conteúdo infantil dos canais ligados; nunca PT-BR (regra do catálogo, e filtro de segurança aqui)
+  function shortsList() {
+    if (settings.shortsOn === false) return [];
+    const on = new Set(channelsOn());
+    return (catalog.shorts || []).filter((v) => on.has(v.ch) && !/^pt-br$/i.test(v.lang || '')
+      && (settings.shortsOtherLangs !== false || ['pt-PT', 'sem-dialogo'].includes(v.lang)));
+  }
+  const LANG = { 'pt-PT': 'Português europeu', 'sem-dialogo': 'Sem diálogo', en: 'Inglês', es: 'Espanhol', fr: 'Francês' };
   const chOf = (v) => (v.ch === 'pais' ? { name: 'Escolhido pelos pais', cor: '#9a5424', tema: 'tudo' } : catalog.channels[v.ch] || { name: '', cor: '#888' });
   const thumb = (id) => `https://i.ytimg.com/vi/${encodeURIComponent(id)}/mqdefault.jpg`;
 
@@ -87,6 +95,8 @@
     const recent = watch.recent.map((id) => all.find((v) => v.id === id)).filter(Boolean).slice(0, 10);
     const chs = channelsOn().filter((k) => tema === 'tudo' || catalog.channels[k].tema === tema);
     return `<div class="chips">${Object.entries(TEMAS).map(([k, n]) => `<button class="tchip ${k === tema ? 'on' : ''}" data-tema="${k}">${n}</button>`).join('')}</div>
+      ${tema === 'tudo' && shortsList().length ? `<section class="row"><div class="row-head"><h2><span class="dot" style="background:var(--red)"></span>Shorts</h2><a href="#shorts">Ver Shorts</a></div>
+        <div class="rail shorts-rail">${shortsList().map((v) => `<a class="card scard" href="#shorts-${esc(v.id)}"><div class="thumb vert"><img loading="lazy" src="${thumb(v.id)}" alt=""><span class="dur">${esc(v.dur || '')}</span></div><div class="t">${esc(v.title)}</div></a>`).join('')}</div></section>` : ''}
       ${recent.length && tema === 'tudo' ? `<section class="row"><div class="row-head"><h2>Continuar a ver</h2></div><div class="rail">${recent.map(card).join('')}</div></section>` : ''}
       ${chs.map((k) => {
         const c = catalog.channels[k]; const list = all.filter((v) => v.ch === k);
@@ -136,6 +146,8 @@
   }
   function stopPlayer() {
     clearInterval(tick); tick = null; clearInterval(countdown); countdown = null;
+    if (feedObs) { feedObs.disconnect(); feedObs = null; }
+    activeShort = null; document.body.classList.remove('in-shorts');
     if (player && player.destroy) { try { player.destroy(); } catch (_) { /* ignorar */ } }
     player = null;
   }
@@ -204,6 +216,66 @@
   }
 
   // ---------------------------------------------------------------------------
+  // Shorts: deslizar na vertical; um leitor de cada vez (o do Short visível)
+  // ---------------------------------------------------------------------------
+  let feedObs = null, shortsMuted = true, activeShort = null;
+  function shortsPage() {
+    const list = shortsList();
+    if (!list.length) return `<div class="empty">${settings.shortsOn === false ? 'Os Shorts estão desligados na área dos pais.' : 'Ainda não há Shorts.'}</div>`;
+    return `<div class="feed" id="feed">${list.map((v) => { const ch = chOf(v); return `<section class="short" data-id="${esc(v.id)}">
+      <div class="sframe"><img class="sposter" src="https://i.ytimg.com/vi/${encodeURIComponent(v.id)}/hqdefault.jpg" alt="">
+        <div class="sinfo"><span class="badge-pt">${v.lang === 'pt-PT' ? '✓ ' : ''}${esc(LANG[v.lang] || v.lang || '')}</span><b>${esc(v.title)}</b><span><i style="background:${esc(ch.cor)}"></i>${esc(ch.name)}</span></div>
+        <button class="sound" hidden>🔇 Toca para ouvir</button></div></section>`; }).join('')}</div>`;
+  }
+  function bindShorts(startId) {
+    const feed = $('#feed'); if (!feed) return;
+    document.body.classList.add('in-shorts');
+    document.documentElement.style.setProperty('--hdr', `${$('.top').offsetHeight}px`);
+    feedObs = new IntersectionObserver((entries) => {
+      for (const e of entries) if (e.isIntersecting && e.intersectionRatio >= 0.6) playShort(e.target);
+    }, { root: feed, threshold: [0.6] });
+    feed.querySelectorAll('.short').forEach((el) => feedObs.observe(el));
+    if (startId) { const el = feed.querySelector(`.short[data-id="${CSS.escape(startId)}"]`); if (el) el.scrollIntoView(); }
+    feed.addEventListener('keydown', (e) => {
+      if (!activeShort) return;
+      if (e.key === 'ArrowDown' && activeShort.nextElementSibling) { e.preventDefault(); activeShort.nextElementSibling.scrollIntoView({ behavior: 'smooth' }); }
+      if (e.key === 'ArrowUp' && activeShort.previousElementSibling) { e.preventDefault(); activeShort.previousElementSibling.scrollIntoView({ behavior: 'smooth' }); }
+    });
+    feed.tabIndex = 0; feed.focus({ preventScroll: true });
+  }
+  async function playShort(el) {
+    if (activeShort === el) return;
+    const v = shortsList().find((x) => x.id === el.dataset.id); if (!v) return;
+    clearInterval(tick); tick = null;
+    if (player && player.destroy) { try { player.destroy(); } catch (_) { /* ignorar */ } player = null; }
+    document.querySelectorAll('.short .splayer').forEach((n) => n.remove());
+    activeShort = el; current = v;
+    const r = stopReason(); if (r) { stopPlayer(); view.innerHTML = stopScreen(r); return; }
+    await loadYT();
+    if (activeShort !== el) return;
+    const holder = document.createElement('div'); holder.className = 'splayer'; holder.id = 'sp-' + v.id;
+    el.querySelector('.sframe').appendChild(holder);
+    const sound = el.querySelector('.sound');
+    sound.hidden = !shortsMuted;
+    sound.onclick = (e) => { e.stopPropagation(); shortsMuted = false; sound.hidden = true; try { player.unMute(); player.playVideo(); } catch (_) { /* ignorar */ } };
+    player = new window.YT.Player(holder.id, {
+      host: 'https://www.youtube-nocookie.com', videoId: v.id,
+      playerVars: { autoplay: 1, mute: shortsMuted ? 1 : 0, playsinline: 1, controls: 0, rel: 0, modestbranding: 1, iv_load_policy: 3, cc_lang_pref: 'pt', hl: 'pt-PT' },
+      events: {
+        onReady: (e) => { if (shortsMuted) e.target.mute(); e.target.playVideo(); },
+        onStateChange: (e) => {
+          if (e.data === 1) startTick(); else { clearInterval(tick); tick = null; }
+          if (e.data === 0) { // acabou: passar ao Short seguinte (ou voltar ao primeiro)
+            const next = el.nextElementSibling || el.parentElement.firstElementChild;
+            if (next && next !== el) next.scrollIntoView({ behavior: 'smooth' }); else { try { e.target.seekTo(0); e.target.playVideo(); } catch (_) { /* ignorar */ } }
+          }
+        },
+        onError: () => { const next = el.nextElementSibling; if (next) next.scrollIntoView({ behavior: 'smooth' }); },
+      },
+    });
+  }
+
+  // ---------------------------------------------------------------------------
   // Painel dos pais (PIN)
   // ---------------------------------------------------------------------------
   let unlockedUntil = 0;
@@ -254,6 +326,8 @@
         ${top.length ? `<div style="margin-top:12px">${top.map((c) => `<div class="field"><div>${esc(c.name)}</div><b>${fmt(c.sec)}</b></div>`).join('')}</div>` : ''}</div>
       <div class="panel"><h2>Limites</h2>
         <div class="field"><div>Tempo por dia<div class="d">Quando acaba, os vídeos param até amanhã.</div></div>${seg('dailyMin', [[0, 'Sem limite'], [30, '30 min'], [60, '1 h'], [90, '1 h 30'], [120, '2 h']], settings.dailyMin)}</div>
+        <div class="field"><div>Shorts<div class="d">Vídeos curtos para deslizar. Nunca entra português do Brasil.</div></div>${seg('shortsOn', [['true', 'Ligados'], ['false', 'Desligados']], settings.shortsOn !== false)}</div>
+        <div class="field"><div>Shorts noutros idiomas<div class="d">Desenhos sem diálogo entram sempre; esta opção permite também outros idiomas (por exemplo inglês). O português do Brasil fica sempre de fora.</div></div>${seg('shortsOtherLangs', [['true', 'Permitir'], ['false', 'Só PT-PT e sem diálogo']], settings.shortsOtherLangs !== false)}</div>
         <div class="field"><div>Hora de dormir<div class="d">Sem vídeos entre estas horas.</div></div>
           <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">${seg('bedOn', [['true', 'Ligada'], ['false', 'Desligada']], settings.bedtime.on)}
           <input type="time" id="bf" value="${esc(settings.bedtime.from)}" /> às <input type="time" id="bt" value="${esc(settings.bedtime.to)}" /></div></div>
@@ -285,6 +359,8 @@
       const k = s.dataset.key, v = b.dataset.v;
       if (k === 'dailyMin') settings.dailyMin = Number(v);
       else if (k === 'bedOn') settings.bedtime.on = v === 'true';
+      else if (k === 'shortsOn') settings.shortsOn = v === 'true';
+      else if (k === 'shortsOtherLangs') settings.shortsOtherLangs = v === 'true';
       else if (k.startsWith('ch:')) { const c = k.slice(3); settings.disabled = settings.disabled.filter((x) => x !== c); if (v === 'off') settings.disabled.push(c); }
       else if (k.startsWith('pch:')) { const c = k.slice(4); settings.enabled = settings.enabled.filter((x) => x !== c); if (v === 'on') settings.enabled.push(c); }
       saveSettings(); route(); toast('Guardado.');
@@ -317,6 +393,7 @@
     const h = (location.hash || '#inicio').slice(1);
     const r = stopReason();
     if (r && !h.startsWith('pais')) { view.innerHTML = stopScreen(r); return; }
+    if (h === 'shorts' || h.startsWith('shorts-')) { view.innerHTML = shortsPage(); bindShorts(h.startsWith('shorts-') ? h.slice(7) : null); return; }
     if (h.startsWith('ver-')) { const id = h.slice(4); view.innerHTML = watchPage(id); bindWatch(id); }
     else if (h.startsWith('canal-')) view.innerHTML = channelPage(h.slice(6));
     else if (h === 'procurar') { view.innerHTML = searchPage(); bindSearch(); }
@@ -336,5 +413,5 @@
       try { await navigator.serviceWorker.register('sw.js'); } catch (_) { /* sem modo offline */ }
     }
   })();
-  window.BTV = { videos, upNext, stopReason, get settings() { return settings; } };
+  window.BTV = { videos, upNext, stopReason, shortsList, get settings() { return settings; } };
 })();

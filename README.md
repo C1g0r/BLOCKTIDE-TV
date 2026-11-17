@@ -5,6 +5,7 @@ portuguesa verificados. Os vídeos tocam no leitor oficial do YouTube (incorpora
 sem sugestões externas no fim). Interface própria BLOCKTIDE — não imita o YouTube.
 
 - Início por temas, «Continuar a ver», páginas de canal, pesquisa só no catálogo
+- **Shorts:** vídeos curtos para deslizar na vertical (um leitor de cada vez, começa sem som, passa sozinho ao seguinte). Só conteúdo infantil e **nunca português do Brasil**; os pais podem desligar os Shorts ou limitar a PT-PT e sem diálogo
 - Fim do vídeo: ecrã «A seguir» com outro vídeo parecido (contagem de 6 s)
 - Área dos pais com PIN: resumo do tempo, limite diário, hora de dormir, canais, vídeos acrescentados
 - Instalável no ecrã principal (iPhone: Partilhar → «Adicionar ao ecrã principal»; Android: «Instalar app»)
@@ -17,6 +18,8 @@ Teste (Python + Playwright): `python3 tests/tv_e2e.py`.
 © 2026 Igor Serrano. Todos os direitos reservados — ver `LICENSE`. Tipos de letra Nunito e Lilita One sob a licença SIL OFL (`fonts/`).
 
 ## Catálogo
+
+- **Shorts** (`catalog.json` → `shorts`): 10 vídeos curtos verificados (Canal Panda, Xana Toc Toc, Sónia e as Profissões). Cada Short tem `lang` (`pt-PT`, `sem-dialogo` ou outro idioma); `pt-BR` nunca entra.
 
 - **Verificados** (ligados): RTP zigzag, Panda e os Caricas, Xana Toc Toc, Avô Cantigas, Sónia e as Profissões, Canal Panda — 42 vídeos.
 - **Por confirmar** (desligados até os pais os ligarem): Cartoonito Portugal, Disney Junior PT, Moonbug Portugal,

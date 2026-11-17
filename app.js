@@ -29,6 +29,7 @@
   let catalog = { channels: {}, videos: [] };
   // Canais verificados: ligados até os pais os desligarem. Canais «por confirmar»: desligados até os pais os ligarem.
   const pending = (k) => (catalog.channels[k] || {}).status === 'pendente';
+  const intl = (k) => (catalog.channels[k] || {}).status === 'internacional';
   const channelsOn = () => Object.keys(catalog.channels).filter((k) => (pending(k) ? settings.enabled.includes(k) : !settings.disabled.includes(k)));
   function videos() {
     const on = new Set(channelsOn());
@@ -40,8 +41,14 @@
     if (settings.shortsOn === false) return [];
     const on = new Set(channelsOn());
     // Só Shorts verdadeiros: verticais e até 3 minutos
-    return (catalog.shorts || []).filter((v) => on.has(v.ch) && v.vertical === true && (v.sec || 0) > 0 && v.sec <= 180 && !/^pt-br$/i.test(v.lang || '')
+    const ok = (catalog.shorts || []).filter((v) => on.has(v.ch) && v.vertical === true && (v.sec || 0) > 0 && v.sec <= 180 && !/^pt-br$/i.test(v.lang || '')
       && (settings.shortsOtherLangs !== false || ['pt-PT', 'sem-dialogo'].includes(v.lang)));
+    // Primeiro os portugueses; depois os de outros países, alternando os canais
+    const pt = ok.filter((v) => !intl(v.ch)), by = {};
+    ok.filter((v) => intl(v.ch)).forEach((v) => (by[v.ch] = by[v.ch] || []).push(v));
+    const queues = Object.values(by), mixed = [];
+    for (let i = 0; queues.some((q) => q.length > i); i++) queues.forEach((q) => { if (q[i]) mixed.push(q[i]); });
+    return [...pt, ...mixed];
   }
   const LANG = { 'pt-PT': 'Português europeu', 'sem-dialogo': 'Sem diálogo', en: 'Inglês', es: 'Espanhol', fr: 'Francês', de: 'Alemão', it: 'Italiano', nl: 'Neerlandês' };
   const chOf = (v) => (v.ch === 'pais' ? { name: 'Escolhido pelos pais', cor: '#9a5424', tema: 'tudo' } : catalog.channels[v.ch] || { name: '', cor: '#888' });
@@ -97,7 +104,7 @@
     const chs = channelsOn().filter((k) => tema === 'tudo' || catalog.channels[k].tema === tema);
     return `<div class="chips">${Object.entries(TEMAS).map(([k, n]) => `<button class="tchip ${k === tema ? 'on' : ''}" data-tema="${k}">${n}</button>`).join('')}</div>
       ${tema === 'tudo' && shortsList().length ? `<section class="row"><div class="row-head"><h2><span class="dot" style="background:var(--red)"></span>Shorts</h2><a href="#shorts">Ver Shorts</a></div>
-        <div class="rail shorts-rail">${shortsList().map((v) => `<a class="card scard" href="#shorts-${esc(v.id)}"><div class="thumb vert"><img loading="lazy" src="${thumb(v.id)}" alt=""><span class="dur">${esc(v.dur || '')}</span></div><div class="t">${esc(v.title)}</div></a>`).join('')}</div></section>` : ''}
+        <div class="rail shorts-rail">${shortsList().slice(0, 30).map((v) => `<a class="card scard" href="#shorts-${esc(v.id)}"><div class="thumb vert"><img loading="lazy" src="${thumb(v.id)}" alt=""><span class="dur">${esc(v.dur || '')}</span></div><div class="t">${esc(v.title)}</div></a>`).join('')}</div></section>` : ''}
       ${recent.length && tema === 'tudo' ? `<section class="row"><div class="row-head"><h2>Continuar a ver</h2></div><div class="rail">${recent.map(card).join('')}</div></section>` : ''}
       ${chs.map((k) => {
         const c = catalog.channels[k]; const list = all.filter((v) => v.ch === k);
@@ -378,8 +385,13 @@
           <input type="time" id="bf" value="${esc(settings.bedtime.from)}" /> às <input type="time" id="bt" value="${esc(settings.bedtime.to)}" /></div></div>
       </div>
       <div class="panel"><h2>Canais</h2><p class="muted" style="font-weight:800;margin:6px 0 0">Canais de produção portuguesa, verificados. Desligue os que não quiser.</p>
-        ${Object.entries(catalog.channels).filter(([k]) => !pending(k)).map(([k, c]) => `<div class="field"><div><span class="dot" style="display:inline-block;width:11px;height:11px;border-radius:3px;background:${esc(c.cor)};margin-right:7px"></span><b>${esc(c.name)}</b><div class="d">${catalog.videos.filter((v) => v.ch === k).length} vídeos · ${esc(TEMAS[c.tema] || '')}</div></div>
+        ${Object.entries(catalog.channels).filter(([k]) => !pending(k) && !intl(k)).map(([k, c]) => `<div class="field"><div><span class="dot" style="display:inline-block;width:11px;height:11px;border-radius:3px;background:${esc(c.cor)};margin-right:7px"></span><b>${esc(c.name)}</b><div class="d">${catalog.videos.filter((v) => v.ch === k).length} vídeos · ${esc(TEMAS[c.tema] || '')}</div></div>
           ${seg('ch:' + k, [['on', 'Ligado'], ['off', 'Desligado']], settings.disabled.includes(k) ? 'off' : 'on')}</div>`).join('')}
+      </div>
+      <div class="panel"><h2>Shorts de outros países</h2><p class="muted" style="font-weight:800;margin:6px 0 0">Canais infantis oficiais de fora do Brasil, só na secção de Shorts e depois dos Shorts portugueses. Os de inglês, espanhol e francês só aparecem com «Shorts noutros idiomas» em «Permitir»; os sem diálogo aparecem sempre.</p>
+        ${Object.entries(catalog.channels).filter(([k]) => intl(k)).map(([k, c]) => { const n = (catalog.shorts || []).filter((v) => v.ch === k).length; return `<div class="field"><div><span class="dot" style="display:inline-block;width:11px;height:11px;border-radius:3px;background:${esc(c.cor)};margin-right:7px"></span><b>${esc(c.name)}</b>
+          <div class="d">${n} Shorts${c.nota ? ` · ${esc(c.nota)}` : ''}</div></div>
+          ${seg('ch:' + k, [['on', 'Ligado'], ['off', 'Desligado']], settings.disabled.includes(k) ? 'off' : 'on')}</div>`; }).join('')}
       </div>
       <div class="panel"><h2>Canais por confirmar</h2><p class="muted" style="font-weight:800;margin:6px 0 0">Canais com identidade confirmada que se apresentam em português de Portugal, mas cujo áudio ainda não foi verificado. Ficam desligados: ouça um ou dois vídeos e ligue só os que forem mesmo em português europeu.</p>
         ${Object.entries(catalog.channels).filter(([k]) => pending(k)).map(([k, c]) => { const n = catalog.videos.filter((v) => v.ch === k).length; return `<div class="field"><div><span class="dot" style="display:inline-block;width:11px;height:11px;border-radius:3px;background:${esc(c.cor)};margin-right:7px"></span><b>${esc(c.name)}</b>

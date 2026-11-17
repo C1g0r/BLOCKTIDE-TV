@@ -235,18 +235,22 @@
   function shortsPage() {
     const list = shortsList();
     if (!list.length) return `<div class="empty">${settings.shortsOn === false ? 'Os Shorts estão desligados na área dos pais.' : 'Ainda não há Shorts.'}</div>`;
-    return `<div class="feed" id="feed">${list.map((v) => { const ch = chOf(v); return `<section class="short" data-id="${esc(v.id)}">
+    // O leitor fica DENTRO da lista e POR BAIXO dos Shorts: o dedo toca sempre na lista e desliza em qualquer ponto do ecrã
+    return `<div class="feed" id="feed"><div class="sdock" id="sdock"><div id="sp"></div></div>${list.map((v) => { const ch = chOf(v); return `<section class="short" data-id="${esc(v.id)}">
       <div class="sframe"><img class="sposter" src="https://i.ytimg.com/vi/${encodeURIComponent(v.id)}/hqdefault.jpg" alt="">
         <div class="sinfo"><span class="badge-pt">${v.lang === 'pt-PT' ? '✓ ' : ''}${esc(LANG[v.lang] || v.lang || '')}</span><b>${esc(v.title)}</b><span><i style="background:${esc(ch.cor)}"></i>${esc(ch.name)}</span></div></div></section>`; }).join('')}</div>
-      <div class="sdock" id="sdock"><div id="sp"></div>
-        <button class="sound" id="ssound" hidden>🔇 Toca para ouvir</button>
-        <button class="splay" id="splay" hidden aria-label="Tocar">▶</button></div>`;
+      <button class="sound" id="ssound" hidden>🔇 Toca para ouvir</button>
+      <button class="splay" id="splay" hidden aria-label="Tocar">▶</button>`;
   }
-  // O leitor fica por cima do Short ativo e segue-o enquanto se desliza
+  const nextShort = (el) => { let n = el && el.nextElementSibling; while (n && !n.matches('.short')) n = n.nextElementSibling; return n; };
+  const prevShort = (el) => { let n = el && el.previousElementSibling; while (n && !n.matches('.short')) n = n.previousElementSibling; return n; };
+  // Põe o leitor exatamente atrás do Short ativo (coordenadas dentro da lista; acompanha o deslizar sozinho)
   function placeDock() {
-    const dock = $('#sdock'); if (!dock || !activeShort) return;
-    const f = activeShort.querySelector('.sframe'); const r = f.getBoundingClientRect(); const b = f.clientTop || 0;
-    Object.assign(dock.style, { top: `${r.top + b}px`, left: `${r.left + b}px`, width: `${r.width - 2 * b}px`, height: `${r.height - 2 * b}px` });
+    const dock = $('#sdock'), feed = $('#feed'); if (!dock || !feed || !activeShort) return;
+    const f = activeShort.querySelector('.sframe'), r = f.getBoundingClientRect(), fr = feed.getBoundingClientRect(), b = f.clientTop || 0;
+    Object.assign(dock.style, { top: `${r.top - fr.top + feed.scrollTop + b}px`, left: `${r.left - fr.left + b}px`, width: `${r.width - 2 * b}px`, height: `${r.height - 2 * b}px` });
+    // os botões de som e ▶ vão com o Short ativo
+    f.append($('#ssound'), $('#splay'));
   }
   function followDock() { cancelAnimationFrame(dockRaf); dockRaf = requestAnimationFrame(placeDock); }
   function bindShorts(startId) {
@@ -257,20 +261,19 @@
       for (const e of entries) if (e.isIntersecting && e.intersectionRatio >= 0.6) playShort(e.target);
     }, { root: feed, threshold: [0.6] });
     feed.querySelectorAll('.short').forEach((el) => feedObs.observe(el));
-    feed.addEventListener('scroll', followDock, { passive: true });
     window.addEventListener('resize', followDock);
     $('#ssound').onclick = () => { shortsMuted = false; $('#ssound').hidden = true; try { sPlayer.unMute(); sPlayer.setVolume(100); sPlayer.playVideo(); } catch (_) { /* ignorar */ } };
     // Tocar no Short pausa ou continua (o leitor deixa passar os toques para se poder deslizar)
     feed.addEventListener('click', (e) => {
-      if (!sPlayer || !e.target.closest('.short')) return;
+      if (!sPlayer || !e.target.closest('.short') || e.target.closest('button')) return;
       try { if (sPlayer.getPlayerState() === 1) sPlayer.pauseVideo(); else sPlayer.playVideo(); } catch (_) { /* ignorar */ }
     });
     $('#splay').onclick = () => { $('#splay').hidden = true; try { sPlayer.playVideo(); } catch (_) { /* ignorar */ } };
     if (startId) { const el = feed.querySelector(`.short[data-id="${CSS.escape(startId)}"]`); if (el) el.scrollIntoView(); }
     feed.addEventListener('keydown', (e) => {
       if (!activeShort) return;
-      if (e.key === 'ArrowDown' && activeShort.nextElementSibling) { e.preventDefault(); activeShort.nextElementSibling.scrollIntoView({ behavior: 'smooth' }); }
-      if (e.key === 'ArrowUp' && activeShort.previousElementSibling) { e.preventDefault(); activeShort.previousElementSibling.scrollIntoView({ behavior: 'smooth' }); }
+      if (e.key === 'ArrowDown' && nextShort(activeShort)) { e.preventDefault(); nextShort(activeShort).scrollIntoView({ behavior: 'smooth' }); }
+      if (e.key === 'ArrowUp' && prevShort(activeShort)) { e.preventDefault(); prevShort(activeShort).scrollIntoView({ behavior: 'smooth' }); }
     });
     feed.tabIndex = 0; feed.focus({ preventScroll: true });
   }
@@ -282,13 +285,13 @@
         events: {
           onReady: (e) => { e.target.mute(); e.target.playVideo(); resolve(); },
           onStateChange: (e) => {
-            if (e.data === 1) { startTick(); $('#splay') && ($('#splay').hidden = true); } else { clearInterval(tick); tick = null; }
+            if (e.data === 1) { startTick(); $('#splay') && ($('#splay').hidden = true); activeShort && activeShort.classList.add('live'); } else { clearInterval(tick); tick = null; }
             if (e.data === 0 && activeShort) { // acabou: passar ao Short seguinte (ou repetir o último)
-              const next = activeShort.nextElementSibling;
+              const next = nextShort(activeShort);
               if (next) next.scrollIntoView({ behavior: 'smooth' }); else { try { e.target.seekTo(0); e.target.playVideo(); } catch (_) { /* ignorar */ } }
             }
           },
-          onError: () => { const next = activeShort && activeShort.nextElementSibling; if (next) next.scrollIntoView({ behavior: 'smooth' }); },
+          onError: () => { const next = activeShort && nextShort(activeShort); if (next) next.scrollIntoView({ behavior: 'smooth' }); },
         },
       });
     });
@@ -312,6 +315,7 @@
     if (activeShort === el) return;
     const v = shortsList().find((x) => x.id === el.dataset.id); if (!v) return;
     clearInterval(tick); tick = null;
+    if (activeShort) activeShort.classList.remove('live');
     activeShort = el; current = v; placeDock();
     const r = stopReason(); if (r) { stopPlayer(); view.innerHTML = stopScreen(r); return; }
     await loadYT();

@@ -156,15 +156,25 @@ body.in-shorts main { padding: 0; max-width: none; }
 .short { height: 100%; scroll-snap-align: start; scroll-snap-stop: always; display: grid; place-items: center; padding: 10px; }
 .sframe { position: relative; height: 100%; max-width: 100%; aspect-ratio: 9 / 16; background: #000; border-radius: 20px; overflow: hidden; border: 4px solid #fff; box-shadow: 0 6px 0 rgba(0, 0, 0, .35); }
 .sposter { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: brightness(.75); }
-.sdock { position: fixed; z-index: 20; border-radius: 16px; overflow: hidden; pointer-events: none; }
+.feed { position: relative; }
+.short { position: relative; z-index: 1; }
+.sdock { position: absolute; z-index: 0; top: 0; left: 0; width: 0; height: 0; border-radius: 16px; overflow: hidden; pointer-events: none; background: #000; }
 .sdock iframe { pointer-events: none; }
-.sdock .sound, .sdock .splay { pointer-events: auto; }
+/* Short a tocar: o fundo fica transparente e vê-se o vídeo que está por baixo */
+.short.live .sframe { background: transparent; }
+.short.live .sposter { opacity: 0; transition: opacity .25s; }
 .sdock iframe, .sdock #sp { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
-.splay { position: absolute; inset: 0; margin: auto; width: 84px; height: 84px; border-radius: 50%; border: 0; z-index: 5; font-size: 34px; background: var(--yellow); color: var(--ink); box-shadow: inset 0 -5px 0 var(--yellow-dark), 0 6px 18px rgba(0,0,0,.4); }
+.splay { position: absolute; inset: 0; margin: auto; width: 84px; height: 84px; border-radius: 50%; border: 0; z-index: 30; font-size: 34px; background: var(--yellow); color: var(--ink); box-shadow: inset 0 -5px 0 var(--yellow-dark), 0 6px 18px rgba(0,0,0,.4); }
 .sinfo { position: absolute; left: 0; right: 0; bottom: 0; z-index: 25; display: flex; flex-direction: column; gap: 6px; align-items: flex-start; padding: 40px 14px 14px; color: #fff; pointer-events: none;
   background: linear-gradient(transparent, rgba(0, 0, 0, .75)); }
 .sinfo b { font-size: 17px; text-shadow: 0 1px 2px rgba(0, 0, 0, .6); }
 .sinfo span:last-child { display: flex; align-items: center; gap: 6px; font-weight: 800; font-size: 13px; }
 .sinfo i { width: 10px; height: 10px; border-radius: 3px; display: inline-block; }
-.sound { white-space: nowrap; position: absolute; top: 12px; left: 50%; transform: translateX(-50%); z-index: 4; border: 0; border-radius: 999px; padding: 10px 16px; font-weight: 900; background: var(--yellow); color: var(--ink); box-shadow: inset 0 -3px 0 var(--yellow-dark); }
+.sound { white-space: nowrap; position: absolute; top: 12px; left: 50%; transform: translateX(-50%); z-index: 30; border: 0; border-radius: 999px; padding: 10px 16px; font-weight: 900; background: var(--yellow); color: var(--ink); box-shadow: inset 0 -3px 0 var(--yellow-dark); }
 @media (min-width: 700px) { .short { padding: 18px; } }
+/* Telemóvel: o Short ocupa o ecrã todo, como no YouTube */
+@media (max-width: 699px) {
+  .short { padding: 0; }
+  .sframe { width: 100%; height: 100%; aspect-ratio: auto; border: 0; border-radius: 0; box-shadow: none; }
+  .sdock { border-radius: 0; }
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>BLOCKTIDE TV</title>
+  <meta name="description" content="Vídeos em português europeu para crianças, escolhidos e verificados." />
+  <meta name="theme-color" content="#0b5ed7" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="icons/icon-192.png" />
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="BLOCKTIDE" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <link rel="stylesheet" href="theme.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="#inicio" aria-label="Início"><img src="icons/logo-96.png" alt="" /><span class="wordmark"><span class="a">BLOCK</span><span class="b">TIDE</span></span><span class="tv">TV</span></a>
+    <div class="actions">
+      <a class="iconbtn" href="#procurar" aria-label="Procurar"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg></a>
+      <a class="iconbtn" href="#pais" aria-label="Pais"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></a>
+    </div>
+  </header>
+  <main id="view" tabindex="-1"></main>
+  <div id="toast" class="toast" hidden></div>
+  <script src="app.js"></script>
+</body>
+</html>

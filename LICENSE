@@ -1,0 +1,28 @@
+BLOCKTIDE — Language Intelligence & Parental Protection
+Copyright © 2026 Igor Serrano. Todos os direitos reservados.
+
+Este software — incluindo o código-fonte, a extensão de navegador, o motor de
+classificação, as regras linguísticas, os modelos treinados e respetivos pesos,
+o design, o logótipo e os ícones, a documentação e os nomes «BLOCKTIDE» e
+«PT Filter» (nome anterior) — é propriedade
+exclusiva do autor.
+
+Sem autorização prévia e por escrito do titular dos direitos, é proibido:
+  - copiar, reproduzir ou distribuir o software, no todo ou em parte;
+  - modificar, adaptar, traduzir ou criar obras derivadas;
+  - vender, sublicenciar, alugar ou disponibilizar o software a terceiros;
+  - descompilar, fazer engenharia inversa ou extrair os modelos e os seus pesos;
+  - publicar o software em lojas de extensões ou de aplicações.
+
+É permitida a utilização pessoal pelo próprio titular e por quem ele autorizar
+expressamente.
+
+Componentes e dados de terceiros usados no treino e na avaliação mantêm as suas
+próprias licenças e exigem atribuição: ver THIRD_PARTY_NOTICES.md. Esta licença
+não se sobrepõe a essas condições.
+
+O SOFTWARE É FORNECIDO «TAL COMO ESTÁ», SEM GARANTIAS DE QUALQUER TIPO,
+EXPRESSAS OU IMPLÍCITAS. O BLOCKTIDE é uma ferramenta de apoio e não garante a
+filtragem completa ou correta de todos os conteúdos.
+
+Contacto para licenciamento: Igor Serrano.

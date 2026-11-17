@@ -1,0 +1,296 @@
+{
+ "version": "2026-11-16",
+ "note": "Catálogo inicial verificado: canais de produção portuguesa; vídeos com reprodução incorporada permitida.",
+ "channels": {
+  "zigzag": {
+   "id": "UCdFnXETzOn-BQT_ZtQE1nTw",
+   "name": "RTP zigzag",
+   "tema": "desenhos",
+   "cor": "#e0261f"
+  },
+  "caricas": {
+   "id": "UCrRCYfAdzBO3ViaOseB9dJw",
+   "name": "Panda e os Caricas",
+   "tema": "musica",
+   "cor": "#1fa84f"
+  },
+  "xana": {
+   "id": "UCF8C_W8v0_n6VdCLjmHsOSA",
+   "name": "Xana Toc Toc",
+   "tema": "musica",
+   "cor": "#ff6fae"
+  },
+  "avo": {
+   "id": "UCCqe3u9RWPYfNZVaSGZfJYw",
+   "name": "Avô Cantigas",
+   "tema": "musica",
+   "cor": "#ff9a1a"
+  },
+  "sonia": {
+   "id": "UC14by_N1mtgWtTCY7tFdhGg",
+   "name": "Sónia e as Profissões",
+   "tema": "aprender",
+   "cor": "#8a4fff"
+  },
+  "panda": {
+   "id": "UC8FVkqHpH3z7aDMgfE78sNw",
+   "name": "Canal Panda",
+   "tema": "aprender",
+   "cor": "#0b5ed7"
+  }
+ },
+ "videos": [
+  {
+   "id": "MSkoCcj0Q5U",
+   "ch": "zigzag",
+   "title": "Dia Mundial da Gentileza - 2.ª parte",
+   "dur": "3:05"
+  },
+  {
+   "id": "lc8aeUYEGMs",
+   "ch": "zigzag",
+   "title": "Dia Mundial da Gentileza - 1.ª parte",
+   "dur": "2:50"
+  },
+  {
+   "id": "_ZWsfOtZ2TQ",
+   "ch": "zigzag",
+   "title": "Viana: A Lenda dos Corações de Ouro (trailer)",
+   "dur": "2:03"
+  },
+  {
+   "id": "SPGXIQkJ4Kc",
+   "ch": "zigzag",
+   "title": "Ser Astronauta é a profissão mais bonita do mundo | Anselmo Wannabe",
+   "dur": "1:25"
+  },
+  {
+   "id": "P34j7pt_gSI",
+   "ch": "zigzag",
+   "title": "Ser Bailarino é a profissão mais bonita do mundo | Anselmo Wannabe",
+   "dur": "2:43"
+  },
+  {
+   "id": "P0QE5kPxt38",
+   "ch": "zigzag",
+   "title": "Ser Artista de Rua é a profissão mais bonita do mundo | Anselmo Wannabe",
+   "dur": "1:50"
+  },
+  {
+   "id": "RSXrGYuhvas",
+   "ch": "zigzag",
+   "title": "Faroeste na praia?! | As Férias do Menino Nicolau",
+   "dur": "1:37"
+  },
+  {
+   "id": "8hoYy3L07zw",
+   "ch": "zigzag",
+   "title": "Batedores | As Férias do Menino Nicolau",
+   "dur": "2:22"
+  },
+  {
+   "id": "XTXiO_CZaPs",
+   "ch": "zigzag",
+   "title": "Nunca desistas! | Jasmine e Jambo",
+   "dur": "1:37"
+  },
+  {
+   "id": "n614nAcVkOY",
+   "ch": "zigzag",
+   "title": "Tenham pena! | Athleticus",
+   "dur": "1:42"
+  },
+  {
+   "id": "ee5hdYWA8so",
+   "ch": "caricas",
+   "title": "A Todos Um Bom Natal",
+   "dur": "3:13"
+  },
+  {
+   "id": "RaxObWIyZYM",
+   "ch": "caricas",
+   "title": "Abracadabra",
+   "dur": "3:09"
+  },
+  {
+   "id": "C3U2cQMrdSE",
+   "ch": "caricas",
+   "title": "Escola De Magia",
+   "dur": "3:03"
+  },
+  {
+   "id": "0buLe_ak24E",
+   "ch": "caricas",
+   "title": "Salta Pipoquinha",
+   "dur": "1:47"
+  },
+  {
+   "id": "UGwDF9bXkUU",
+   "ch": "caricas",
+   "title": "Popó Chiribitatá Salabencopé Tirolirolalá",
+   "dur": "1:46"
+  },
+  {
+   "id": "tuqZpnvV7QM",
+   "ch": "caricas",
+   "title": "O Galo Badalo, a Galinha Balbina, o Pinto Jacinto e o Peru Glu-Glu",
+   "dur": "2:36"
+  },
+  {
+   "id": "6Y4GmC3j08M",
+   "ch": "caricas",
+   "title": "Kulikitaka",
+   "dur": "2:02"
+  },
+  {
+   "id": "7105OzIJmA8",
+   "ch": "caricas",
+   "title": "Urso Panda",
+   "dur": "2:28"
+  },
+  {
+   "id": "jAw7l3bt5bE",
+   "ch": "caricas",
+   "title": "Sem Parar (ao vivo no musical «Na Selva»)",
+   "dur": "2:04"
+  },
+  {
+   "id": "P0FMViERZ5w",
+   "ch": "caricas",
+   "title": "Os Sons Da Selva (ao vivo no musical «Na Selva»)",
+   "dur": "2:37"
+  },
+  {
+   "id": "yYJuTZp5JHc",
+   "ch": "xana",
+   "title": "Cai a Noite",
+   "dur": "3:59"
+  },
+  {
+   "id": "oC8SmY90BHk",
+   "ch": "xana",
+   "title": "Canções De Embalar",
+   "dur": "47:40"
+  },
+  {
+   "id": "Df-ZK6iSrB4",
+   "ch": "xana",
+   "title": "Histórias no Trolipop | De Regresso a Casa",
+   "dur": "2:21"
+  },
+  {
+   "id": "OFV9YcVzXYg",
+   "ch": "xana",
+   "title": "Histórias no Trolipop | Mala Cor de Rosa Perdida",
+   "dur": "2:39"
+  },
+  {
+   "id": "YH5xlsA9COs",
+   "ch": "xana",
+   "title": "Histórias no Trolipop | Boleia ao Bicho Maluco",
+   "dur": "2:17"
+  },
+  {
+   "id": "zdEDrOqb8Os",
+   "ch": "xana",
+   "title": "Histórias no Trolipop | O Livro Perdido",
+   "dur": "2:08"
+  },
+  {
+   "id": "uTodeAdlb_o",
+   "ch": "xana",
+   "title": "Histórias no Trolipop | Os Meus Amigos Peixinhos",
+   "dur": "2:57"
+  },
+  {
+   "id": "wgarXvbXpVM",
+   "ch": "xana",
+   "title": "Histórias no Trolipop | A Festa de Despedida",
+   "dur": "2:32"
+  },
+  {
+   "id": "tShG5o-IpFg",
+   "ch": "xana",
+   "title": "Histórias no Trolipop | A Hora do Desporto",
+   "dur": "3:01"
+  },
+  {
+   "id": "HUAqJ41jZlk",
+   "ch": "avo",
+   "title": "Atchim...! Santinho!",
+   "dur": "3:26"
+  },
+  {
+   "id": "RDqmhcOWOd0",
+   "ch": "avo",
+   "title": "Um Do Li Ta",
+   "dur": "2:36"
+  },
+  {
+   "id": "eVMlSY0oinU",
+   "ch": "avo",
+   "title": "Fantasminha Brincalhão",
+   "dur": "3:15"
+  },
+  {
+   "id": "XYZ1suw4z74",
+   "ch": "sonia",
+   "title": "O Jardineiro",
+   "dur": "1:19"
+  },
+  {
+   "id": "xOIsbH2-fkI",
+   "ch": "sonia",
+   "title": "O Astronauta",
+   "dur": "2:06"
+  },
+  {
+   "id": "sSbTg6oOARQ",
+   "ch": "sonia",
+   "title": "O Padeiro",
+   "dur": "2:20"
+  },
+  {
+   "id": "orLGfMXoAPs",
+   "ch": "sonia",
+   "title": "O DJ",
+   "dur": "2:03"
+  },
+  {
+   "id": "2E-GrBUShQo",
+   "ch": "sonia",
+   "title": "O Polícia",
+   "dur": "1:51"
+  },
+  {
+   "id": "632uMX_gfQg",
+   "ch": "sonia",
+   "title": "A Cabeleireira",
+   "dur": "1:56"
+  },
+  {
+   "id": "rjqIQ2nu-9s",
+   "ch": "sonia",
+   "title": "A Professora",
+   "dur": "2:43"
+  },
+  {
+   "id": "uHszmWMeXZk",
+   "ch": "sonia",
+   "title": "O Bombeiro",
+   "dur": "2:27"
+  },
+  {
+   "id": "MwFO3_4JeUM",
+   "ch": "panda",
+   "title": "Toca a Aprender | Com Peso e Medida",
+   "dur": "0:26"
+  },
+  {
+   "id": "yz2nShwFFAI",
+   "ch": "panda",
+   "title": "Toca a Aprender | O Novo Ritmo",
+   "dur": "0:26"
+  }
+ ]
+}

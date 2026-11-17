@@ -1,0 +1,18 @@
+{
+  "name": "BLOCKTIDE TV",
+  "short_name": "BLOCKTIDE",
+  "description": "Vídeos em português europeu para crianças, escolhidos e verificados.",
+  "lang": "pt-PT",
+  "start_url": "./#inicio",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#0b5ed7",
+  "theme_color": "#0b5ed7",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/maskable-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+    { "src": "icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

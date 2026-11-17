@@ -1,6 +1,6 @@
 /*! BLOCKTIDE TV — © 2026 Igor Serrano. Todos os direitos reservados. */
 // Guarda a aplicação para abrir depressa (e sem rede mostra o ecrã inicial). Os vídeos vêm sempre do YouTube.
-const CACHE = 'btv-0.3.0';
+const CACHE = 'btv-0.4.0';
 const SHELL = ['./', './index.html', './styles.css', './theme.css', './app.js', './catalog.json', './manifest.webmanifest',
   './icons/icon-192.png', './icons/logo-96.png', './fonts/lilita-one-400.woff2', './fonts/nunito-700.woff2', './fonts/nunito-800.woff2', './fonts/nunito-900.woff2'];
 self.addEventListener('install', (e) => { e.waitUntil((async () => { const c = await caches.open(CACHE); await c.addAll(SHELL); await self.skipWaiting(); })()); });

@@ -363,76 +363,708 @@
    "dur": ""
   }
  ],
- "shorts_rule": "Shorts: só conteúdo infantil; nunca português do Brasil. lang: pt-PT, sem-dialogo ou o código de outro idioma (en, es, ...).",
+ "shorts_rule": "Shorts verdadeiros: vídeos verticais do separador «Shorts» do canal, até 3 minutos, incorporação permitida (verificado com oEmbed em 2026-11-17). Só conteúdo infantil; nunca português do Brasil.",
  "shorts": [
   {
-   "id": "MwFO3_4JeUM",
-   "ch": "panda",
-   "title": "Toca a Aprender | Com Peso e Medida",
-   "dur": "0:26",
+   "id": "Grlv6rWfKzE",
+   "ch": "zigzag",
+   "title": "Samuel | Ep. 11: O Bloco de Gelo",
+   "dur": "1:28",
+   "sec": 88,
+   "vertical": true,
    "lang": "pt-PT"
   },
   {
-   "id": "yz2nShwFFAI",
-   "ch": "panda",
-   "title": "Toca a Aprender | O Novo Ritmo",
-   "dur": "0:26",
+   "id": "yHTMPJkcFAI",
+   "ch": "zigzag",
+   "title": "Samuel | Ep. 10: O Espetáculo de Dança",
+   "dur": "1:40",
+   "sec": 100,
+   "vertical": true,
    "lang": "pt-PT"
   },
   {
-   "id": "UcYgeNNPscI",
-   "ch": "panda",
-   "title": "Patrulha Pata no Canal Panda",
-   "dur": "0:31",
+   "id": "tNgW2yHQHIk",
+   "ch": "zigzag",
+   "title": "Samuel | Ep. 9: A Vela",
+   "dur": "0:39",
+   "sec": 39,
+   "vertical": true,
    "lang": "pt-PT"
   },
   {
-   "id": "ANjxIEhEFXU",
-   "ch": "panda",
-   "title": "Super Wings no Canal Panda",
-   "dur": "0:32",
+   "id": "lN-hjZZMgUA",
+   "ch": "zigzag",
+   "title": "Samuel | Ep. 8: Sozinho",
+   "dur": "0:34",
+   "sec": 34,
+   "vertical": true,
    "lang": "pt-PT"
   },
   {
-   "id": "wVsDqjKHcQA",
-   "ch": "panda",
-   "title": "Dinoster: Os Heróis Quânticos",
-   "dur": "0:35",
+   "id": "Ix5dhnQVbd8",
+   "ch": "zigzag",
+   "title": "Samuel | Ep. 7: O Cão",
+   "dur": "0:54",
+   "sec": 54,
+   "vertical": true,
    "lang": "pt-PT"
   },
   {
-   "id": "lYY-IAdcp9c",
-   "ch": "panda",
-   "title": "Dino Ranch no Canal Panda",
-   "dur": "0:38",
+   "id": "UO7QThWij-w",
+   "ch": "zigzag",
+   "title": "Samuel | Ep. 6: A Declaração",
+   "dur": "1:02",
+   "sec": 62,
+   "vertical": true,
    "lang": "pt-PT"
   },
   {
-   "id": "SbzVyglA2PY",
-   "ch": "panda",
-   "title": "Cinema Panda: Os Mundos de Mia",
-   "dur": "0:37",
+   "id": "0lKssk_CYWA",
+   "ch": "zigzag",
+   "title": "Samuel | Ep. 5: O Comboio",
+   "dur": "0:50",
+   "sec": 50,
+   "vertical": true,
    "lang": "pt-PT"
   },
   {
-   "id": "rHRlSAj6o2Q",
+   "id": "OuRkAyftJTM",
+   "ch": "zigzag",
+   "title": "Samuel | Ep. 4: As Cartas Perfumadas",
+   "dur": "1:21",
+   "sec": 81,
+   "vertical": true,
+   "lang": "pt-PT"
+  },
+  {
+   "id": "McZlgK8e2FY",
+   "ch": "zigzag",
+   "title": "Samuel | Ep. 3: A Piscina",
+   "dur": "1:04",
+   "sec": 64,
+   "vertical": true,
+   "lang": "pt-PT"
+  },
+  {
+   "id": "itnG1Fi5qNo",
+   "ch": "zigzag",
+   "title": "Samuel | Ep. 2: O Almoço",
+   "dur": "1:01",
+   "sec": 61,
+   "vertical": true,
+   "lang": "pt-PT"
+  },
+  {
+   "id": "VZwgTA3FdbY",
+   "ch": "zigzag",
+   "title": "Samuel | Ep. 1: Samuel e Amigos",
+   "dur": "0:39",
+   "sec": 39,
+   "vertical": true,
+   "lang": "pt-PT"
+  },
+  {
+   "id": "MNMCTfiXqbo",
    "ch": "panda",
-   "title": "Especial Aventuras sem Limites",
+   "title": "Patrulha Pata",
    "dur": "0:41",
+   "sec": 41,
+   "vertical": true,
    "lang": "pt-PT"
   },
   {
-   "id": "ICPCtxnKq2c",
-   "ch": "xana",
-   "title": "10 anos de Xana Toc Toc!",
+   "id": "Vt9Kc87hdaY",
+   "ch": "panda",
+   "title": "Super Wings",
+   "dur": "0:40",
+   "sec": 40,
+   "vertical": true,
+   "lang": "pt-PT"
+  },
+  {
+   "id": "p1n7S1e5G4I",
+   "ch": "panda",
+   "title": "Porquinha Peppa",
+   "dur": "0:20",
+   "sec": 20,
+   "vertical": true,
+   "lang": "pt-PT"
+  },
+  {
+   "id": "9COJNecWYGU",
+   "ch": "panda",
+   "title": "Nova música Panda e os Caricas",
+   "dur": "0:10",
+   "sec": 10,
+   "vertical": true,
+   "lang": "pt-PT"
+  },
+  {
+   "id": "cGvROffQq2w",
+   "ch": "panda",
+   "title": "Dia Mundial da Dança",
+   "dur": "0:20",
+   "sec": 20,
+   "vertical": true,
+   "lang": "pt-PT"
+  },
+  {
+   "id": "V-5KKm-wb8M",
+   "ch": "panda",
+   "title": "DJ Riscas ao vivo!",
+   "dur": "0:24",
+   "sec": 24,
+   "vertical": true,
+   "lang": "pt-PT"
+  },
+  {
+   "id": "1XLb2OE9jMA",
+   "ch": "panda",
+   "title": "SuperThings: Kazoom Power",
+   "dur": "0:34",
+   "sec": 34,
+   "vertical": true,
+   "lang": "pt-PT"
+  },
+  {
+   "id": "THMBlGkEtHs",
+   "ch": "caricas",
+   "title": "Preparados para a primeira aula de magia?",
+   "dur": "0:26",
+   "sec": 26,
+   "vertical": true,
+   "lang": "pt-PT"
+  },
+  {
+   "id": "8BpzpidbB80",
+   "ch": "caricas",
+   "title": "Ado a-ado, cada um no seu quadrado!",
+   "dur": "0:53",
+   "sec": 53,
+   "vertical": true,
+   "lang": "pt-PT"
+  },
+  {
+   "id": "8BUNb6Z_eTQ",
+   "ch": "caricas",
+   "title": "Prontos para a brincadeira, amigos?",
    "dur": "0:56",
+   "sec": 56,
+   "vertical": true,
    "lang": "pt-PT"
   },
   {
-   "id": "9u6tfWHF2ks",
-   "ch": "sonia",
-   "title": "Sónia e as Profissões",
-   "dur": "0:21",
+   "id": "iwsZD651aKo",
+   "ch": "caricas",
+   "title": "Quem sabe todas as vogais?",
+   "dur": "0:38",
+   "sec": 38,
+   "vertical": true,
+   "lang": "pt-PT"
+  },
+  {
+   "id": "kHnbVD2JI9g",
+   "ch": "caricas",
+   "title": "Vamos jogar ao Panda Manda!",
+   "dur": "0:58",
+   "sec": 58,
+   "vertical": true,
+   "lang": "pt-PT"
+  },
+  {
+   "id": "ozo3smFB5nI",
+   "ch": "caricas",
+   "title": "Conheces algum truque de magia?",
+   "dur": "0:24",
+   "sec": 24,
+   "vertical": true,
+   "lang": "pt-PT"
+  },
+  {
+   "id": "sIe5ZZr2BlY",
+   "ch": "caricas",
+   "title": "Porque é que os polícias não gostam de sabão?",
+   "dur": "0:16",
+   "sec": 16,
+   "vertical": true,
+   "lang": "pt-PT"
+  },
+  {
+   "id": "pl3B5jSn6ks",
+   "ch": "caricas",
+   "title": "Que barulho é este?",
+   "dur": "0:44",
+   "sec": 44,
+   "vertical": true,
+   "lang": "pt-PT"
+  },
+  {
+   "id": "1_9CqB6mnCQ",
+   "ch": "caricas",
+   "title": "Há lugar para todos neste Balão Mágico!",
+   "dur": "0:38",
+   "sec": 38,
+   "vertical": true,
+   "lang": "pt-PT"
+  },
+  {
+   "id": "aUdac2KY90g",
+   "ch": "caricas",
+   "title": "Temos uma adivinha para ti!",
+   "dur": "0:14",
+   "sec": 14,
+   "vertical": true,
+   "lang": "pt-PT"
+  },
+  {
+   "id": "lYE7L0BadC4",
+   "ch": "caricas",
+   "title": "Já sabes quais são as 5 vogais?",
+   "dur": "0:12",
+   "sec": 12,
+   "vertical": true,
+   "lang": "pt-PT"
+  },
+  {
+   "id": "FLnzYt7Pi5Q",
+   "ch": "caricas",
+   "title": "Prontos para o mundo encantado da magia?",
+   "dur": "0:28",
+   "sec": 28,
+   "vertical": true,
+   "lang": "pt-PT"
+  },
+  {
+   "id": "c-eOLaukdjE",
+   "ch": "cartoonito",
+   "title": "Um sonho dececionante",
+   "dur": "0:48",
+   "sec": 48,
+   "vertical": true,
+   "lang": "pt-PT"
+  },
+  {
+   "id": "9PSiRcPXwL0",
+   "ch": "cartoonito",
+   "title": "Ser babysitter não é para os fracos",
+   "dur": "0:22",
+   "sec": 22,
+   "vertical": true,
+   "lang": "pt-PT"
+  },
+  {
+   "id": "immE9ikfrm4",
+   "ch": "cartoonito",
+   "title": "Os Lemingues Bebés jogam Rali de Dominós",
+   "dur": "0:51",
+   "sec": 51,
+   "vertical": true,
+   "lang": "pt-PT"
+  },
+  {
+   "id": "-Dzor7JVJac",
+   "ch": "cartoonito",
+   "title": "O Jerry está em concentração máxima",
+   "dur": "0:23",
+   "sec": 23,
+   "vertical": true,
+   "lang": "pt-PT"
+  },
+  {
+   "id": "jQTS--CgrIc",
+   "ch": "cartoonito",
+   "title": "Miguel tenta treinar um T-Rex… só que não!",
+   "dur": "0:51",
+   "sec": 51,
+   "vertical": true,
+   "lang": "pt-PT"
+  },
+  {
+   "id": "wltwh4sY18o",
+   "ch": "cartoonito",
+   "title": "As bananas não são para comer, tonto",
+   "dur": "0:15",
+   "sec": 15,
+   "vertical": true,
+   "lang": "pt-PT"
+  },
+  {
+   "id": "FgKwy-7t4KA",
+   "ch": "cartoonito",
+   "title": "Acampamento espacial para jovens astronautas",
+   "dur": "0:51",
+   "sec": 51,
+   "vertical": true,
+   "lang": "pt-PT"
+  },
+  {
+   "id": "dh2M--AyHwk",
+   "ch": "cartoonito",
+   "title": "Que vença o melhor",
+   "dur": "0:57",
+   "sec": 57,
+   "vertical": true,
+   "lang": "pt-PT"
+  },
+  {
+   "id": "m4aGv5F4C8M",
+   "ch": "cartoonito",
+   "title": "A tarefa falhou com sucesso",
+   "dur": "0:14",
+   "sec": 14,
+   "vertical": true,
+   "lang": "pt-PT"
+  },
+  {
+   "id": "ZcReMclshy0",
+   "ch": "cartoonito",
+   "title": "Nem dá para fazer um piquenique em paz",
+   "dur": "0:39",
+   "sec": 39,
+   "vertical": true,
+   "lang": "pt-PT"
+  },
+  {
+   "id": "GOZ6fUziZic",
+   "ch": "cartoonito",
+   "title": "O Tom queria bolo. O Jerry trouxe surpresas.",
+   "dur": "1:00",
+   "sec": 60,
+   "vertical": true,
+   "lang": "pt-PT"
+  },
+  {
+   "id": "voQtFTxjorE",
+   "ch": "cartoonito",
+   "title": "Eis a sinfonia do fracasso",
+   "dur": "0:23",
+   "sec": 23,
+   "vertical": true,
+   "lang": "pt-PT"
+  },
+  {
+   "id": "25nVuiFqeQU",
+   "ch": "disneyjr",
+   "title": "SuperKitties",
+   "dur": "0:13",
+   "sec": 13,
+   "vertical": true,
+   "lang": "pt-PT"
+  },
+  {
+   "id": "WI9icsmLF4U",
+   "ch": "disneyjr",
+   "title": "Spidey e a sua Superequipa",
+   "dur": "0:10",
+   "sec": 10,
+   "vertical": true,
+   "lang": "pt-PT"
+  },
+  {
+   "id": "j0e8A7f1wZ8",
+   "ch": "disneyjr",
+   "title": "A Casa do Mickey Mouse+ | O truque de magia",
+   "dur": "0:22",
+   "sec": 22,
+   "vertical": true,
+   "lang": "pt-PT"
+  },
+  {
+   "id": "efC34LWofqo",
+   "ch": "disneyjr",
+   "title": "A Princesa Sofia: Escola de Magia",
+   "dur": "0:08",
+   "sec": 8,
+   "vertical": true,
+   "lang": "pt-PT"
+  },
+  {
+   "id": "IS0R0AenP5s",
+   "ch": "disneyjr",
+   "title": "Homem de Ferro e a sua Superequipa",
+   "dur": "0:19",
+   "sec": 19,
+   "vertical": true,
+   "lang": "pt-PT"
+  },
+  {
+   "id": "P7R5MC1KwYE",
+   "ch": "disneyjr",
+   "title": "Homem de Ferro e a sua Superequipa",
+   "dur": "0:37",
+   "sec": 37,
+   "vertical": true,
+   "lang": "pt-PT"
+  },
+  {
+   "id": "uPWJMkBYHq8",
+   "ch": "disneyjr",
+   "title": "A Casa do Mickey Mouse+ | Caça de Halloween",
+   "dur": "0:42",
+   "sec": 42,
+   "vertical": true,
+   "lang": "pt-PT"
+  },
+  {
+   "id": "FYu1J_YKwtI",
+   "ch": "disneyjr",
+   "title": "A Princesa Sofia: Escola de Magia",
+   "dur": "0:31",
+   "sec": 31,
+   "vertical": true,
+   "lang": "pt-PT"
+  },
+  {
+   "id": "TwHO_gVNTTc",
+   "ch": "disneyjr",
+   "title": "Spidey e a sua Superequipa",
+   "dur": "0:54",
+   "sec": 54,
+   "vertical": true,
+   "lang": "pt-PT"
+  },
+  {
+   "id": "aGEkxjOjC0M",
+   "ch": "disneyjr",
+   "title": "SuperKitties | Há um monstro na selva!",
+   "dur": "0:18",
+   "sec": 18,
+   "vertical": true,
+   "lang": "pt-PT"
+  },
+  {
+   "id": "LJG1XzT-Pjo",
+   "ch": "disneyjr",
+   "title": "Poupa energia!",
+   "dur": "1:00",
+   "sec": 60,
+   "vertical": true,
+   "lang": "pt-PT"
+  },
+  {
+   "id": "CtXkN9kcISg",
+   "ch": "disneyjr",
+   "title": "É Halloween!",
+   "dur": "0:55",
+   "sec": 55,
+   "vertical": true,
+   "lang": "pt-PT"
+  },
+  {
+   "id": "Dn5iZhUHj7E",
+   "ch": "moonbug",
+   "title": "Levar com tarte na cara!",
+   "dur": "0:15",
+   "sec": 15,
+   "vertical": true,
+   "lang": "pt-PT"
+  },
+  {
+   "id": "kRfygGvULZ0",
+   "ch": "moonbug",
+   "title": "Robô Bebé está com gás!",
+   "dur": "0:29",
+   "sec": 29,
+   "vertical": true,
+   "lang": "pt-PT"
+  },
+  {
+   "id": "M_yCRco9jwo",
+   "ch": "moonbug",
+   "title": "Que é que estás a ver, Jeff?",
+   "dur": "0:13",
+   "sec": 13,
+   "vertical": true,
+   "lang": "pt-PT"
+  },
+  {
+   "id": "Vg1tJFkARdk",
+   "ch": "moonbug",
+   "title": "Quem está a controlar o ARPO?",
+   "dur": "0:23",
+   "sec": 23,
+   "vertical": true,
+   "lang": "pt-PT"
+  },
+  {
+   "id": "UCtCfuJo--M",
+   "ch": "moonbug",
+   "title": "Todos a bordo?",
+   "dur": "0:25",
+   "sec": 25,
+   "vertical": true,
+   "lang": "pt-PT"
+  },
+  {
+   "id": "XMM02o0tHBM",
+   "ch": "moonbug",
+   "title": "ARPO engana o crocodilo do Nilo!",
+   "dur": "0:27",
+   "sec": 27,
+   "vertical": true,
+   "lang": "pt-PT"
+  },
+  {
+   "id": "N3DPxiVjvBs",
+   "ch": "moonbug",
+   "title": "Cuidado a cantar no carro...",
+   "dur": "0:24",
+   "sec": 24,
+   "vertical": true,
+   "lang": "pt-PT"
+  },
+  {
+   "id": "gX4YaimYgnA",
+   "ch": "moonbug",
+   "title": "Jogar à apanhada com o Robô-Cão",
+   "dur": "0:30",
+   "sec": 30,
+   "vertical": true,
+   "lang": "pt-PT"
+  },
+  {
+   "id": "cqeGW2ad8MA",
+   "ch": "moonbug",
+   "title": "Brincadeira com cadeiras!",
+   "dur": "0:19",
+   "sec": 19,
+   "vertical": true,
+   "lang": "pt-PT"
+  },
+  {
+   "id": "SxCd9rSW3OU",
+   "ch": "moonbug",
+   "title": "O Cão Robô quer brincar!",
+   "dur": "0:16",
+   "sec": 16,
+   "vertical": true,
+   "lang": "pt-PT"
+  },
+  {
+   "id": "4o0BXdrKldI",
+   "ch": "moonbug",
+   "title": "O Newt precisa de ir à casa de banho!",
+   "dur": "0:41",
+   "sec": 41,
+   "vertical": true,
+   "lang": "pt-PT"
+  },
+  {
+   "id": "5_3uSXOpE-U",
+   "ch": "moonbug",
+   "title": "O Esquilo tem saudades dos amigos",
+   "dur": "0:28",
+   "sec": 28,
+   "vertical": true,
+   "lang": "pt-PT"
+  },
+  {
+   "id": "dOju_Yk-YMM",
+   "ch": "mega",
+   "title": "4 pratos na cabeça! | Aprende a contar",
+   "dur": "1:52",
+   "sec": 112,
+   "vertical": true,
+   "lang": "pt-PT"
+  },
+  {
+   "id": "QG6Zf6F82dA",
+   "ch": "mega",
+   "title": "Aprende a contar até 10 com animais",
+   "dur": "2:36",
+   "sec": 156,
+   "vertical": true,
+   "lang": "pt-PT"
+  },
+  {
+   "id": "iwe6oS2OnVc",
+   "ch": "mega",
+   "title": "Malabarismo com lenços para crianças",
+   "dur": "2:26",
+   "sec": 146,
+   "vertical": true,
+   "lang": "pt-PT"
+  },
+  {
+   "id": "wx4XfYDqDpE",
+   "ch": "mega",
+   "title": "Letra Y | Y de Yoga",
+   "dur": "2:58",
+   "sec": 178,
+   "vertical": true,
+   "lang": "pt-PT"
+  },
+  {
+   "id": "SLVlMWrIOlI",
+   "ch": "mega",
+   "title": "Letra X | Consegues tocar xilofone?",
+   "dur": "1:09",
+   "sec": 69,
+   "vertical": true,
+   "lang": "pt-PT"
+  },
+  {
+   "id": "QV1p02hwUvM",
+   "ch": "mega",
+   "title": "Letra W | W de Waffle",
+   "dur": "1:51",
+   "sec": 111,
+   "vertical": true,
+   "lang": "pt-PT"
+  },
+  {
+   "id": "TJrWnWghLMU",
+   "ch": "mega",
+   "title": "Letra V | Onde está a mamã?",
+   "dur": "1:21",
+   "sec": 81,
+   "vertical": true,
+   "lang": "pt-PT"
+  },
+  {
+   "id": "ELib2VvOk30",
+   "ch": "mega",
+   "title": "Letra U | U de Unicórnio",
+   "dur": "1:36",
+   "sec": 96,
+   "vertical": true,
+   "lang": "pt-PT"
+  },
+  {
+   "id": "p3aKvb9ucaU",
+   "ch": "mega",
+   "title": "Letra T | T de Tambor",
+   "dur": "1:35",
+   "sec": 95,
+   "vertical": true,
+   "lang": "pt-PT"
+  },
+  {
+   "id": "5eABQLbezDc",
+   "ch": "mega",
+   "title": "Letra S | Quantos sapatos?",
+   "dur": "2:03",
+   "sec": 123,
+   "vertical": true,
+   "lang": "pt-PT"
+  },
+  {
+   "id": "MnyGnV_g3VU",
+   "ch": "mega",
+   "title": "Letra R | Quantos números?",
+   "dur": "2:27",
+   "sec": 147,
+   "vertical": true,
+   "lang": "pt-PT"
+  },
+  {
+   "id": "Y4W7RZhLlLk",
+   "ch": "mega",
+   "title": "Letra Q | Descobre os animais",
+   "dur": "0:43",
+   "sec": 43,
+   "vertical": true,
    "lang": "pt-PT"
   }
  ]

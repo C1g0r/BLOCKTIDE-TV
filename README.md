@@ -19,7 +19,7 @@ Teste (Python + Playwright): `python3 tests/tv_e2e.py`.
 
 ## Catálogo
 
-- **Shorts** (`catalog.json` → `shorts`): 10 vídeos curtos verificados (Canal Panda, Xana Toc Toc, Sónia e as Profissões). Cada Short tem `lang` (`pt-PT`, `sem-dialogo` ou outro idioma); `pt-BR` nunca entra.
+- **Shorts** (`catalog.json` → `shorts`): 78 Shorts verdadeiros (verticais, até 3 min, incorporação confirmada): 30 dos canais verificados (RTP zigzag, Canal Panda, Panda e os Caricas) e 48 dos canais por confirmar, que só aparecem quando os pais os ligam. `pt-BR` nunca entra.
 
 - **Verificados** (ligados): RTP zigzag, Panda e os Caricas, Xana Toc Toc, Avô Cantigas, Sónia e as Profissões, Canal Panda — 42 vídeos.
 - **Por confirmar** (desligados até os pais os ligarem): Cartoonito Portugal, Disney Junior PT, Moonbug Portugal,

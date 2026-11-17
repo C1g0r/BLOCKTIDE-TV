@@ -39,7 +39,8 @@
   function shortsList() {
     if (settings.shortsOn === false) return [];
     const on = new Set(channelsOn());
-    return (catalog.shorts || []).filter((v) => on.has(v.ch) && !/^pt-br$/i.test(v.lang || '')
+    // Só Shorts verdadeiros: verticais e até 3 minutos
+    return (catalog.shorts || []).filter((v) => on.has(v.ch) && v.vertical === true && (v.sec || 0) > 0 && v.sec <= 180 && !/^pt-br$/i.test(v.lang || '')
       && (settings.shortsOtherLangs !== false || ['pt-PT', 'sem-dialogo'].includes(v.lang)));
   }
   const LANG = { 'pt-PT': 'Português europeu', 'sem-dialogo': 'Sem diálogo', en: 'Inglês', es: 'Espanhol', fr: 'Francês' };

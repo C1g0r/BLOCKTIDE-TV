@@ -75,10 +75,13 @@ with sync_playwright() as p:
   check('PIN criado e área dos pais aberta', pg.locator('h1').first.inner_text() == 'Área dos pais')
   pg.screenshot(path=str(OUT / '43-tv-pais.png'), full_page=True)
   pg.click('.seg[data-key="ch:panda"] button[data-v="off"]'); pg.wait_for_timeout(200)
+  check('canais por confirmar aparecem na área dos pais, desligados', pg.locator('.seg[data-key="pch:cartoonito"] button.on[data-v="off"]').count() == 1)
+  pg.click('.seg[data-key="pch:cartoonito"] button[data-v="on"]'); pg.wait_for_timeout(200)
   pg.fill('#au', 'https://youtu.be/dQw4w9WgXcQ'); pg.fill('#at', 'Vídeo da família'); pg.click('#addv'); pg.wait_for_timeout(200)
   pg.goto(URL + '#inicio'); pg.wait_for_selector('.card')
   heads = pg.locator('section.row h2').all_inner_texts()
   check(f'canal desligado sai do início e vídeo dos pais aparece: {heads}', 'Canal Panda' not in heads and 'Escolhidos pelos pais' in heads)
+  check('canal por confirmar ligado pelos pais aparece no início', 'Cartoonito Portugal' in heads and 'Moonbug Portugal' not in heads)
   # Limite diário
   pg.evaluate("""() => { const s = JSON.parse(localStorage.getItem('btv.settings')); s.dailyMin = 30; localStorage.setItem('btv.settings', JSON.stringify(s));
     const w = JSON.parse(localStorage.getItem('btv.watch')); const d = new Date(); const k = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;

@@ -1,42 +1,88 @@
 {
- "version": "2026-11-16",
- "note": "Catálogo inicial verificado: canais de produção portuguesa; vídeos com reprodução incorporada permitida.",
+ "version": "2026-11-17",
+ "note": "Canais «verificado»: produção portuguesa confirmada. Canais «pendente»: ID confirmado, idioma por auditar — desligados até os pais os ligarem.",
  "channels": {
   "zigzag": {
    "id": "UCdFnXETzOn-BQT_ZtQE1nTw",
    "name": "RTP zigzag",
    "tema": "desenhos",
-   "cor": "#e0261f"
+   "cor": "#e0261f",
+   "status": "verificado"
   },
   "caricas": {
    "id": "UCrRCYfAdzBO3ViaOseB9dJw",
    "name": "Panda e os Caricas",
    "tema": "musica",
-   "cor": "#1fa84f"
+   "cor": "#1fa84f",
+   "status": "verificado"
   },
   "xana": {
    "id": "UCF8C_W8v0_n6VdCLjmHsOSA",
    "name": "Xana Toc Toc",
    "tema": "musica",
-   "cor": "#ff6fae"
+   "cor": "#ff6fae",
+   "status": "verificado"
   },
   "avo": {
    "id": "UCCqe3u9RWPYfNZVaSGZfJYw",
    "name": "Avô Cantigas",
    "tema": "musica",
-   "cor": "#ff9a1a"
+   "cor": "#ff9a1a",
+   "status": "verificado"
   },
   "sonia": {
    "id": "UC14by_N1mtgWtTCY7tFdhGg",
    "name": "Sónia e as Profissões",
    "tema": "aprender",
-   "cor": "#8a4fff"
+   "cor": "#8a4fff",
+   "status": "verificado"
   },
   "panda": {
    "id": "UC8FVkqHpH3z7aDMgfE78sNw",
    "name": "Canal Panda",
    "tema": "aprender",
-   "cor": "#0b5ed7"
+   "cor": "#0b5ed7",
+   "status": "verificado"
+  },
+  "cartoonito": {
+   "id": "UCxikJwnErvIlf_l6MD9IcAA",
+   "name": "Cartoonito Portugal",
+   "tema": "desenhos",
+   "cor": "#00a3e0",
+   "status": "pendente",
+   "nota": "Canal oficial português; alguns vídeos sem diálogo."
+  },
+  "disneyjr": {
+   "id": "UCpv3czzaPFWvBQZ372mlMOw",
+   "name": "Disney Junior PT",
+   "tema": "desenhos",
+   "cor": "#5b2d90",
+   "status": "pendente",
+   "nota": "Canal oficial Disney Junior Portugal; confirmar o idioma de cada vídeo."
+  },
+  "moonbug": {
+   "id": "UCZVA1wZLvRgM-bm751yVDow",
+   "name": "Moonbug Portugal",
+   "tema": "desenhos",
+   "cor": "#ff5a5f",
+   "status": "pendente",
+   "nota": "O canal declara dobragem em português de Portugal."
+  },
+  "mega": {
+   "id": "UCLQUBcUOpQW8z7Ll3QRyARA",
+   "name": "Aprender com a MEGA",
+   "tema": "aprender",
+   "cor": "#ffb400",
+   "status": "pendente",
+   "nota": "A descrição declara português de Portugal."
+  },
+  "guilherme": {
+   "id": "UCIi2pKTI5dnHb25W6LWZZKg",
+   "name": "Histórias do Guilherme",
+   "tema": "historias",
+   "cor": "#2bb3a3",
+   "status": "pendente",
+   "nota": "Audiolivros infantis declarados em PT-PT; confirmar cada vídeo."
   }
  },
  "videos": [
@@ -291,6 +337,30 @@
    "ch": "panda",
    "title": "Toca a Aprender | O Novo Ritmo",
    "dur": "0:26"
+  },
+  {
+   "id": "m_SdfX90dn4",
+   "ch": "cartoonito",
+   "title": "Tom e Jerry — compilação com papagaios de papel",
+   "dur": ""
+  },
+  {
+   "id": "DeKshxCdsPM",
+   "ch": "cartoonito",
+   "title": "Batwheels — A nova rede da Batwing",
+   "dur": ""
+  },
+  {
+   "id": "klQEpnBIq4I",
+   "ch": "cartoonito",
+   "title": "Batwheels — Ajudar os teus amigos",
+   "dur": ""
+  },
+  {
+   "id": "U39BNCA_5Aw",
+   "ch": "moonbug",
+   "title": "Blippi e Meekah entram num concurso de talentos",
+   "dur": ""
   }
  ]
 }

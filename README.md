@@ -16,6 +16,14 @@ Teste (Python + Playwright): `python3 tests/tv_e2e.py`.
 
 © 2026 Igor Serrano. Todos os direitos reservados — ver `LICENSE`. Tipos de letra Nunito e Lilita One sob a licença SIL OFL (`fonts/`).
 
+## Catálogo
+
+- **Verificados** (ligados): RTP zigzag, Panda e os Caricas, Xana Toc Toc, Avô Cantigas, Sónia e as Profissões, Canal Panda — 42 vídeos.
+- **Por confirmar** (desligados até os pais os ligarem): Cartoonito Portugal, Disney Junior PT, Moonbug Portugal,
+  Aprender com a MEGA, Histórias do Guilherme — identidade confirmada, áudio por auditar; 4 vídeos até agora.
+- `docs/pesquisa-2026-11-17/`: a pesquisa original, incluindo 18 canais candidatos ainda sem ID confirmado
+  (vários são brasileiros e não devem entrar). Ficou de fora «Portuguese at Ease» (aulas para adultos).
+
 **Limites desta versão:** catálogo fixo (`catalog.json`, 42 vídeos de 6 canais); a seguir, um pequeno
 servidor com a API do YouTube para o manter atualizado. O leitor incorporado não permite escolher a
 faixa de áudio: o catálogo só deve ter vídeos sem dobragens.

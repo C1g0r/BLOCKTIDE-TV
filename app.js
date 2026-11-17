@@ -9,7 +9,7 @@
   const $ = (s, r = document) => r.querySelector(s);
   const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const view = $('#view');
-  const TEMAS = { tudo: 'Tudo', desenhos: 'Desenhos e programas', musica: 'Música', aprender: 'Aprender' };
+  const TEMAS = { tudo: 'Tudo', desenhos: 'Desenhos e programas', musica: 'Música', aprender: 'Aprender', historias: 'Histórias' };
   const NEXT_SECONDS = 6;
 
   // ---------------------------------------------------------------------------
@@ -17,8 +17,9 @@
   // ---------------------------------------------------------------------------
   const load = (k, d) => { try { const v = JSON.parse(localStorage.getItem(k)); return v ?? d; } catch (_) { return d; } };
   const save = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch (_) { /* sem armazenamento: continua */ } };
-  const DEF = { disabled: [], dailyMin: 0, bedtime: { on: false, from: '21:00', to: '07:30' }, added: [], pin: null };
+  const DEF = { disabled: [], enabled: [], dailyMin: 0, bedtime: { on: false, from: '21:00', to: '07:30' }, added: [], pin: null };
   let settings = { ...DEF, ...load('btv.settings', {}) };
+  if (!Array.isArray(settings.enabled)) settings.enabled = [];
   const saveSettings = () => save('btv.settings', settings);
   let watch = load('btv.watch', { days: {}, channels: {}, recent: [] });
   const saveWatch = () => save('btv.watch', watch);
@@ -26,7 +27,9 @@
   const secsToday = () => (watch.days[today()] || {}).sec || 0;
 
   let catalog = { channels: {}, videos: [] };
-  const channelsOn = () => Object.keys(catalog.channels).filter((k) => !settings.disabled.includes(k));
+  // Canais verificados: ligados até os pais os desligarem. Canais «por confirmar»: desligados até os pais os ligarem.
+  const pending = (k) => (catalog.channels[k] || {}).status === 'pendente';
+  const channelsOn = () => Object.keys(catalog.channels).filter((k) => (pending(k) ? settings.enabled.includes(k) : !settings.disabled.includes(k)));
   function videos() {
     const on = new Set(channelsOn());
     const added = settings.added.map((a) => ({ ...a, ch: 'pais' }));
@@ -95,7 +98,7 @@
   }
   function channelPage(k) {
     const c = catalog.channels[k];
-    if (!c || settings.disabled.includes(k)) return '<div class="empty">Canal indisponível.</div>';
+    if (!c || !channelsOn().includes(k)) return '<div class="empty">Canal indisponível.</div>';
     return `<h1 style="display:flex;align-items:center;gap:10px"><span class="dot" style="width:18px;height:18px;border-radius:5px;background:${esc(c.cor)}"></span>${esc(c.name)}</h1>
       <p class="muted" style="font-weight:800">Canal português verificado · ${videos().filter((v) => v.ch === k).length} vídeos</p>
       <div class="grid">${videos().filter((v) => v.ch === k).map(card).join('')}</div>`;
@@ -256,8 +259,13 @@
           <input type="time" id="bf" value="${esc(settings.bedtime.from)}" /> às <input type="time" id="bt" value="${esc(settings.bedtime.to)}" /></div></div>
       </div>
       <div class="panel"><h2>Canais</h2><p class="muted" style="font-weight:800;margin:6px 0 0">Canais de produção portuguesa, verificados. Desligue os que não quiser.</p>
-        ${Object.entries(catalog.channels).map(([k, c]) => `<div class="field"><div><span class="dot" style="display:inline-block;width:11px;height:11px;border-radius:3px;background:${esc(c.cor)};margin-right:7px"></span><b>${esc(c.name)}</b><div class="d">${catalog.videos.filter((v) => v.ch === k).length} vídeos · ${esc(TEMAS[c.tema] || '')}</div></div>
+        ${Object.entries(catalog.channels).filter(([k]) => !pending(k)).map(([k, c]) => `<div class="field"><div><span class="dot" style="display:inline-block;width:11px;height:11px;border-radius:3px;background:${esc(c.cor)};margin-right:7px"></span><b>${esc(c.name)}</b><div class="d">${catalog.videos.filter((v) => v.ch === k).length} vídeos · ${esc(TEMAS[c.tema] || '')}</div></div>
           ${seg('ch:' + k, [['on', 'Ligado'], ['off', 'Desligado']], settings.disabled.includes(k) ? 'off' : 'on')}</div>`).join('')}
+      </div>
+      <div class="panel"><h2>Canais por confirmar</h2><p class="muted" style="font-weight:800;margin:6px 0 0">Canais com identidade confirmada que se apresentam em português de Portugal, mas cujo áudio ainda não foi verificado. Ficam desligados: ouça um ou dois vídeos e ligue só os que forem mesmo em português europeu.</p>
+        ${Object.entries(catalog.channels).filter(([k]) => pending(k)).map(([k, c]) => { const n = catalog.videos.filter((v) => v.ch === k).length; return `<div class="field"><div><span class="dot" style="display:inline-block;width:11px;height:11px;border-radius:3px;background:${esc(c.cor)};margin-right:7px"></span><b>${esc(c.name)}</b>
+          <div class="d">${n ? `${n} vídeo${n > 1 ? 's' : ''}` : 'Ainda sem vídeos no catálogo'} · ${esc(TEMAS[c.tema] || '')}${c.nota ? ` · ${esc(c.nota)}` : ''} · <a href="https://www.youtube.com/channel/${esc(c.id)}" target="_blank" rel="noopener">abrir no YouTube</a></div></div>
+          ${seg('pch:' + k, [['on', 'Ligado'], ['off', 'Desligado']], settings.enabled.includes(k) ? 'on' : 'off')}</div>`; }).join('')}
       </div>
       <div class="panel"><h2>Acrescentar um vídeo</h2><p class="muted" style="font-weight:800;margin:6px 0 10px">Um vídeo do YouTube que já viu e sabe que é em português europeu.</p>
         <div style="display:grid;gap:8px"><input type="url" id="au" placeholder="Endereço do vídeo (youtube.com/watch?v=… ou youtu.be/…)" /><input type="text" id="at" placeholder="Nome para a criança ver" />
@@ -278,6 +286,7 @@
       if (k === 'dailyMin') settings.dailyMin = Number(v);
       else if (k === 'bedOn') settings.bedtime.on = v === 'true';
       else if (k.startsWith('ch:')) { const c = k.slice(3); settings.disabled = settings.disabled.filter((x) => x !== c); if (v === 'off') settings.disabled.push(c); }
+      else if (k.startsWith('pch:')) { const c = k.slice(4); settings.enabled = settings.enabled.filter((x) => x !== c); if (v === 'on') settings.enabled.push(c); }
       saveSettings(); route(); toast('Guardado.');
     }));
     $('#bf').onchange = () => { settings.bedtime.from = $('#bf').value; saveSettings(); toast('Guardado.'); };
@@ -293,7 +302,7 @@
     $('#lock').onclick = () => { unlockedUntil = 0; location.hash = '#inicio'; };
     $('#wipe').onclick = () => {
       if (b2.dataset.confirm !== '1') { b2.dataset.confirm = '1'; b2.textContent = 'Carregue outra vez para confirmar'; return; }
-      settings = { ...DEF, bedtime: { ...DEF.bedtime } }; watch = { days: {}, channels: {}, recent: [] }; saveSettings(); saveWatch(); unlockedUntil = 0; location.hash = '#inicio';
+      settings = { ...DEF, enabled: [], disabled: [], added: [], bedtime: { ...DEF.bedtime } }; watch = { days: {}, channels: {}, recent: [] }; saveSettings(); saveWatch(); unlockedUntil = 0; location.hash = '#inicio';
     };
     const b2 = $('#wipe');
   }

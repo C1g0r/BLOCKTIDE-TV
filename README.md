@@ -37,3 +37,9 @@ As verificações automáticas do catálogo correm no GitHub Actions a cada alte
 ### Curadoria adicional (21/11/2026)
 
 Foi incluído um vídeo oficial de Panda e os Caricas, **Os Caricas (Ao Vivo no Campo Pequeno, Lisboa, 2018)**. A página oficial do YouTube identifica a editora Universal Music Portugal, a apresentação em Lisboa e apresenta a letra em português. A reprodução integral e a incorporação continuam por verificar. O catálogo contém agora 66 vídeos normais e 156 Shorts.
+
+## Diagnóstico de atualizações (v0.5.3)
+
+A área dos pais mostra a versão do código, a versão do catálogo, o total de vídeos e quantos estão disponíveis com os filtros atuais. Os canais pendentes ficam desligados por defeito; por isso, o total do catálogo não corresponde necessariamente ao número de vídeos visíveis.
+
+A aplicação verifica a atualização do service worker a cada abertura e recarrega quando uma nova versão toma posse. Para consultar os dados técnicos no navegador: `window.BTV.diagnostics`. O carregamento de `catalog.json` utiliza `cache: 'no-store'` quando existe ligação. Em instalações antigas pode ser necessária uma atualização manual inicial para obter o novo código.

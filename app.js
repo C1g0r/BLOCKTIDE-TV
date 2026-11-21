@@ -421,7 +421,7 @@
         <div class="field"><div>Sair da área dos pais</div><button class="btn" id="lock">Bloquear</button></div>
         <div class="field"><div>Apagar dados deste aparelho<div class="d">PIN, limites, histórico e vídeos acrescentados.</div></div><button class="btn danger" id="wipe">Apagar</button></div>
       </div>
-      <p class="muted" style="font-size:12px;font-weight:700;text-align:center">BLOCKTIDE TV · © 2026 Igor Serrano · Os vídeos são reproduzidos pelo leitor do YouTube.</p>`;
+      <p class="muted" style="font-size:12px;font-weight:700;text-align:center">BLOCKTIDE TV · versão 0.5.3 · catálogo ${esc(catalog.version || 'desconhecido')} · ${catalog.videos.length} vídeos (${videos().filter((v) => v.ch !== 'pais').length} disponíveis com os filtros atuais) · © 2026 Igor Serrano.</p>`;
   }
   function bindParents() {
     if (Date.now() > unlockedUntil) { bindGate(); return; }
@@ -477,11 +477,42 @@
   window.addEventListener('hashchange', route);
 
   (async () => {
-    try { catalog = await (await fetch('catalog.json', { cache: 'no-cache' })).json(); } catch (_) { view.innerHTML = '<div class="empty">Sem ligação. Tente outra vez.</div>'; return; }
+    try {
+      const response = await fetch('catalog.json', { cache: 'no-store' });
+      if (!response.ok) throw new Error('HTTP ' + response.status);
+      catalog = await response.json();
+    } catch (_) { view.innerHTML = '<div class="empty">Não foi possível carregar o catálogo. Verifique a ligação e tente novamente.</div>'; return; }
     route();
-    if ('serviceWorker' in navigator && location.protocol === 'https:' || location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
-      try { await navigator.serviceWorker.register('sw.js'); } catch (_) { /* sem modo offline */ }
+    // O SW anterior podia manter app.js antigo indefinidamente; esta versão verifica atualizações
+    // em cada abertura e recarrega uma vez quando o novo controlador toma posse.
+    if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost' || location.hostname === '127.0.0.1')) {
+      let refreshing = false;
+      navigator.serviceWorker.addEventListener('controllerchange', () => {
+        if (refreshing) return;
+        refreshing = true;
+        location.reload();
+      });
+      try {
+        const registration = await navigator.serviceWorker.register('sw.js', { updateViaCache: 'none' });
+        await registration.update();
+      } catch (_) { /* sem modo offline */ }
     }
   })();
-  window.BTV = { videos, upNext, stopReason, shortsList, get settings() { return settings; } };
+  window.BTV = {
+    videos, upNext, stopReason, shortsList,
+    get settings() { return settings; },
+    get diagnostics() {
+      const visible = videos();
+      return {
+        appVersion: '0.5.3',
+        catalogVersion: catalog.version || 'desconhecida',
+        totalVideos: catalog.videos.length,
+        visibleVideos: visible.length,
+        pendingVideos: catalog.videos.filter((v) => pending(v.ch)).length,
+        shortsAvailable: shortsList().length,
+        disabledChannels: settings.disabled.slice(),
+        enabledPendingChannels: settings.enabled.slice()
+      };
+    }
+  };
 })();

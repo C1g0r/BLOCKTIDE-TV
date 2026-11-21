@@ -33,3 +33,7 @@ A lista anterior de canais candidatos (sem ID confirmado) continua separada em `
 ## Qualidade e auditoria
 
 As verificações automáticas do catálogo correm no GitHub Actions a cada alteração relevante. Consultar [critérios editoriais](docs/CRITERIOS-EDITORIAIS.md). A validação estrutural não substitui a audição e revisão humanas dos vídeos.
+
+### Curadoria adicional (21/11/2026)
+
+Foi incluído um vídeo oficial de Panda e os Caricas, **Os Caricas (Ao Vivo no Campo Pequeno, Lisboa, 2018)**. A página oficial do YouTube identifica a editora Universal Music Portugal, a apresentação em Lisboa e apresenta a letra em português. A reprodução integral e a incorporação continuam por verificar. O catálogo contém agora 66 vídeos normais e 156 Shorts.

@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-21",
+  "version": "2026-11-21-curadoria-2",
   "note": "Catálogo infantil com exclusão de fontes brasileiras declaradas. Canais pendentes ficam desativados por defeito. Idioma e origem reais carecem de auditoria humana; não se assume verificação de áudio.",
   "channels": {
     "zigzag": {
@@ -610,6 +610,16 @@
       "dur": "",
       "market": "PT",
       "review": "pendente_audio"
+    },
+    {
+      "id": "6q9HXwC24o4",
+      "ch": "caricas",
+      "title": "Os Caricas — Ao Vivo no Campo Pequeno (Lisboa, 2018)",
+      "dur": "",
+      "lang": "pt-PT",
+      "originCountry": "PT",
+      "review": "fonte_oficial_letra_pt_audio_nao_auditado",
+      "source": "https://www.youtube.com/watch?v=6q9HXwC24o4"
     }
   ],
   "shorts_rule": "Shorts verdadeiros: vídeos verticais do separador «Shorts» do canal, até 3 minutos, incorporação permitida (verificado com oEmbed em 2026-11-17). Só conteúdo infantil; nunca português do Brasil. Shorts internacionais: só canais infantis oficiais de fora do Brasil (inglês, espanhol de Espanha, francês ou sem diálogo), verificados como verticais, até 3 minutos e incorporáveis; nunca PT-BR.",

@@ -1,1837 +1,2022 @@
 {
- "version": "2026-11-17",
- "note": "Canais «verificado»: produção portuguesa confirmada. Canais «pendente»: ID confirmado, idioma por auditar — desligados até os pais os ligarem.",
- "channels": {
-  "zigzag": {
-   "id": "UCdFnXETzOn-BQT_ZtQE1nTw",
-   "name": "RTP zigzag",
-   "tema": "desenhos",
-   "cor": "#e0261f",
-   "status": "verificado"
-  },
-  "caricas": {
-   "id": "UCrRCYfAdzBO3ViaOseB9dJw",
-   "name": "Panda e os Caricas",
-   "tema": "musica",
-   "cor": "#1fa84f",
-   "status": "verificado"
-  },
-  "xana": {
-   "id": "UCF8C_W8v0_n6VdCLjmHsOSA",
-   "name": "Xana Toc Toc",
-   "tema": "musica",
-   "cor": "#ff6fae",
-   "status": "verificado"
-  },
-  "avo": {
-   "id": "UCCqe3u9RWPYfNZVaSGZfJYw",
-   "name": "Avô Cantigas",
-   "tema": "musica",
-   "cor": "#ff9a1a",
-   "status": "verificado"
-  },
-  "sonia": {
-   "id": "UC14by_N1mtgWtTCY7tFdhGg",
-   "name": "Sónia e as Profissões",
-   "tema": "aprender",
-   "cor": "#8a4fff",
-   "status": "verificado"
-  },
-  "panda": {
-   "id": "UC8FVkqHpH3z7aDMgfE78sNw",
-   "name": "Canal Panda",
-   "tema": "aprender",
-   "cor": "#0b5ed7",
-   "status": "verificado"
-  },
-  "cartoonito": {
-   "id": "UCxikJwnErvIlf_l6MD9IcAA",
-   "name": "Cartoonito Portugal",
-   "tema": "desenhos",
-   "cor": "#00a3e0",
-   "status": "pendente",
-   "nota": "Canal oficial português; alguns vídeos sem diálogo."
-  },
-  "disneyjr": {
-   "id": "UCpv3czzaPFWvBQZ372mlMOw",
-   "name": "Disney Junior PT",
-   "tema": "desenhos",
-   "cor": "#5b2d90",
-   "status": "pendente",
-   "nota": "Canal oficial Disney Junior Portugal; confirmar o idioma de cada vídeo."
-  },
-  "moonbug": {
-   "id": "UCZVA1wZLvRgM-bm751yVDow",
-   "name": "Moonbug Portugal",
-   "tema": "desenhos",
-   "cor": "#ff5a5f",
-   "status": "pendente",
-   "nota": "O canal declara dobragem em português de Portugal."
-  },
-  "mega": {
-   "id": "UCLQUBcUOpQW8z7Ll3QRyARA",
-   "name": "Aprender com a MEGA",
-   "tema": "aprender",
-   "cor": "#ffb400",
-   "status": "pendente",
-   "nota": "A descrição declara português de Portugal."
-  },
-  "guilherme": {
-   "id": "UCIi2pKTI5dnHb25W6LWZZKg",
-   "name": "Histórias do Guilherme",
-   "tema": "historias",
-   "cor": "#2bb3a3",
-   "status": "pendente",
-   "nota": "Audiolivros infantis declarados em PT-PT; confirmar cada vídeo."
-  },
-  "shaun": {
-   "id": "UCS7H8U-n5mINVJjJsaRtGHg",
-   "name": "Shaun the Sheep",
-   "tema": "internacional",
-   "cor": "#7cb342",
-   "status": "internacional",
-   "nota": "Canal oficial, só Shorts (Reino Unido · sem diálogo)."
-  },
-  "pingu": {
-   "id": "UCM88mtSE0zRTn5ae4EbYcuw",
-   "name": "Pingu",
-   "tema": "internacional",
-   "cor": "#1e88e5",
-   "status": "internacional",
-   "nota": "Canal oficial, só Shorts (Suíça/Reino Unido · sem diálogo)."
-  },
-  "peppaen": {
-   "id": "UCAOtE1V7Ots4DjM8JLlrYgg",
-   "name": "Peppa Pig (inglês)",
-   "tema": "internacional",
-   "cor": "#ec407a",
-   "status": "internacional",
-   "nota": "Canal oficial, só Shorts (Reino Unido · inglês)."
-  },
-  "bluey": {
-   "id": "UCVzLLZkDuFGAE2BGdBuBNBg",
-   "name": "Bluey",
-   "tema": "internacional",
-   "cor": "#42a5f5",
-   "status": "internacional",
-   "nota": "Canal oficial, só Shorts (Austrália · inglês)."
-  },
-  "duggee": {
-   "id": "UCj_mFUb-47d9QNiJ5556LjQ",
-   "name": "Hey Duggee",
-   "tema": "internacional",
-   "cor": "#fb8c00",
-   "status": "internacional",
-   "nota": "Canal oficial, só Shorts (Reino Unido · inglês)."
-  },
-  "supersimple": {
-   "id": "UCLsooMJoIpl_7ux2jvdPB-Q",
-   "name": "Super Simple Songs",
-   "tema": "internacional",
-   "cor": "#26a69a",
-   "status": "internacional",
-   "nota": "Canal oficial, só Shorts (Canadá · inglês)."
-  },
-  "pocoyoes": {
-   "id": "UCnB5W_ZJgiDFnklejRGADxw",
-   "name": "Pocoyó (Espanha)",
-   "tema": "internacional",
-   "cor": "#29b6f6",
-   "status": "internacional",
-   "nota": "Canal oficial, só Shorts (Espanha · espanhol)."
-  },
-  "peppafr": {
-   "id": "UCXptamDYEVcU4JCio30hYTw",
-   "name": "Peppa Pig (francês)",
-   "tema": "internacional",
-   "cor": "#f06292",
-   "status": "internacional",
-   "nota": "Canal oficial, só Shorts (França · francês)."
-  }
- },
- "videos": [
-  {
-   "id": "MSkoCcj0Q5U",
-   "ch": "zigzag",
-   "title": "Dia Mundial da Gentileza - 2.ª parte",
-   "dur": "3:05"
-  },
-  {
-   "id": "lc8aeUYEGMs",
-   "ch": "zigzag",
-   "title": "Dia Mundial da Gentileza - 1.ª parte",
-   "dur": "2:50"
-  },
-  {
-   "id": "_ZWsfOtZ2TQ",
-   "ch": "zigzag",
-   "title": "Viana: A Lenda dos Corações de Ouro (trailer)",
-   "dur": "2:03"
-  },
-  {
-   "id": "SPGXIQkJ4Kc",
-   "ch": "zigzag",
-   "title": "Ser Astronauta é a profissão mais bonita do mundo | Anselmo Wannabe",
-   "dur": "1:25"
-  },
-  {
-   "id": "P34j7pt_gSI",
-   "ch": "zigzag",
-   "title": "Ser Bailarino é a profissão mais bonita do mundo | Anselmo Wannabe",
-   "dur": "2:43"
-  },
-  {
-   "id": "P0QE5kPxt38",
-   "ch": "zigzag",
-   "title": "Ser Artista de Rua é a profissão mais bonita do mundo | Anselmo Wannabe",
-   "dur": "1:50"
-  },
-  {
-   "id": "RSXrGYuhvas",
-   "ch": "zigzag",
-   "title": "Faroeste na praia?! | As Férias do Menino Nicolau",
-   "dur": "1:37"
-  },
-  {
-   "id": "8hoYy3L07zw",
-   "ch": "zigzag",
-   "title": "Batedores | As Férias do Menino Nicolau",
-   "dur": "2:22"
-  },
-  {
-   "id": "XTXiO_CZaPs",
-   "ch": "zigzag",
-   "title": "Nunca desistas! | Jasmine e Jambo",
-   "dur": "1:37"
-  },
-  {
-   "id": "n614nAcVkOY",
-   "ch": "zigzag",
-   "title": "Tenham pena! | Athleticus",
-   "dur": "1:42"
-  },
-  {
-   "id": "ee5hdYWA8so",
-   "ch": "caricas",
-   "title": "A Todos Um Bom Natal",
-   "dur": "3:13"
-  },
-  {
-   "id": "RaxObWIyZYM",
-   "ch": "caricas",
-   "title": "Abracadabra",
-   "dur": "3:09"
-  },
-  {
-   "id": "C3U2cQMrdSE",
-   "ch": "caricas",
-   "title": "Escola De Magia",
-   "dur": "3:03"
-  },
-  {
-   "id": "0buLe_ak24E",
-   "ch": "caricas",
-   "title": "Salta Pipoquinha",
-   "dur": "1:47"
-  },
-  {
-   "id": "UGwDF9bXkUU",
-   "ch": "caricas",
-   "title": "Popó Chiribitatá Salabencopé Tirolirolalá",
-   "dur": "1:46"
-  },
-  {
-   "id": "tuqZpnvV7QM",
-   "ch": "caricas",
-   "title": "O Galo Badalo, a Galinha Balbina, o Pinto Jacinto e o Peru Glu-Glu",
-   "dur": "2:36"
-  },
-  {
-   "id": "6Y4GmC3j08M",
-   "ch": "caricas",
-   "title": "Kulikitaka",
-   "dur": "2:02"
-  },
-  {
-   "id": "7105OzIJmA8",
-   "ch": "caricas",
-   "title": "Urso Panda",
-   "dur": "2:28"
-  },
-  {
-   "id": "jAw7l3bt5bE",
-   "ch": "caricas",
-   "title": "Sem Parar (ao vivo no musical «Na Selva»)",
-   "dur": "2:04"
-  },
-  {
-   "id": "P0FMViERZ5w",
-   "ch": "caricas",
-   "title": "Os Sons Da Selva (ao vivo no musical «Na Selva»)",
-   "dur": "2:37"
-  },
-  {
-   "id": "yYJuTZp5JHc",
-   "ch": "xana",
-   "title": "Cai a Noite",
-   "dur": "3:59"
-  },
-  {
-   "id": "oC8SmY90BHk",
-   "ch": "xana",
-   "title": "Canções De Embalar",
-   "dur": "47:40"
-  },
-  {
-   "id": "Df-ZK6iSrB4",
-   "ch": "xana",
-   "title": "Histórias no Trolipop | De Regresso a Casa",
-   "dur": "2:21"
-  },
-  {
-   "id": "OFV9YcVzXYg",
-   "ch": "xana",
-   "title": "Histórias no Trolipop | Mala Cor de Rosa Perdida",
-   "dur": "2:39"
-  },
-  {
-   "id": "YH5xlsA9COs",
-   "ch": "xana",
-   "title": "Histórias no Trolipop | Boleia ao Bicho Maluco",
-   "dur": "2:17"
-  },
-  {
-   "id": "zdEDrOqb8Os",
-   "ch": "xana",
-   "title": "Histórias no Trolipop | O Livro Perdido",
-   "dur": "2:08"
-  },
-  {
-   "id": "uTodeAdlb_o",
-   "ch": "xana",
-   "title": "Histórias no Trolipop | Os Meus Amigos Peixinhos",
-   "dur": "2:57"
-  },
-  {
-   "id": "wgarXvbXpVM",
-   "ch": "xana",
-   "title": "Histórias no Trolipop | A Festa de Despedida",
-   "dur": "2:32"
-  },
-  {
-   "id": "tShG5o-IpFg",
-   "ch": "xana",
-   "title": "Histórias no Trolipop | A Hora do Desporto",
-   "dur": "3:01"
-  },
-  {
-   "id": "HUAqJ41jZlk",
-   "ch": "avo",
-   "title": "Atchim...! Santinho!",
-   "dur": "3:26"
-  },
-  {
-   "id": "RDqmhcOWOd0",
-   "ch": "avo",
-   "title": "Um Do Li Ta",
-   "dur": "2:36"
-  },
-  {
-   "id": "eVMlSY0oinU",
-   "ch": "avo",
-   "title": "Fantasminha Brincalhão",
-   "dur": "3:15"
-  },
-  {
-   "id": "XYZ1suw4z74",
-   "ch": "sonia",
-   "title": "O Jardineiro",
-   "dur": "1:19"
-  },
-  {
-   "id": "xOIsbH2-fkI",
-   "ch": "sonia",
-   "title": "O Astronauta",
-   "dur": "2:06"
-  },
-  {
-   "id": "sSbTg6oOARQ",
-   "ch": "sonia",
-   "title": "O Padeiro",
-   "dur": "2:20"
-  },
-  {
-   "id": "orLGfMXoAPs",
-   "ch": "sonia",
-   "title": "O DJ",
-   "dur": "2:03"
-  },
-  {
-   "id": "2E-GrBUShQo",
-   "ch": "sonia",
-   "title": "O Polícia",
-   "dur": "1:51"
-  },
-  {
-   "id": "632uMX_gfQg",
-   "ch": "sonia",
-   "title": "A Cabeleireira",
-   "dur": "1:56"
-  },
-  {
-   "id": "rjqIQ2nu-9s",
-   "ch": "sonia",
-   "title": "A Professora",
-   "dur": "2:43"
-  },
-  {
-   "id": "uHszmWMeXZk",
-   "ch": "sonia",
-   "title": "O Bombeiro",
-   "dur": "2:27"
-  },
-  {
-   "id": "MwFO3_4JeUM",
-   "ch": "panda",
-   "title": "Toca a Aprender | Com Peso e Medida",
-   "dur": "0:26"
-  },
-  {
-   "id": "yz2nShwFFAI",
-   "ch": "panda",
-   "title": "Toca a Aprender | O Novo Ritmo",
-   "dur": "0:26"
-  },
-  {
-   "id": "m_SdfX90dn4",
-   "ch": "cartoonito",
-   "title": "Tom e Jerry — compilação com papagaios de papel",
-   "dur": ""
-  },
-  {
-   "id": "DeKshxCdsPM",
-   "ch": "cartoonito",
-   "title": "Batwheels — A nova rede da Batwing",
-   "dur": ""
-  },
-  {
-   "id": "klQEpnBIq4I",
-   "ch": "cartoonito",
-   "title": "Batwheels — Ajudar os teus amigos",
-   "dur": ""
-  },
-  {
-   "id": "U39BNCA_5Aw",
-   "ch": "moonbug",
-   "title": "Blippi e Meekah entram num concurso de talentos",
-   "dur": ""
-  }
- ],
- "shorts_rule": "Shorts verdadeiros: vídeos verticais do separador «Shorts» do canal, até 3 minutos, incorporação permitida (verificado com oEmbed em 2026-11-17). Só conteúdo infantil; nunca português do Brasil. Shorts internacionais: só canais infantis oficiais de fora do Brasil (inglês, espanhol de Espanha, francês ou sem diálogo), verificados como verticais, até 3 minutos e incorporáveis; nunca PT-BR.",
- "shorts": [
-  {
-   "id": "Grlv6rWfKzE",
-   "ch": "zigzag",
-   "title": "Samuel | Ep. 11: O Bloco de Gelo",
-   "dur": "1:28",
-   "sec": 88,
-   "vertical": true,
-   "lang": "pt-PT"
-  },
-  {
-   "id": "yHTMPJkcFAI",
-   "ch": "zigzag",
-   "title": "Samuel | Ep. 10: O Espetáculo de Dança",
-   "dur": "1:40",
-   "sec": 100,
-   "vertical": true,
-   "lang": "pt-PT"
-  },
-  {
-   "id": "tNgW2yHQHIk",
-   "ch": "zigzag",
-   "title": "Samuel | Ep. 9: A Vela",
-   "dur": "0:39",
-   "sec": 39,
-   "vertical": true,
-   "lang": "pt-PT"
-  },
-  {
-   "id": "lN-hjZZMgUA",
-   "ch": "zigzag",
-   "title": "Samuel | Ep. 8: Sozinho",
-   "dur": "0:34",
-   "sec": 34,
-   "vertical": true,
-   "lang": "pt-PT"
-  },
-  {
-   "id": "Ix5dhnQVbd8",
-   "ch": "zigzag",
-   "title": "Samuel | Ep. 7: O Cão",
-   "dur": "0:54",
-   "sec": 54,
-   "vertical": true,
-   "lang": "pt-PT"
-  },
-  {
-   "id": "UO7QThWij-w",
-   "ch": "zigzag",
-   "title": "Samuel | Ep. 6: A Declaração",
-   "dur": "1:02",
-   "sec": 62,
-   "vertical": true,
-   "lang": "pt-PT"
-  },
-  {
-   "id": "0lKssk_CYWA",
-   "ch": "zigzag",
-   "title": "Samuel | Ep. 5: O Comboio",
-   "dur": "0:50",
-   "sec": 50,
-   "vertical": true,
-   "lang": "pt-PT"
-  },
-  {
-   "id": "OuRkAyftJTM",
-   "ch": "zigzag",
-   "title": "Samuel | Ep. 4: As Cartas Perfumadas",
-   "dur": "1:21",
-   "sec": 81,
-   "vertical": true,
-   "lang": "pt-PT"
-  },
-  {
-   "id": "McZlgK8e2FY",
-   "ch": "zigzag",
-   "title": "Samuel | Ep. 3: A Piscina",
-   "dur": "1:04",
-   "sec": 64,
-   "vertical": true,
-   "lang": "pt-PT"
-  },
-  {
-   "id": "itnG1Fi5qNo",
-   "ch": "zigzag",
-   "title": "Samuel | Ep. 2: O Almoço",
-   "dur": "1:01",
-   "sec": 61,
-   "vertical": true,
-   "lang": "pt-PT"
-  },
-  {
-   "id": "VZwgTA3FdbY",
-   "ch": "zigzag",
-   "title": "Samuel | Ep. 1: Samuel e Amigos",
-   "dur": "0:39",
-   "sec": 39,
-   "vertical": true,
-   "lang": "pt-PT"
-  },
-  {
-   "id": "MNMCTfiXqbo",
-   "ch": "panda",
-   "title": "Patrulha Pata",
-   "dur": "0:41",
-   "sec": 41,
-   "vertical": true,
-   "lang": "pt-PT"
-  },
-  {
-   "id": "Vt9Kc87hdaY",
-   "ch": "panda",
-   "title": "Super Wings",
-   "dur": "0:40",
-   "sec": 40,
-   "vertical": true,
-   "lang": "pt-PT"
-  },
-  {
-   "id": "p1n7S1e5G4I",
-   "ch": "panda",
-   "title": "Porquinha Peppa",
-   "dur": "0:20",
-   "sec": 20,
-   "vertical": true,
-   "lang": "pt-PT"
-  },
-  {
-   "id": "9COJNecWYGU",
-   "ch": "panda",
-   "title": "Nova música Panda e os Caricas",
-   "dur": "0:10",
-   "sec": 10,
-   "vertical": true,
-   "lang": "pt-PT"
-  },
-  {
-   "id": "cGvROffQq2w",
-   "ch": "panda",
-   "title": "Dia Mundial da Dança",
-   "dur": "0:20",
-   "sec": 20,
-   "vertical": true,
-   "lang": "pt-PT"
-  },
-  {
-   "id": "V-5KKm-wb8M",
-   "ch": "panda",
-   "title": "DJ Riscas ao vivo!",
-   "dur": "0:24",
-   "sec": 24,
-   "vertical": true,
-   "lang": "pt-PT"
-  },
-  {
-   "id": "1XLb2OE9jMA",
-   "ch": "panda",
-   "title": "SuperThings: Kazoom Power",
-   "dur": "0:34",
-   "sec": 34,
-   "vertical": true,
-   "lang": "pt-PT"
-  },
-  {
-   "id": "THMBlGkEtHs",
-   "ch": "caricas",
-   "title": "Preparados para a primeira aula de magia?",
-   "dur": "0:26",
-   "sec": 26,
-   "vertical": true,
-   "lang": "pt-PT"
-  },
-  {
-   "id": "8BpzpidbB80",
-   "ch": "caricas",
-   "title": "Ado a-ado, cada um no seu quadrado!",
-   "dur": "0:53",
-   "sec": 53,
-   "vertical": true,
-   "lang": "pt-PT"
-  },
-  {
-   "id": "8BUNb6Z_eTQ",
-   "ch": "caricas",
-   "title": "Prontos para a brincadeira, amigos?",
-   "dur": "0:56",
-   "sec": 56,
-   "vertical": true,
-   "lang": "pt-PT"
-  },
-  {
-   "id": "iwsZD651aKo",
-   "ch": "caricas",
-   "title": "Quem sabe todas as vogais?",
-   "dur": "0:38",
-   "sec": 38,
-   "vertical": true,
-   "lang": "pt-PT"
-  },
-  {
-   "id": "kHnbVD2JI9g",
-   "ch": "caricas",
-   "title": "Vamos jogar ao Panda Manda!",
-   "dur": "0:58",
-   "sec": 58,
-   "vertical": true,
-   "lang": "pt-PT"
-  },
-  {
-   "id": "ozo3smFB5nI",
-   "ch": "caricas",
-   "title": "Conheces algum truque de magia?",
-   "dur": "0:24",
-   "sec": 24,
-   "vertical": true,
-   "lang": "pt-PT"
-  },
-  {
-   "id": "sIe5ZZr2BlY",
-   "ch": "caricas",
-   "title": "Porque é que os polícias não gostam de sabão?",
-   "dur": "0:16",
-   "sec": 16,
-   "vertical": true,
-   "lang": "pt-PT"
-  },
-  {
-   "id": "pl3B5jSn6ks",
-   "ch": "caricas",
-   "title": "Que barulho é este?",
-   "dur": "0:44",
-   "sec": 44,
-   "vertical": true,
-   "lang": "pt-PT"
-  },
-  {
-   "id": "1_9CqB6mnCQ",
-   "ch": "caricas",
-   "title": "Há lugar para todos neste Balão Mágico!",
-   "dur": "0:38",
-   "sec": 38,
-   "vertical": true,
-   "lang": "pt-PT"
-  },
-  {
-   "id": "aUdac2KY90g",
-   "ch": "caricas",
-   "title": "Temos uma adivinha para ti!",
-   "dur": "0:14",
-   "sec": 14,
-   "vertical": true,
-   "lang": "pt-PT"
-  },
-  {
-   "id": "lYE7L0BadC4",
-   "ch": "caricas",
-   "title": "Já sabes quais são as 5 vogais?",
-   "dur": "0:12",
-   "sec": 12,
-   "vertical": true,
-   "lang": "pt-PT"
-  },
-  {
-   "id": "FLnzYt7Pi5Q",
-   "ch": "caricas",
-   "title": "Prontos para o mundo encantado da magia?",
-   "dur": "0:28",
-   "sec": 28,
-   "vertical": true,
-   "lang": "pt-PT"
-  },
-  {
-   "id": "c-eOLaukdjE",
-   "ch": "cartoonito",
-   "title": "Um sonho dececionante",
-   "dur": "0:48",
-   "sec": 48,
-   "vertical": true,
-   "lang": "pt-PT"
-  },
-  {
-   "id": "9PSiRcPXwL0",
-   "ch": "cartoonito",
-   "title": "Ser babysitter não é para os fracos",
-   "dur": "0:22",
-   "sec": 22,
-   "vertical": true,
-   "lang": "pt-PT"
-  },
-  {
-   "id": "immE9ikfrm4",
-   "ch": "cartoonito",
-   "title": "Os Lemingues Bebés jogam Rali de Dominós",
-   "dur": "0:51",
-   "sec": 51,
-   "vertical": true,
-   "lang": "pt-PT"
-  },
-  {
-   "id": "-Dzor7JVJac",
-   "ch": "cartoonito",
-   "title": "O Jerry está em concentração máxima",
-   "dur": "0:23",
-   "sec": 23,
-   "vertical": true,
-   "lang": "pt-PT"
-  },
-  {
-   "id": "jQTS--CgrIc",
-   "ch": "cartoonito",
-   "title": "Miguel tenta treinar um T-Rex… só que não!",
-   "dur": "0:51",
-   "sec": 51,
-   "vertical": true,
-   "lang": "pt-PT"
-  },
-  {
-   "id": "wltwh4sY18o",
-   "ch": "cartoonito",
-   "title": "As bananas não são para comer, tonto",
-   "dur": "0:15",
-   "sec": 15,
-   "vertical": true,
-   "lang": "pt-PT"
-  },
-  {
-   "id": "FgKwy-7t4KA",
-   "ch": "cartoonito",
-   "title": "Acampamento espacial para jovens astronautas",
-   "dur": "0:51",
-   "sec": 51,
-   "vertical": true,
-   "lang": "pt-PT"
-  },
-  {
-   "id": "dh2M--AyHwk",
-   "ch": "cartoonito",
-   "title": "Que vença o melhor",
-   "dur": "0:57",
-   "sec": 57,
-   "vertical": true,
-   "lang": "pt-PT"
-  },
-  {
-   "id": "m4aGv5F4C8M",
-   "ch": "cartoonito",
-   "title": "A tarefa falhou com sucesso",
-   "dur": "0:14",
-   "sec": 14,
-   "vertical": true,
-   "lang": "pt-PT"
-  },
-  {
-   "id": "ZcReMclshy0",
-   "ch": "cartoonito",
-   "title": "Nem dá para fazer um piquenique em paz",
-   "dur": "0:39",
-   "sec": 39,
-   "vertical": true,
-   "lang": "pt-PT"
-  },
-  {
-   "id": "GOZ6fUziZic",
-   "ch": "cartoonito",
-   "title": "O Tom queria bolo. O Jerry trouxe surpresas.",
-   "dur": "1:00",
-   "sec": 60,
-   "vertical": true,
-   "lang": "pt-PT"
-  },
-  {
-   "id": "voQtFTxjorE",
-   "ch": "cartoonito",
-   "title": "Eis a sinfonia do fracasso",
-   "dur": "0:23",
-   "sec": 23,
-   "vertical": true,
-   "lang": "pt-PT"
-  },
-  {
-   "id": "25nVuiFqeQU",
-   "ch": "disneyjr",
-   "title": "SuperKitties",
-   "dur": "0:13",
-   "sec": 13,
-   "vertical": true,
-   "lang": "pt-PT"
-  },
-  {
-   "id": "WI9icsmLF4U",
-   "ch": "disneyjr",
-   "title": "Spidey e a sua Superequipa",
-   "dur": "0:10",
-   "sec": 10,
-   "vertical": true,
-   "lang": "pt-PT"
-  },
-  {
-   "id": "j0e8A7f1wZ8",
-   "ch": "disneyjr",
-   "title": "A Casa do Mickey Mouse+ | O truque de magia",
-   "dur": "0:22",
-   "sec": 22,
-   "vertical": true,
-   "lang": "pt-PT"
-  },
-  {
-   "id": "efC34LWofqo",
-   "ch": "disneyjr",
-   "title": "A Princesa Sofia: Escola de Magia",
-   "dur": "0:08",
-   "sec": 8,
-   "vertical": true,
-   "lang": "pt-PT"
-  },
-  {
-   "id": "IS0R0AenP5s",
-   "ch": "disneyjr",
-   "title": "Homem de Ferro e a sua Superequipa",
-   "dur": "0:19",
-   "sec": 19,
-   "vertical": true,
-   "lang": "pt-PT"
-  },
-  {
-   "id": "P7R5MC1KwYE",
-   "ch": "disneyjr",
-   "title": "Homem de Ferro e a sua Superequipa",
-   "dur": "0:37",
-   "sec": 37,
-   "vertical": true,
-   "lang": "pt-PT"
-  },
-  {
-   "id": "uPWJMkBYHq8",
-   "ch": "disneyjr",
-   "title": "A Casa do Mickey Mouse+ | Caça de Halloween",
-   "dur": "0:42",
-   "sec": 42,
-   "vertical": true,
-   "lang": "pt-PT"
-  },
-  {
-   "id": "FYu1J_YKwtI",
-   "ch": "disneyjr",
-   "title": "A Princesa Sofia: Escola de Magia",
-   "dur": "0:31",
-   "sec": 31,
-   "vertical": true,
-   "lang": "pt-PT"
-  },
-  {
-   "id": "TwHO_gVNTTc",
-   "ch": "disneyjr",
-   "title": "Spidey e a sua Superequipa",
-   "dur": "0:54",
-   "sec": 54,
-   "vertical": true,
-   "lang": "pt-PT"
-  },
-  {
-   "id": "aGEkxjOjC0M",
-   "ch": "disneyjr",
-   "title": "SuperKitties | Há um monstro na selva!",
-   "dur": "0:18",
-   "sec": 18,
-   "vertical": true,
-   "lang": "pt-PT"
-  },
-  {
-   "id": "LJG1XzT-Pjo",
-   "ch": "disneyjr",
-   "title": "Poupa energia!",
-   "dur": "1:00",
-   "sec": 60,
-   "vertical": true,
-   "lang": "pt-PT"
-  },
-  {
-   "id": "CtXkN9kcISg",
-   "ch": "disneyjr",
-   "title": "É Halloween!",
-   "dur": "0:55",
-   "sec": 55,
-   "vertical": true,
-   "lang": "pt-PT"
-  },
-  {
-   "id": "Dn5iZhUHj7E",
-   "ch": "moonbug",
-   "title": "Levar com tarte na cara!",
-   "dur": "0:15",
-   "sec": 15,
-   "vertical": true,
-   "lang": "pt-PT"
-  },
-  {
-   "id": "kRfygGvULZ0",
-   "ch": "moonbug",
-   "title": "Robô Bebé está com gás!",
-   "dur": "0:29",
-   "sec": 29,
-   "vertical": true,
-   "lang": "pt-PT"
-  },
-  {
-   "id": "M_yCRco9jwo",
-   "ch": "moonbug",
-   "title": "Que é que estás a ver, Jeff?",
-   "dur": "0:13",
-   "sec": 13,
-   "vertical": true,
-   "lang": "pt-PT"
-  },
-  {
-   "id": "Vg1tJFkARdk",
-   "ch": "moonbug",
-   "title": "Quem está a controlar o ARPO?",
-   "dur": "0:23",
-   "sec": 23,
-   "vertical": true,
-   "lang": "pt-PT"
-  },
-  {
-   "id": "UCtCfuJo--M",
-   "ch": "moonbug",
-   "title": "Todos a bordo?",
-   "dur": "0:25",
-   "sec": 25,
-   "vertical": true,
-   "lang": "pt-PT"
-  },
-  {
-   "id": "XMM02o0tHBM",
-   "ch": "moonbug",
-   "title": "ARPO engana o crocodilo do Nilo!",
-   "dur": "0:27",
-   "sec": 27,
-   "vertical": true,
-   "lang": "pt-PT"
-  },
-  {
-   "id": "N3DPxiVjvBs",
-   "ch": "moonbug",
-   "title": "Cuidado a cantar no carro...",
-   "dur": "0:24",
-   "sec": 24,
-   "vertical": true,
-   "lang": "pt-PT"
-  },
-  {
-   "id": "gX4YaimYgnA",
-   "ch": "moonbug",
-   "title": "Jogar à apanhada com o Robô-Cão",
-   "dur": "0:30",
-   "sec": 30,
-   "vertical": true,
-   "lang": "pt-PT"
-  },
-  {
-   "id": "cqeGW2ad8MA",
-   "ch": "moonbug",
-   "title": "Brincadeira com cadeiras!",
-   "dur": "0:19",
-   "sec": 19,
-   "vertical": true,
-   "lang": "pt-PT"
-  },
-  {
-   "id": "SxCd9rSW3OU",
-   "ch": "moonbug",
-   "title": "O Cão Robô quer brincar!",
-   "dur": "0:16",
-   "sec": 16,
-   "vertical": true,
-   "lang": "pt-PT"
-  },
-  {
-   "id": "4o0BXdrKldI",
-   "ch": "moonbug",
-   "title": "O Newt precisa de ir à casa de banho!",
-   "dur": "0:41",
-   "sec": 41,
-   "vertical": true,
-   "lang": "pt-PT"
-  },
-  {
-   "id": "5_3uSXOpE-U",
-   "ch": "moonbug",
-   "title": "O Esquilo tem saudades dos amigos",
-   "dur": "0:28",
-   "sec": 28,
-   "vertical": true,
-   "lang": "pt-PT"
-  },
-  {
-   "id": "dOju_Yk-YMM",
-   "ch": "mega",
-   "title": "4 pratos na cabeça! | Aprende a contar",
-   "dur": "1:52",
-   "sec": 112,
-   "vertical": true,
-   "lang": "pt-PT"
-  },
-  {
-   "id": "QG6Zf6F82dA",
-   "ch": "mega",
-   "title": "Aprende a contar até 10 com animais",
-   "dur": "2:36",
-   "sec": 156,
-   "vertical": true,
-   "lang": "pt-PT"
-  },
-  {
-   "id": "iwe6oS2OnVc",
-   "ch": "mega",
-   "title": "Malabarismo com lenços para crianças",
-   "dur": "2:26",
-   "sec": 146,
-   "vertical": true,
-   "lang": "pt-PT"
-  },
-  {
-   "id": "wx4XfYDqDpE",
-   "ch": "mega",
-   "title": "Letra Y | Y de Yoga",
-   "dur": "2:58",
-   "sec": 178,
-   "vertical": true,
-   "lang": "pt-PT"
-  },
-  {
-   "id": "SLVlMWrIOlI",
-   "ch": "mega",
-   "title": "Letra X | Consegues tocar xilofone?",
-   "dur": "1:09",
-   "sec": 69,
-   "vertical": true,
-   "lang": "pt-PT"
-  },
-  {
-   "id": "QV1p02hwUvM",
-   "ch": "mega",
-   "title": "Letra W | W de Waffle",
-   "dur": "1:51",
-   "sec": 111,
-   "vertical": true,
-   "lang": "pt-PT"
-  },
-  {
-   "id": "TJrWnWghLMU",
-   "ch": "mega",
-   "title": "Letra V | Onde está a mamã?",
-   "dur": "1:21",
-   "sec": 81,
-   "vertical": true,
-   "lang": "pt-PT"
-  },
-  {
-   "id": "ELib2VvOk30",
-   "ch": "mega",
-   "title": "Letra U | U de Unicórnio",
-   "dur": "1:36",
-   "sec": 96,
-   "vertical": true,
-   "lang": "pt-PT"
-  },
-  {
-   "id": "p3aKvb9ucaU",
-   "ch": "mega",
-   "title": "Letra T | T de Tambor",
-   "dur": "1:35",
-   "sec": 95,
-   "vertical": true,
-   "lang": "pt-PT"
-  },
-  {
-   "id": "5eABQLbezDc",
-   "ch": "mega",
-   "title": "Letra S | Quantos sapatos?",
-   "dur": "2:03",
-   "sec": 123,
-   "vertical": true,
-   "lang": "pt-PT"
-  },
-  {
-   "id": "MnyGnV_g3VU",
-   "ch": "mega",
-   "title": "Letra R | Quantos números?",
-   "dur": "2:27",
-   "sec": 147,
-   "vertical": true,
-   "lang": "pt-PT"
-  },
-  {
-   "id": "Y4W7RZhLlLk",
-   "ch": "mega",
-   "title": "Letra Q | Descobre os animais",
-   "dur": "0:43",
-   "sec": 43,
-   "vertical": true,
-   "lang": "pt-PT"
-  },
-  {
-   "id": "m71TY15bzQE",
-   "ch": "shaun",
-   "title": "Starry Starry Night 🐑🐑🐑",
-   "dur": "1:02",
-   "sec": 62,
-   "vertical": true,
-   "lang": "sem-dialogo"
-  },
-  {
-   "id": "7gvP5KfAaTs",
-   "ch": "shaun",
-   "title": "Whistle Prank 🐑🐑🐑",
-   "dur": "0:25",
-   "sec": 25,
-   "vertical": true,
-   "lang": "sem-dialogo"
-  },
-  {
-   "id": "hFaYcv9FIfQ",
-   "ch": "shaun",
-   "title": "Is Shaun Sick 🐑🐑🐑",
-   "dur": "0:47",
-   "sec": 47,
-   "vertical": true,
-   "lang": "sem-dialogo"
-  },
-  {
-   "id": "8sXIIL0pCRo",
-   "ch": "shaun",
-   "title": "Power Cut 🐑🐑🐑",
-   "dur": "0:45",
-   "sec": 45,
-   "vertical": true,
-   "lang": "sem-dialogo"
-  },
-  {
-   "id": "X5zmAlHXF4k",
-   "ch": "shaun",
-   "title": "Happy Haloween! 🎃",
-   "dur": "0:21",
-   "sec": 21,
-   "vertical": true,
-   "lang": "sem-dialogo"
-  },
-  {
-   "id": "qhRW3Q4D4oI",
-   "ch": "shaun",
-   "title": "Breaking the fourth wall! See my movie! 🎥",
-   "dur": "0:07",
-   "sec": 7,
-   "vertical": true,
-   "lang": "sem-dialogo"
-  },
-  {
-   "id": "a-_6cJ6fi2I",
-   "ch": "shaun",
-   "title": "A plane over Mossy Bottom ✈️",
-   "dur": "0:11",
-   "sec": 11,
-   "vertical": true,
-   "lang": "sem-dialogo"
-  },
-  {
-   "id": "PijL9AiEx_0",
-   "ch": "shaun",
-   "title": "Beekeeping gone wrong 🐑🐑🐑",
-   "dur": "1:04",
-   "sec": 64,
-   "vertical": true,
-   "lang": "sem-dialogo"
-  },
-  {
-   "id": "CkFCZ9SplNY",
-   "ch": "shaun",
-   "title": "DIY On The Farm 🐑🐑🐑",
-   "dur": "1:01",
-   "sec": 61,
-   "vertical": true,
-   "lang": "sem-dialogo"
-  },
-  {
-   "id": "5rYr587-3BQ",
-   "ch": "shaun",
-   "title": "Baking a Cake 🐑🐑🐑",
-   "dur": "1:23",
-   "sec": 83,
-   "vertical": true,
-   "lang": "sem-dialogo"
-  },
-  {
-   "id": "Y1rkjGfX4Z4",
-   "ch": "pingu",
-   "title": "Flying a Kite! 🐧",
-   "dur": "0:17",
-   "sec": 17,
-   "vertical": true,
-   "lang": "sem-dialogo"
-  },
-  {
-   "id": "NZkhSWJAo0o",
-   "ch": "pingu",
-   "title": "Story Time! 🐧",
-   "dur": "0:19",
-   "sec": 19,
-   "vertical": true,
-   "lang": "sem-dialogo"
-  },
-  {
-   "id": "91jNHnMEGsI",
-   "ch": "pingu",
-   "title": "Endless Laughter! 🐧",
-   "dur": "0:42",
-   "sec": 42,
-   "vertical": true,
-   "lang": "sem-dialogo"
-  },
-  {
-   "id": "OZ9tCtKvr48",
-   "ch": "pingu",
-   "title": "Animal Feeding Time! 🐧",
-   "dur": "0:58",
-   "sec": 58,
-   "vertical": true,
-   "lang": "sem-dialogo"
-  },
-  {
-   "id": "1-uWy9PF1i4",
-   "ch": "pingu",
-   "title": "What Time is It?! 🐧",
-   "dur": "0:32",
-   "sec": 32,
-   "vertical": true,
-   "lang": "sem-dialogo"
-  },
-  {
-   "id": "C-98E7aoHZE",
-   "ch": "pingu",
-   "title": "This is Going to FALL! 🐧",
-   "dur": "0:56",
-   "sec": 56,
-   "vertical": true,
-   "lang": "sem-dialogo"
-  },
-  {
-   "id": "1w42EuvQoBo",
-   "ch": "pingu",
-   "title": "Icecream Day! 🐧",
-   "dur": "0:18",
-   "sec": 18,
-   "vertical": true,
-   "lang": "sem-dialogo"
-  },
-  {
-   "id": "tQ9GxzeJdsM",
-   "ch": "pingu",
-   "title": "A Magnetic Connection! 🐧",
-   "dur": "0:23",
-   "sec": 23,
-   "vertical": true,
-   "lang": "sem-dialogo"
-  },
-  {
-   "id": "Cbm4P5GJ_TA",
-   "ch": "pingu",
-   "title": "So many Accidents! 🐧",
-   "dur": "0:16",
-   "sec": 16,
-   "vertical": true,
-   "lang": "sem-dialogo"
-  },
-  {
-   "id": "A4EUYwKNI8E",
-   "ch": "pingu",
-   "title": "Pingu Saves the Day! 🐧",
-   "dur": "0:16",
-   "sec": 16,
-   "vertical": true,
-   "lang": "sem-dialogo"
-  },
-  {
-   "id": "auZG4WuhV5A",
-   "ch": "peppaen",
-   "title": "Tales VS Toys: Baby Evie & Peppa Pig Become MERMAIDS! 🧜‍♀️",
-   "dur": "0:33",
-   "sec": 33,
-   "vertical": true,
-   "lang": "en"
-  },
-  {
-   "id": "hS2oXvfb78U",
-   "ch": "peppaen",
-   "title": "Peppa Pig & Pedro Pony Build a GIANT Pumpkin Mountain! 🎃",
-   "dur": "0:17",
-   "sec": 17,
-   "vertical": true,
-   "lang": "en"
-  },
-  {
-   "id": "R2GmZlN4X5Y",
-   "ch": "peppaen",
-   "title": "Tales VS Toys: Peppa gives Baby Evie a Duck for Bathtime! 🐥",
-   "dur": "0:25",
-   "sec": 25,
-   "vertical": true,
-   "lang": "en"
-  },
-  {
-   "id": "VHvnXQNPAj0",
-   "ch": "peppaen",
-   "title": "Peppa Pig’s Day in Her Life 🌞",
-   "dur": "0:21",
-   "sec": 21,
-   "vertical": true,
-   "lang": "en"
-  },
-  {
-   "id": "SbUxt1xzA6k",
-   "ch": "peppaen",
-   "title": "Peppa Pig Rescues Baby Evie from Jail",
-   "dur": "0:30",
-   "sec": 30,
-   "vertical": true,
-   "lang": "en"
-  },
-  {
-   "id": "xC9iPgwII2I",
-   "ch": "peppaen",
-   "title": "Can Peppa Pig Make the RIGHT Choice?",
-   "dur": "0:31",
-   "sec": 31,
-   "vertical": true,
-   "lang": "en"
-  },
-  {
-   "id": "wVsXi1BBC4g",
-   "ch": "peppaen",
-   "title": "Is it Baby Evie or Baby Alexander?",
-   "dur": "0:26",
-   "sec": 26,
-   "vertical": true,
-   "lang": "en"
-  },
-  {
-   "id": "tw_ifqMCg6s",
-   "ch": "peppaen",
-   "title": "Peppa Pig & George ESCAPE from a VIDEO Game!",
-   "dur": "0:31",
-   "sec": 31,
-   "vertical": true,
-   "lang": "en"
-  },
-  {
-   "id": "p3AzNK1yZBU",
-   "ch": "peppaen",
-   "title": "Why is Evie Crying at Night?",
-   "dur": "0:30",
-   "sec": 30,
-   "vertical": true,
-   "lang": "en"
-  },
-  {
-   "id": "_EkzI97Bs5k",
-   "ch": "peppaen",
-   "title": "Peppa Pig's FANCY Sparkle Party!",
-   "dur": "0:27",
-   "sec": 27,
-   "vertical": true,
-   "lang": "en"
-  },
-  {
-   "id": "ffKpshNJPto",
-   "ch": "bluey",
-   "title": "Bluey COPIES Bandit! 👯🤣",
-   "dur": "0:30",
-   "sec": 30,
-   "vertical": true,
-   "lang": "en"
-  },
-  {
-   "id": "Qx-Wg-Ppxus",
-   "ch": "bluey",
-   "title": "Why can't we say DUNNY? 🚽🤐",
-   "dur": "0:31",
-   "sec": 31,
-   "vertical": true,
-   "lang": "en"
-  },
-  {
-   "id": "jbagSCvMwg4",
-   "ch": "bluey",
-   "title": "Happy Heelerween from Bluey! 🎃 💙",
-   "dur": "0:38",
-   "sec": 38,
-   "vertical": true,
-   "lang": "en"
-  },
-  {
-   "id": "b6RfT85wjWI",
-   "ch": "bluey",
-   "title": "Bluey Stop Motion Pumpkin! 🎃 👻",
-   "dur": "0:24",
-   "sec": 24,
-   "vertical": true,
-   "lang": "en"
-  },
-  {
-   "id": "bGQz3feLS3U",
-   "ch": "bluey",
-   "title": "There's a BIG WAVE! 💙😲🌊",
-   "dur": "0:26",
-   "sec": 26,
-   "vertical": true,
-   "lang": "en"
-  },
-  {
-   "id": "3uLbtiYDZHE",
-   "ch": "bluey",
-   "title": "We had a BARBIE! 💙🍗",
-   "dur": "0:16",
-   "sec": 16,
-   "vertical": true,
-   "lang": "en"
-  },
-  {
-   "id": "8pfTDp1KGxA",
-   "ch": "bluey",
-   "title": "Watch out, there's a Ghost! 💙😧👻",
-   "dur": "0:43",
-   "sec": 43,
-   "vertical": true,
-   "lang": "en"
-  },
-  {
-   "id": "0tYV9zWBk-g",
-   "ch": "bluey",
-   "title": "Bluey Learns to Play Torchmouse! 💙🔦🐭",
-   "dur": "0:35",
-   "sec": 35,
-   "vertical": true,
-   "lang": "en"
-  },
-  {
-   "id": "CA5ct7h_aaE",
-   "ch": "bluey",
-   "title": "Bandit has NITS! 💙 🤢",
-   "dur": "0:39",
-   "sec": 39,
-   "vertical": true,
-   "lang": "en"
-  },
-  {
-   "id": "5JgW83B4R9I",
-   "ch": "bluey",
-   "title": "Bandit NEEDS his pillow and blanket! 💙🛌",
-   "dur": "0:30",
-   "sec": 30,
-   "vertical": true,
-   "lang": "en"
-  },
-  {
-   "id": "3u0DJVb3CpM",
-   "ch": "duggee",
-   "title": "Why is Hatsu all of us 😭🧡",
-   "dur": "0:39",
-   "sec": 39,
-   "vertical": true,
-   "lang": "en"
-  },
-  {
-   "id": "B6W-BfIX2HA",
-   "ch": "duggee",
-   "title": "Counting, but make it FUN 🔢",
-   "dur": "0:36",
-   "sec": 36,
-   "vertical": true,
-   "lang": "en"
-  },
-  {
-   "id": "8uh9L2Vi98w",
-   "ch": "duggee",
-   "title": "Delivery chipmunks to the rescue!",
-   "dur": "1:47",
-   "sec": 107,
-   "vertical": true,
-   "lang": "en"
-  },
-  {
-   "id": "N3NMdg4cFjs",
-   "ch": "duggee",
-   "title": "This song understood the assignment 💅",
-   "dur": "0:31",
-   "sec": 31,
-   "vertical": true,
-   "lang": "en"
-  },
-  {
-   "id": "SlgPchcRBFo",
-   "ch": "duggee",
-   "title": "A special Duggee at home? 🐶🐾",
-   "dur": "0:20",
-   "sec": 20,
-   "vertical": true,
-   "lang": "en"
-  },
-  {
-   "id": "sMCXJem9i7w",
-   "ch": "duggee",
-   "title": "Where is the lie 🙃",
-   "dur": "0:22",
-   "sec": 22,
-   "vertical": true,
-   "lang": "en"
-  },
-  {
-   "id": "6xIwwLKTVY8",
-   "ch": "duggee",
-   "title": "Looking for your keys like 👾🕹️",
-   "dur": "0:28",
-   "sec": 28,
-   "vertical": true,
-   "lang": "en"
-  },
-  {
-   "id": "C9o94Gn1s0c",
-   "ch": "duggee",
-   "title": "Same, to be honest 😂",
-   "dur": "0:16",
-   "sec": 16,
-   "vertical": true,
-   "lang": "en"
-  },
-  {
-   "id": "0Q3BwsfegkI",
-   "ch": "duggee",
-   "title": "This tune sounds familiar 🤔",
-   "dur": "0:23",
-   "sec": 23,
-   "vertical": true,
-   "lang": "en"
-  },
-  {
-   "id": "uqSEgBz_IQU",
-   "ch": "duggee",
-   "title": "Perfect pause = bragging rights! 🧡",
-   "dur": "0:11",
-   "sec": 11,
-   "vertical": true,
-   "lang": "en"
-  },
-  {
-   "id": "iB2JoKjhOGE",
-   "ch": "supersimple",
-   "title": "Happy Super Simple Day!",
-   "dur": "1:18",
-   "sec": 78,
-   "vertical": true,
-   "lang": "en"
-  },
-  {
-   "id": "NFP_RP7Jh5c",
-   "ch": "supersimple",
-   "title": "Celebrating the World Cup with Head Shoulders Knees and Toes!",
-   "dur": "0:19",
-   "sec": 19,
-   "vertical": true,
-   "lang": "en"
-  },
-  {
-   "id": "p0V1yFG-X_k",
-   "ch": "supersimple",
-   "title": "Merry Christmas from Santa and Super Simple Songs!",
-   "dur": "0:34",
-   "sec": 34,
-   "vertical": true,
-   "lang": "en"
-  },
-  {
-   "id": "LnQA9McSOgA",
-   "ch": "supersimple",
-   "title": "Silliness with Santa! 🎅 Ho ho ho!",
-   "dur": "0:43",
-   "sec": 43,
-   "vertical": true,
-   "lang": "en"
-  },
-  {
-   "id": "EYLaVEYKQ8Y",
-   "ch": "supersimple",
-   "title": "Birds On A Wire Craft",
-   "dur": "0:59",
-   "sec": 59,
-   "vertical": true,
-   "lang": "en"
-  },
-  {
-   "id": "e87xaEjYMtg",
-   "ch": "supersimple",
-   "title": "Peanut Butter And Jelly 🥜 🍇",
-   "dur": "0:50",
-   "sec": 50,
-   "vertical": true,
-   "lang": "en"
-  },
-  {
-   "id": "fJB4riaF-5w",
-   "ch": "supersimple",
-   "title": "Toodly Doodly Doo Play Set",
-   "dur": "1:00",
-   "sec": 60,
-   "vertical": true,
-   "lang": "en"
-  },
-  {
-   "id": "B0J4bDD_9oU",
-   "ch": "supersimple",
-   "title": "One Potato Two Potato!",
-   "dur": "0:46",
-   "sec": 46,
-   "vertical": true,
-   "lang": "en"
-  },
-  {
-   "id": "kD9VhP6Lczc",
-   "ch": "pocoyoes",
-   "title": "🏓 ¿Quién será el CAMPEÓN de PING-PONG?",
-   "dur": "0:46",
-   "sec": 46,
-   "vertical": true,
-   "lang": "es"
-  },
-  {
-   "id": "EgvNrTdpKO4",
-   "ch": "pocoyoes",
-   "title": "🦆 ¡Pato SALVA la FIESTA DE BURBUJAS de Pocoyó! 🫧",
-   "dur": "0:45",
-   "sec": 45,
-   "vertical": true,
-   "lang": "es"
-  },
-  {
-   "id": "YPIoXzoU2-M",
-   "ch": "pocoyoes",
-   "title": "🎤 ¿Puede Cantar el Amigo de Pocoyó?",
-   "dur": "0:34",
-   "sec": 34,
-   "vertical": true,
-   "lang": "es"
-  },
-  {
-   "id": "yPl1pOY_2qA",
-   "ch": "pocoyoes",
-   "title": "🕵️ ¡El MISTERIO del JUGUETE PERDIDO de Pocoyó! 🧸",
-   "dur": "0:22",
-   "sec": 22,
-   "vertical": true,
-   "lang": "es"
-  },
-  {
-   "id": "h7aHpY7wx7I",
-   "ch": "pocoyoes",
-   "title": "🎮 ¡Bea y Pocoyó Descubren un UNIVERSO de VIDEOJUEGOS!",
-   "dur": "0:46",
-   "sec": 46,
-   "vertical": true,
-   "lang": "es"
-  },
-  {
-   "id": "0xiA_VLok88",
-   "ch": "pocoyoes",
-   "title": "🎢 ¡Persecución en la MONTAÑA RUSA con Bea!",
-   "dur": "0:49",
-   "sec": 49,
-   "vertical": true,
-   "lang": "es"
-  },
-  {
-   "id": "TBng1gqishw",
-   "ch": "pocoyoes",
-   "title": "¡¿Podrá Pocoyó curar a Pato?! 🏥",
-   "dur": "0:48",
-   "sec": 48,
-   "vertical": true,
-   "lang": "es"
-  },
-  {
-   "id": "YDQq82FyRX4",
-   "ch": "pocoyoes",
-   "title": "¡La trompeta mágica de Pocoyó! 🎺 ✨",
-   "dur": "0:53",
-   "sec": 53,
-   "vertical": true,
-   "lang": "es"
-  },
-  {
-   "id": "i5g9vWudClA",
-   "ch": "pocoyoes",
-   "title": "¡Bea Quiere Aprender a PATINAR! 🛼",
-   "dur": "0:33",
-   "sec": 33,
-   "vertical": true,
-   "lang": "es"
-  },
-  {
-   "id": "TcGAuiIfpOo",
-   "ch": "pocoyoes",
-   "title": "¡¿Quién quiere ver un TRUCO DE MAGIA?! 🪄✨",
-   "dur": "0:37",
-   "sec": 37,
-   "vertical": true,
-   "lang": "es"
-  },
-  {
-   "id": "5f2DxWSqJh8",
-   "ch": "peppafr",
-   "title": "Peppa Pig et Pedro Pony font une Montagne de Citrouilles GÉANTE 🎃",
-   "dur": "0:17",
-   "sec": 17,
-   "vertical": true,
-   "lang": "fr"
-  },
-  {
-   "id": "8ccaUieUUt8",
-   "ch": "peppafr",
-   "title": "Une Journée dans la Vie de Peppa Pig 🌞",
-   "dur": "0:21",
-   "sec": 21,
-   "vertical": true,
-   "lang": "fr"
-  },
-  {
-   "id": "Y0Jgpp5EBOs",
-   "ch": "peppafr",
-   "title": "Peppa Pig et George choisissent leur CITROUILLE PRÉFÉRÉE ! 🎃🦖",
-   "dur": "0:21",
-   "sec": 21,
-   "vertical": true,
-   "lang": "fr"
-  },
-  {
-   "id": "ysxlxk-TS10",
-   "ch": "peppafr",
-   "title": "Peppa Pig donne un BAIN MOUSSANT à Baby Evie ! 🛁🫧",
-   "dur": "0:15",
-   "sec": 15,
-   "vertical": true,
-   "lang": "fr"
-  },
-  {
-   "id": "gdOXZc1rq2E",
-   "ch": "peppafr",
-   "title": "Peppa Pig essaie de NOURRIR Baby Evie ! 🍼😅",
-   "dur": "0:18",
-   "sec": 18,
-   "vertical": true,
-   "lang": "fr"
-  },
-  {
-   "id": "G67ye9Gpg8E",
-   "ch": "peppafr",
-   "title": "Peppa Pig et George construisent le PLUS GRAND FORT ! 🏰",
-   "dur": "0:18",
-   "sec": 18,
-   "vertical": true,
-   "lang": "fr"
-  },
-  {
-   "id": "0bDE6B3fcNk",
-   "ch": "peppafr",
-   "title": "Pluie, pluie, va-t'en à la Fête Foraine ! 🎡",
-   "dur": "0:17",
-   "sec": 17,
-   "vertical": true,
-   "lang": "fr"
-  },
-  {
-   "id": "v1nvKMVuFn0",
-   "ch": "peppafr",
-   "title": "Boo Boo à la fête foraine ! 🎡",
-   "dur": "0:17",
-   "sec": 17,
-   "vertical": true,
-   "lang": "fr"
-  },
-  {
-   "id": "1YBLlwjk1xc",
-   "ch": "peppafr",
-   "title": "Tunnel secret 🤫🔒",
-   "dur": "0:34",
-   "sec": 34,
-   "vertical": true,
-   "lang": "fr"
-  },
-  {
-   "id": "FcZ_cQSKO5A",
-   "ch": "peppafr",
-   "title": "Restaurant miniature 🔥🧑‍🍳",
-   "dur": "0:29",
-   "sec": 29,
-   "vertical": true,
-   "lang": "fr"
-  }
- ]
+  "version": "2026-11-21",
+  "note": "Catálogo infantil com exclusão de fontes brasileiras declaradas. Canais pendentes ficam desativados por defeito. Idioma e origem reais carecem de auditoria humana; não se assume verificação de áudio.",
+  "channels": {
+    "zigzag": {
+      "id": "UCdFnXETzOn-BQT_ZtQE1nTw",
+      "name": "RTP zigzag",
+      "tema": "desenhos",
+      "cor": "#e0261f",
+      "status": "verificado",
+      "market": "PT"
+    },
+    "caricas": {
+      "id": "UCrRCYfAdzBO3ViaOseB9dJw",
+      "name": "Panda e os Caricas",
+      "tema": "musica",
+      "cor": "#1fa84f",
+      "status": "verificado",
+      "market": "PT"
+    },
+    "xana": {
+      "id": "UCF8C_W8v0_n6VdCLjmHsOSA",
+      "name": "Xana Toc Toc",
+      "tema": "musica",
+      "cor": "#ff6fae",
+      "status": "verificado",
+      "market": "PT"
+    },
+    "avo": {
+      "id": "UCCqe3u9RWPYfNZVaSGZfJYw",
+      "name": "Avô Cantigas",
+      "tema": "musica",
+      "cor": "#ff9a1a",
+      "status": "verificado",
+      "market": "PT"
+    },
+    "sonia": {
+      "id": "UC14by_N1mtgWtTCY7tFdhGg",
+      "name": "Sónia e as Profissões",
+      "tema": "aprender",
+      "cor": "#8a4fff",
+      "status": "verificado",
+      "market": "PT"
+    },
+    "panda": {
+      "id": "UC8FVkqHpH3z7aDMgfE78sNw",
+      "name": "Canal Panda",
+      "tema": "aprender",
+      "cor": "#0b5ed7",
+      "status": "verificado",
+      "market": "PT"
+    },
+    "cartoonito": {
+      "id": "UCxikJwnErvIlf_l6MD9IcAA",
+      "name": "Cartoonito Portugal",
+      "tema": "desenhos",
+      "cor": "#00a3e0",
+      "status": "pendente",
+      "nota": "Canal oficial português; alguns vídeos sem diálogo.",
+      "market": "PT"
+    },
+    "disneyjr": {
+      "id": "UCpv3czzaPFWvBQZ372mlMOw",
+      "name": "Disney Junior PT",
+      "tema": "desenhos",
+      "cor": "#5b2d90",
+      "status": "pendente",
+      "nota": "Canal oficial Disney Junior Portugal; confirmar o idioma de cada vídeo.",
+      "market": "PT"
+    },
+    "moonbug": {
+      "id": "UCZVA1wZLvRgM-bm751yVDow",
+      "name": "Moonbug Portugal",
+      "tema": "desenhos",
+      "cor": "#ff5a5f",
+      "status": "pendente",
+      "nota": "O canal declara dobragem em português de Portugal.",
+      "market": "PT"
+    },
+    "mega": {
+      "id": "UCLQUBcUOpQW8z7Ll3QRyARA",
+      "name": "Aprender com a MEGA",
+      "tema": "aprender",
+      "cor": "#ffb400",
+      "status": "pendente",
+      "nota": "A descrição declara português de Portugal.",
+      "market": "PT"
+    },
+    "guilherme": {
+      "id": "UCIi2pKTI5dnHb25W6LWZZKg",
+      "name": "Histórias do Guilherme",
+      "tema": "historias",
+      "cor": "#2bb3a3",
+      "status": "pendente",
+      "nota": "Audiolivros infantis declarados em PT-PT; confirmar cada vídeo.",
+      "market": "PT"
+    },
+    "shaun": {
+      "id": "UCS7H8U-n5mINVJjJsaRtGHg",
+      "name": "Shaun the Sheep",
+      "tema": "internacional",
+      "cor": "#7cb342",
+      "status": "internacional",
+      "nota": "Canal oficial, só Shorts (Reino Unido · sem diálogo).",
+      "market": "UK"
+    },
+    "pingu": {
+      "id": "UCM88mtSE0zRTn5ae4EbYcuw",
+      "name": "Pingu",
+      "tema": "internacional",
+      "cor": "#1e88e5",
+      "status": "internacional",
+      "nota": "Canal oficial, só Shorts (Suíça/Reino Unido · sem diálogo).",
+      "market": "CH"
+    },
+    "peppaen": {
+      "id": "UCAOtE1V7Ots4DjM8JLlrYgg",
+      "name": "Peppa Pig (inglês)",
+      "tema": "internacional",
+      "cor": "#ec407a",
+      "status": "internacional",
+      "nota": "Canal oficial, só Shorts (Reino Unido · inglês).",
+      "market": "UK"
+    },
+    "bluey": {
+      "id": "UCVzLLZkDuFGAE2BGdBuBNBg",
+      "name": "Bluey",
+      "tema": "internacional",
+      "cor": "#42a5f5",
+      "status": "internacional",
+      "nota": "Canal oficial, só Shorts (Austrália · inglês).",
+      "market": "AU"
+    },
+    "duggee": {
+      "id": "UCj_mFUb-47d9QNiJ5556LjQ",
+      "name": "Hey Duggee",
+      "tema": "internacional",
+      "cor": "#fb8c00",
+      "status": "internacional",
+      "nota": "Canal oficial, só Shorts (Reino Unido · inglês).",
+      "market": "UK"
+    },
+    "supersimple": {
+      "id": "UCLsooMJoIpl_7ux2jvdPB-Q",
+      "name": "Super Simple Songs",
+      "tema": "internacional",
+      "cor": "#26a69a",
+      "status": "internacional",
+      "nota": "Canal oficial, só Shorts (Canadá · inglês).",
+      "market": "CA"
+    },
+    "pocoyoes": {
+      "id": "UCnB5W_ZJgiDFnklejRGADxw",
+      "name": "Pocoyó (Espanha)",
+      "tema": "internacional",
+      "cor": "#29b6f6",
+      "status": "internacional",
+      "nota": "Canal oficial, só Shorts (Espanha · espanhol).",
+      "market": "ES"
+    },
+    "peppafr": {
+      "id": "UCXptamDYEVcU4JCio30hYTw",
+      "name": "Peppa Pig (francês)",
+      "tema": "internacional",
+      "cor": "#f06292",
+      "status": "internacional",
+      "nota": "Canal oficial, só Shorts (França · francês).",
+      "market": "FR"
+    }
+  },
+  "videos": [
+    {
+      "id": "MSkoCcj0Q5U",
+      "ch": "zigzag",
+      "title": "Dia Mundial da Gentileza - 2.ª parte",
+      "dur": "3:05"
+    },
+    {
+      "id": "lc8aeUYEGMs",
+      "ch": "zigzag",
+      "title": "Dia Mundial da Gentileza - 1.ª parte",
+      "dur": "2:50"
+    },
+    {
+      "id": "_ZWsfOtZ2TQ",
+      "ch": "zigzag",
+      "title": "Viana: A Lenda dos Corações de Ouro (trailer)",
+      "dur": "2:03"
+    },
+    {
+      "id": "SPGXIQkJ4Kc",
+      "ch": "zigzag",
+      "title": "Ser Astronauta é a profissão mais bonita do mundo | Anselmo Wannabe",
+      "dur": "1:25"
+    },
+    {
+      "id": "P34j7pt_gSI",
+      "ch": "zigzag",
+      "title": "Ser Bailarino é a profissão mais bonita do mundo | Anselmo Wannabe",
+      "dur": "2:43"
+    },
+    {
+      "id": "P0QE5kPxt38",
+      "ch": "zigzag",
+      "title": "Ser Artista de Rua é a profissão mais bonita do mundo | Anselmo Wannabe",
+      "dur": "1:50"
+    },
+    {
+      "id": "RSXrGYuhvas",
+      "ch": "zigzag",
+      "title": "Faroeste na praia?! | As Férias do Menino Nicolau",
+      "dur": "1:37"
+    },
+    {
+      "id": "8hoYy3L07zw",
+      "ch": "zigzag",
+      "title": "Batedores | As Férias do Menino Nicolau",
+      "dur": "2:22"
+    },
+    {
+      "id": "XTXiO_CZaPs",
+      "ch": "zigzag",
+      "title": "Nunca desistas! | Jasmine e Jambo",
+      "dur": "1:37"
+    },
+    {
+      "id": "n614nAcVkOY",
+      "ch": "zigzag",
+      "title": "Tenham pena! | Athleticus",
+      "dur": "1:42"
+    },
+    {
+      "id": "ee5hdYWA8so",
+      "ch": "caricas",
+      "title": "A Todos Um Bom Natal",
+      "dur": "3:13"
+    },
+    {
+      "id": "RaxObWIyZYM",
+      "ch": "caricas",
+      "title": "Abracadabra",
+      "dur": "3:09"
+    },
+    {
+      "id": "C3U2cQMrdSE",
+      "ch": "caricas",
+      "title": "Escola De Magia",
+      "dur": "3:03"
+    },
+    {
+      "id": "0buLe_ak24E",
+      "ch": "caricas",
+      "title": "Salta Pipoquinha",
+      "dur": "1:47"
+    },
+    {
+      "id": "UGwDF9bXkUU",
+      "ch": "caricas",
+      "title": "Popó Chiribitatá Salabencopé Tirolirolalá",
+      "dur": "1:46"
+    },
+    {
+      "id": "tuqZpnvV7QM",
+      "ch": "caricas",
+      "title": "O Galo Badalo, a Galinha Balbina, o Pinto Jacinto e o Peru Glu-Glu",
+      "dur": "2:36"
+    },
+    {
+      "id": "6Y4GmC3j08M",
+      "ch": "caricas",
+      "title": "Kulikitaka",
+      "dur": "2:02"
+    },
+    {
+      "id": "7105OzIJmA8",
+      "ch": "caricas",
+      "title": "Urso Panda",
+      "dur": "2:28"
+    },
+    {
+      "id": "jAw7l3bt5bE",
+      "ch": "caricas",
+      "title": "Sem Parar (ao vivo no musical «Na Selva»)",
+      "dur": "2:04"
+    },
+    {
+      "id": "P0FMViERZ5w",
+      "ch": "caricas",
+      "title": "Os Sons Da Selva (ao vivo no musical «Na Selva»)",
+      "dur": "2:37"
+    },
+    {
+      "id": "yYJuTZp5JHc",
+      "ch": "xana",
+      "title": "Cai a Noite",
+      "dur": "3:59"
+    },
+    {
+      "id": "oC8SmY90BHk",
+      "ch": "xana",
+      "title": "Canções De Embalar",
+      "dur": "47:40"
+    },
+    {
+      "id": "Df-ZK6iSrB4",
+      "ch": "xana",
+      "title": "Histórias no Trolipop | De Regresso a Casa",
+      "dur": "2:21"
+    },
+    {
+      "id": "OFV9YcVzXYg",
+      "ch": "xana",
+      "title": "Histórias no Trolipop | Mala Cor de Rosa Perdida",
+      "dur": "2:39"
+    },
+    {
+      "id": "YH5xlsA9COs",
+      "ch": "xana",
+      "title": "Histórias no Trolipop | Boleia ao Bicho Maluco",
+      "dur": "2:17"
+    },
+    {
+      "id": "zdEDrOqb8Os",
+      "ch": "xana",
+      "title": "Histórias no Trolipop | O Livro Perdido",
+      "dur": "2:08"
+    },
+    {
+      "id": "uTodeAdlb_o",
+      "ch": "xana",
+      "title": "Histórias no Trolipop | Os Meus Amigos Peixinhos",
+      "dur": "2:57"
+    },
+    {
+      "id": "wgarXvbXpVM",
+      "ch": "xana",
+      "title": "Histórias no Trolipop | A Festa de Despedida",
+      "dur": "2:32"
+    },
+    {
+      "id": "tShG5o-IpFg",
+      "ch": "xana",
+      "title": "Histórias no Trolipop | A Hora do Desporto",
+      "dur": "3:01"
+    },
+    {
+      "id": "HUAqJ41jZlk",
+      "ch": "avo",
+      "title": "Atchim...! Santinho!",
+      "dur": "3:26"
+    },
+    {
+      "id": "RDqmhcOWOd0",
+      "ch": "avo",
+      "title": "Um Do Li Ta",
+      "dur": "2:36"
+    },
+    {
+      "id": "eVMlSY0oinU",
+      "ch": "avo",
+      "title": "Fantasminha Brincalhão",
+      "dur": "3:15"
+    },
+    {
+      "id": "XYZ1suw4z74",
+      "ch": "sonia",
+      "title": "O Jardineiro",
+      "dur": "1:19"
+    },
+    {
+      "id": "xOIsbH2-fkI",
+      "ch": "sonia",
+      "title": "O Astronauta",
+      "dur": "2:06"
+    },
+    {
+      "id": "sSbTg6oOARQ",
+      "ch": "sonia",
+      "title": "O Padeiro",
+      "dur": "2:20"
+    },
+    {
+      "id": "orLGfMXoAPs",
+      "ch": "sonia",
+      "title": "O DJ",
+      "dur": "2:03"
+    },
+    {
+      "id": "2E-GrBUShQo",
+      "ch": "sonia",
+      "title": "O Polícia",
+      "dur": "1:51"
+    },
+    {
+      "id": "632uMX_gfQg",
+      "ch": "sonia",
+      "title": "A Cabeleireira",
+      "dur": "1:56"
+    },
+    {
+      "id": "rjqIQ2nu-9s",
+      "ch": "sonia",
+      "title": "A Professora",
+      "dur": "2:43"
+    },
+    {
+      "id": "uHszmWMeXZk",
+      "ch": "sonia",
+      "title": "O Bombeiro",
+      "dur": "2:27"
+    },
+    {
+      "id": "MwFO3_4JeUM",
+      "ch": "panda",
+      "title": "Toca a Aprender | Com Peso e Medida",
+      "dur": "0:26"
+    },
+    {
+      "id": "yz2nShwFFAI",
+      "ch": "panda",
+      "title": "Toca a Aprender | O Novo Ritmo",
+      "dur": "0:26"
+    },
+    {
+      "id": "m_SdfX90dn4",
+      "ch": "cartoonito",
+      "title": "Tom e Jerry — compilação com papagaios de papel",
+      "dur": ""
+    },
+    {
+      "id": "DeKshxCdsPM",
+      "ch": "cartoonito",
+      "title": "Batwheels — A nova rede da Batwing",
+      "dur": ""
+    },
+    {
+      "id": "klQEpnBIq4I",
+      "ch": "cartoonito",
+      "title": "Batwheels — Ajudar os teus amigos",
+      "dur": ""
+    },
+    {
+      "id": "U39BNCA_5Aw",
+      "ch": "moonbug",
+      "title": "Blippi e Meekah entram num concurso de talentos",
+      "dur": ""
+    },
+    {
+      "id": "VYwxikIt07A",
+      "ch": "caricas",
+      "title": "Os Caricas (ao vivo, Lisboa 2016)",
+      "dur": "",
+      "lang": "pt-PT",
+      "originCountry": "PT",
+      "review": "canal_oficial_audio_nao_auditado"
+    },
+    {
+      "id": "XFVOxjBcPcI",
+      "ch": "caricas",
+      "title": "Dó, Ré, Mi, Fá",
+      "dur": "",
+      "lang": "pt-PT",
+      "originCountry": "PT",
+      "review": "canal_oficial_audio_nao_auditado"
+    },
+    {
+      "id": "iz_ZoqJu1EE",
+      "ch": "caricas",
+      "title": "Começar no A",
+      "dur": "",
+      "lang": "pt-PT",
+      "originCountry": "PT",
+      "review": "canal_oficial_audio_nao_auditado"
+    },
+    {
+      "id": "i3FN3D0t1fQ",
+      "ch": "caricas",
+      "title": "A Loja do Mestre Panda",
+      "dur": "",
+      "lang": "pt-PT",
+      "originCountry": "PT",
+      "review": "canal_oficial_audio_nao_auditado"
+    },
+    {
+      "id": "wyAZIk_Rc34",
+      "ch": "caricas",
+      "title": "Ser Educado",
+      "dur": "",
+      "lang": "pt-PT",
+      "originCountry": "PT",
+      "review": "canal_oficial_audio_nao_auditado"
+    },
+    {
+      "id": "ybN2N_hAf1M",
+      "ch": "caricas",
+      "title": "Dança Panda",
+      "dur": "",
+      "lang": "pt-PT",
+      "originCountry": "PT",
+      "review": "canal_oficial_audio_nao_auditado"
+    },
+    {
+      "id": "CeujGNFkyIE",
+      "ch": "caricas",
+      "title": "Ginástica com o Panda",
+      "dur": "",
+      "lang": "pt-PT",
+      "originCountry": "PT",
+      "review": "canal_oficial_audio_nao_auditado"
+    },
+    {
+      "id": "haWFbLcv8bI",
+      "ch": "mega",
+      "title": "Música da Sopa | Com Sopa Fico Forte!",
+      "dur": "",
+      "market": "PT",
+      "languageClaim": "pt-PT",
+      "review": "pendente_audio"
+    },
+    {
+      "id": "fYR6sk7B_i4",
+      "ch": "mega",
+      "title": "Consegues Encontrar as 4 Bolinhas?",
+      "dur": "",
+      "market": "PT",
+      "languageClaim": "pt-PT",
+      "review": "pendente_audio"
+    },
+    {
+      "id": "jjIXoM3R4tY",
+      "ch": "mega",
+      "title": "Instrumentos Musicais | Ouve e Adivinha",
+      "dur": "",
+      "market": "PT",
+      "languageClaim": "pt-PT",
+      "review": "pendente_audio"
+    },
+    {
+      "id": "HJrColxATYc",
+      "ch": "mega",
+      "title": "Aprender e Brincar | Vogais, Números e Música",
+      "dur": "",
+      "market": "PT",
+      "languageClaim": "pt-PT",
+      "review": "pendente_audio"
+    },
+    {
+      "id": "J80uYgv-MgY",
+      "ch": "mega",
+      "title": "Íris e Luigi Brincam ao Ar Livre",
+      "dur": "",
+      "market": "PT",
+      "languageClaim": "pt-PT",
+      "review": "pendente_audio"
+    },
+    {
+      "id": "o79QGeUq7xk",
+      "ch": "mega",
+      "title": "Vamos Brincar aos Veterinários!",
+      "dur": "",
+      "market": "PT",
+      "languageClaim": "pt-PT",
+      "review": "pendente_audio"
+    },
+    {
+      "id": "ocupe2uTeFc",
+      "ch": "mega",
+      "title": "4 Jogos no Parque para Crianças",
+      "dur": "",
+      "market": "PT",
+      "languageClaim": "pt-PT",
+      "review": "pendente_audio"
+    },
+    {
+      "id": "LexD1YB1eVo",
+      "ch": "cartoonito",
+      "title": "Os Lemingues Bebés | A Beleza do Ritmo",
+      "dur": "",
+      "market": "PT",
+      "review": "pendente_audio"
+    },
+    {
+      "id": "InQPfmXwVhk",
+      "ch": "cartoonito",
+      "title": "Os Lemingues Bebés | Lemingues Voadores Brilhantes",
+      "dur": "",
+      "market": "PT",
+      "review": "pendente_audio"
+    },
+    {
+      "id": "yRFahD9rypI",
+      "ch": "cartoonito",
+      "title": "Os Lemingues Bebés | Cuidar das Plantas",
+      "dur": "",
+      "market": "PT",
+      "review": "pendente_audio"
+    },
+    {
+      "id": "votm8qcqE0U",
+      "ch": "cartoonito",
+      "title": "Grizzy e os Lemingues | À Busca de Batalhas",
+      "dur": "",
+      "market": "PT",
+      "review": "pendente_audio"
+    },
+    {
+      "id": "q0VVStW04KE",
+      "ch": "cartoonito",
+      "title": "Os Lemingues Bebés | À Procura de um Adversário",
+      "dur": "",
+      "market": "PT",
+      "review": "pendente_audio"
+    }
+  ],
+  "shorts_rule": "Shorts verdadeiros: vídeos verticais do separador «Shorts» do canal, até 3 minutos, incorporação permitida (verificado com oEmbed em 2026-11-17). Só conteúdo infantil; nunca português do Brasil. Shorts internacionais: só canais infantis oficiais de fora do Brasil (inglês, espanhol de Espanha, francês ou sem diálogo), verificados como verticais, até 3 minutos e incorporáveis; nunca PT-BR.",
+  "shorts": [
+    {
+      "id": "Grlv6rWfKzE",
+      "ch": "zigzag",
+      "title": "Samuel | Ep. 11: O Bloco de Gelo",
+      "dur": "1:28",
+      "sec": 88,
+      "vertical": true,
+      "lang": "pt-PT"
+    },
+    {
+      "id": "yHTMPJkcFAI",
+      "ch": "zigzag",
+      "title": "Samuel | Ep. 10: O Espetáculo de Dança",
+      "dur": "1:40",
+      "sec": 100,
+      "vertical": true,
+      "lang": "pt-PT"
+    },
+    {
+      "id": "tNgW2yHQHIk",
+      "ch": "zigzag",
+      "title": "Samuel | Ep. 9: A Vela",
+      "dur": "0:39",
+      "sec": 39,
+      "vertical": true,
+      "lang": "pt-PT"
+    },
+    {
+      "id": "lN-hjZZMgUA",
+      "ch": "zigzag",
+      "title": "Samuel | Ep. 8: Sozinho",
+      "dur": "0:34",
+      "sec": 34,
+      "vertical": true,
+      "lang": "pt-PT"
+    },
+    {
+      "id": "Ix5dhnQVbd8",
+      "ch": "zigzag",
+      "title": "Samuel | Ep. 7: O Cão",
+      "dur": "0:54",
+      "sec": 54,
+      "vertical": true,
+      "lang": "pt-PT"
+    },
+    {
+      "id": "UO7QThWij-w",
+      "ch": "zigzag",
+      "title": "Samuel | Ep. 6: A Declaração",
+      "dur": "1:02",
+      "sec": 62,
+      "vertical": true,
+      "lang": "pt-PT"
+    },
+    {
+      "id": "0lKssk_CYWA",
+      "ch": "zigzag",
+      "title": "Samuel | Ep. 5: O Comboio",
+      "dur": "0:50",
+      "sec": 50,
+      "vertical": true,
+      "lang": "pt-PT"
+    },
+    {
+      "id": "OuRkAyftJTM",
+      "ch": "zigzag",
+      "title": "Samuel | Ep. 4: As Cartas Perfumadas",
+      "dur": "1:21",
+      "sec": 81,
+      "vertical": true,
+      "lang": "pt-PT"
+    },
+    {
+      "id": "McZlgK8e2FY",
+      "ch": "zigzag",
+      "title": "Samuel | Ep. 3: A Piscina",
+      "dur": "1:04",
+      "sec": 64,
+      "vertical": true,
+      "lang": "pt-PT"
+    },
+    {
+      "id": "itnG1Fi5qNo",
+      "ch": "zigzag",
+      "title": "Samuel | Ep. 2: O Almoço",
+      "dur": "1:01",
+      "sec": 61,
+      "vertical": true,
+      "lang": "pt-PT"
+    },
+    {
+      "id": "VZwgTA3FdbY",
+      "ch": "zigzag",
+      "title": "Samuel | Ep. 1: Samuel e Amigos",
+      "dur": "0:39",
+      "sec": 39,
+      "vertical": true,
+      "lang": "pt-PT"
+    },
+    {
+      "id": "MNMCTfiXqbo",
+      "ch": "panda",
+      "title": "Patrulha Pata",
+      "dur": "0:41",
+      "sec": 41,
+      "vertical": true,
+      "lang": "pt-PT"
+    },
+    {
+      "id": "Vt9Kc87hdaY",
+      "ch": "panda",
+      "title": "Super Wings",
+      "dur": "0:40",
+      "sec": 40,
+      "vertical": true,
+      "lang": "pt-PT"
+    },
+    {
+      "id": "p1n7S1e5G4I",
+      "ch": "panda",
+      "title": "Porquinha Peppa",
+      "dur": "0:20",
+      "sec": 20,
+      "vertical": true,
+      "lang": "pt-PT"
+    },
+    {
+      "id": "9COJNecWYGU",
+      "ch": "panda",
+      "title": "Nova música Panda e os Caricas",
+      "dur": "0:10",
+      "sec": 10,
+      "vertical": true,
+      "lang": "pt-PT"
+    },
+    {
+      "id": "cGvROffQq2w",
+      "ch": "panda",
+      "title": "Dia Mundial da Dança",
+      "dur": "0:20",
+      "sec": 20,
+      "vertical": true,
+      "lang": "pt-PT"
+    },
+    {
+      "id": "V-5KKm-wb8M",
+      "ch": "panda",
+      "title": "DJ Riscas ao vivo!",
+      "dur": "0:24",
+      "sec": 24,
+      "vertical": true,
+      "lang": "pt-PT"
+    },
+    {
+      "id": "1XLb2OE9jMA",
+      "ch": "panda",
+      "title": "SuperThings: Kazoom Power",
+      "dur": "0:34",
+      "sec": 34,
+      "vertical": true,
+      "lang": "pt-PT"
+    },
+    {
+      "id": "THMBlGkEtHs",
+      "ch": "caricas",
+      "title": "Preparados para a primeira aula de magia?",
+      "dur": "0:26",
+      "sec": 26,
+      "vertical": true,
+      "lang": "pt-PT"
+    },
+    {
+      "id": "8BpzpidbB80",
+      "ch": "caricas",
+      "title": "Ado a-ado, cada um no seu quadrado!",
+      "dur": "0:53",
+      "sec": 53,
+      "vertical": true,
+      "lang": "pt-PT"
+    },
+    {
+      "id": "8BUNb6Z_eTQ",
+      "ch": "caricas",
+      "title": "Prontos para a brincadeira, amigos?",
+      "dur": "0:56",
+      "sec": 56,
+      "vertical": true,
+      "lang": "pt-PT"
+    },
+    {
+      "id": "iwsZD651aKo",
+      "ch": "caricas",
+      "title": "Quem sabe todas as vogais?",
+      "dur": "0:38",
+      "sec": 38,
+      "vertical": true,
+      "lang": "pt-PT"
+    },
+    {
+      "id": "kHnbVD2JI9g",
+      "ch": "caricas",
+      "title": "Vamos jogar ao Panda Manda!",
+      "dur": "0:58",
+      "sec": 58,
+      "vertical": true,
+      "lang": "pt-PT"
+    },
+    {
+      "id": "ozo3smFB5nI",
+      "ch": "caricas",
+      "title": "Conheces algum truque de magia?",
+      "dur": "0:24",
+      "sec": 24,
+      "vertical": true,
+      "lang": "pt-PT"
+    },
+    {
+      "id": "sIe5ZZr2BlY",
+      "ch": "caricas",
+      "title": "Porque é que os polícias não gostam de sabão?",
+      "dur": "0:16",
+      "sec": 16,
+      "vertical": true,
+      "lang": "pt-PT"
+    },
+    {
+      "id": "pl3B5jSn6ks",
+      "ch": "caricas",
+      "title": "Que barulho é este?",
+      "dur": "0:44",
+      "sec": 44,
+      "vertical": true,
+      "lang": "pt-PT"
+    },
+    {
+      "id": "1_9CqB6mnCQ",
+      "ch": "caricas",
+      "title": "Há lugar para todos neste Balão Mágico!",
+      "dur": "0:38",
+      "sec": 38,
+      "vertical": true,
+      "lang": "pt-PT"
+    },
+    {
+      "id": "aUdac2KY90g",
+      "ch": "caricas",
+      "title": "Temos uma adivinha para ti!",
+      "dur": "0:14",
+      "sec": 14,
+      "vertical": true,
+      "lang": "pt-PT"
+    },
+    {
+      "id": "lYE7L0BadC4",
+      "ch": "caricas",
+      "title": "Já sabes quais são as 5 vogais?",
+      "dur": "0:12",
+      "sec": 12,
+      "vertical": true,
+      "lang": "pt-PT"
+    },
+    {
+      "id": "FLnzYt7Pi5Q",
+      "ch": "caricas",
+      "title": "Prontos para o mundo encantado da magia?",
+      "dur": "0:28",
+      "sec": 28,
+      "vertical": true,
+      "lang": "pt-PT"
+    },
+    {
+      "id": "c-eOLaukdjE",
+      "ch": "cartoonito",
+      "title": "Um sonho dececionante",
+      "dur": "0:48",
+      "sec": 48,
+      "vertical": true,
+      "lang": "pt-PT"
+    },
+    {
+      "id": "9PSiRcPXwL0",
+      "ch": "cartoonito",
+      "title": "Ser babysitter não é para os fracos",
+      "dur": "0:22",
+      "sec": 22,
+      "vertical": true,
+      "lang": "pt-PT"
+    },
+    {
+      "id": "immE9ikfrm4",
+      "ch": "cartoonito",
+      "title": "Os Lemingues Bebés jogam Rali de Dominós",
+      "dur": "0:51",
+      "sec": 51,
+      "vertical": true,
+      "lang": "pt-PT"
+    },
+    {
+      "id": "-Dzor7JVJac",
+      "ch": "cartoonito",
+      "title": "O Jerry está em concentração máxima",
+      "dur": "0:23",
+      "sec": 23,
+      "vertical": true,
+      "lang": "pt-PT"
+    },
+    {
+      "id": "jQTS--CgrIc",
+      "ch": "cartoonito",
+      "title": "Miguel tenta treinar um T-Rex… só que não!",
+      "dur": "0:51",
+      "sec": 51,
+      "vertical": true,
+      "lang": "pt-PT"
+    },
+    {
+      "id": "wltwh4sY18o",
+      "ch": "cartoonito",
+      "title": "As bananas não são para comer, tonto",
+      "dur": "0:15",
+      "sec": 15,
+      "vertical": true,
+      "lang": "pt-PT"
+    },
+    {
+      "id": "FgKwy-7t4KA",
+      "ch": "cartoonito",
+      "title": "Acampamento espacial para jovens astronautas",
+      "dur": "0:51",
+      "sec": 51,
+      "vertical": true,
+      "lang": "pt-PT"
+    },
+    {
+      "id": "dh2M--AyHwk",
+      "ch": "cartoonito",
+      "title": "Que vença o melhor",
+      "dur": "0:57",
+      "sec": 57,
+      "vertical": true,
+      "lang": "pt-PT"
+    },
+    {
+      "id": "m4aGv5F4C8M",
+      "ch": "cartoonito",
+      "title": "A tarefa falhou com sucesso",
+      "dur": "0:14",
+      "sec": 14,
+      "vertical": true,
+      "lang": "pt-PT"
+    },
+    {
+      "id": "ZcReMclshy0",
+      "ch": "cartoonito",
+      "title": "Nem dá para fazer um piquenique em paz",
+      "dur": "0:39",
+      "sec": 39,
+      "vertical": true,
+      "lang": "pt-PT"
+    },
+    {
+      "id": "GOZ6fUziZic",
+      "ch": "cartoonito",
+      "title": "O Tom queria bolo. O Jerry trouxe surpresas.",
+      "dur": "1:00",
+      "sec": 60,
+      "vertical": true,
+      "lang": "pt-PT"
+    },
+    {
+      "id": "voQtFTxjorE",
+      "ch": "cartoonito",
+      "title": "Eis a sinfonia do fracasso",
+      "dur": "0:23",
+      "sec": 23,
+      "vertical": true,
+      "lang": "pt-PT"
+    },
+    {
+      "id": "25nVuiFqeQU",
+      "ch": "disneyjr",
+      "title": "SuperKitties",
+      "dur": "0:13",
+      "sec": 13,
+      "vertical": true,
+      "lang": "pt-PT"
+    },
+    {
+      "id": "WI9icsmLF4U",
+      "ch": "disneyjr",
+      "title": "Spidey e a sua Superequipa",
+      "dur": "0:10",
+      "sec": 10,
+      "vertical": true,
+      "lang": "pt-PT"
+    },
+    {
+      "id": "j0e8A7f1wZ8",
+      "ch": "disneyjr",
+      "title": "A Casa do Mickey Mouse+ | O truque de magia",
+      "dur": "0:22",
+      "sec": 22,
+      "vertical": true,
+      "lang": "pt-PT"
+    },
+    {
+      "id": "efC34LWofqo",
+      "ch": "disneyjr",
+      "title": "A Princesa Sofia: Escola de Magia",
+      "dur": "0:08",
+      "sec": 8,
+      "vertical": true,
+      "lang": "pt-PT"
+    },
+    {
+      "id": "IS0R0AenP5s",
+      "ch": "disneyjr",
+      "title": "Homem de Ferro e a sua Superequipa",
+      "dur": "0:19",
+      "sec": 19,
+      "vertical": true,
+      "lang": "pt-PT"
+    },
+    {
+      "id": "P7R5MC1KwYE",
+      "ch": "disneyjr",
+      "title": "Homem de Ferro e a sua Superequipa",
+      "dur": "0:37",
+      "sec": 37,
+      "vertical": true,
+      "lang": "pt-PT"
+    },
+    {
+      "id": "uPWJMkBYHq8",
+      "ch": "disneyjr",
+      "title": "A Casa do Mickey Mouse+ | Caça de Halloween",
+      "dur": "0:42",
+      "sec": 42,
+      "vertical": true,
+      "lang": "pt-PT"
+    },
+    {
+      "id": "FYu1J_YKwtI",
+      "ch": "disneyjr",
+      "title": "A Princesa Sofia: Escola de Magia",
+      "dur": "0:31",
+      "sec": 31,
+      "vertical": true,
+      "lang": "pt-PT"
+    },
+    {
+      "id": "TwHO_gVNTTc",
+      "ch": "disneyjr",
+      "title": "Spidey e a sua Superequipa",
+      "dur": "0:54",
+      "sec": 54,
+      "vertical": true,
+      "lang": "pt-PT"
+    },
+    {
+      "id": "aGEkxjOjC0M",
+      "ch": "disneyjr",
+      "title": "SuperKitties | Há um monstro na selva!",
+      "dur": "0:18",
+      "sec": 18,
+      "vertical": true,
+      "lang": "pt-PT"
+    },
+    {
+      "id": "LJG1XzT-Pjo",
+      "ch": "disneyjr",
+      "title": "Poupa energia!",
+      "dur": "1:00",
+      "sec": 60,
+      "vertical": true,
+      "lang": "pt-PT"
+    },
+    {
+      "id": "CtXkN9kcISg",
+      "ch": "disneyjr",
+      "title": "É Halloween!",
+      "dur": "0:55",
+      "sec": 55,
+      "vertical": true,
+      "lang": "pt-PT"
+    },
+    {
+      "id": "Dn5iZhUHj7E",
+      "ch": "moonbug",
+      "title": "Levar com tarte na cara!",
+      "dur": "0:15",
+      "sec": 15,
+      "vertical": true,
+      "lang": "pt-PT"
+    },
+    {
+      "id": "kRfygGvULZ0",
+      "ch": "moonbug",
+      "title": "Robô Bebé está com gás!",
+      "dur": "0:29",
+      "sec": 29,
+      "vertical": true,
+      "lang": "pt-PT"
+    },
+    {
+      "id": "M_yCRco9jwo",
+      "ch": "moonbug",
+      "title": "Que é que estás a ver, Jeff?",
+      "dur": "0:13",
+      "sec": 13,
+      "vertical": true,
+      "lang": "pt-PT"
+    },
+    {
+      "id": "Vg1tJFkARdk",
+      "ch": "moonbug",
+      "title": "Quem está a controlar o ARPO?",
+      "dur": "0:23",
+      "sec": 23,
+      "vertical": true,
+      "lang": "pt-PT"
+    },
+    {
+      "id": "UCtCfuJo--M",
+      "ch": "moonbug",
+      "title": "Todos a bordo?",
+      "dur": "0:25",
+      "sec": 25,
+      "vertical": true,
+      "lang": "pt-PT"
+    },
+    {
+      "id": "XMM02o0tHBM",
+      "ch": "moonbug",
+      "title": "ARPO engana o crocodilo do Nilo!",
+      "dur": "0:27",
+      "sec": 27,
+      "vertical": true,
+      "lang": "pt-PT"
+    },
+    {
+      "id": "N3DPxiVjvBs",
+      "ch": "moonbug",
+      "title": "Cuidado a cantar no carro...",
+      "dur": "0:24",
+      "sec": 24,
+      "vertical": true,
+      "lang": "pt-PT"
+    },
+    {
+      "id": "gX4YaimYgnA",
+      "ch": "moonbug",
+      "title": "Jogar à apanhada com o Robô-Cão",
+      "dur": "0:30",
+      "sec": 30,
+      "vertical": true,
+      "lang": "pt-PT"
+    },
+    {
+      "id": "cqeGW2ad8MA",
+      "ch": "moonbug",
+      "title": "Brincadeira com cadeiras!",
+      "dur": "0:19",
+      "sec": 19,
+      "vertical": true,
+      "lang": "pt-PT"
+    },
+    {
+      "id": "SxCd9rSW3OU",
+      "ch": "moonbug",
+      "title": "O Cão Robô quer brincar!",
+      "dur": "0:16",
+      "sec": 16,
+      "vertical": true,
+      "lang": "pt-PT"
+    },
+    {
+      "id": "4o0BXdrKldI",
+      "ch": "moonbug",
+      "title": "O Newt precisa de ir à casa de banho!",
+      "dur": "0:41",
+      "sec": 41,
+      "vertical": true,
+      "lang": "pt-PT"
+    },
+    {
+      "id": "5_3uSXOpE-U",
+      "ch": "moonbug",
+      "title": "O Esquilo tem saudades dos amigos",
+      "dur": "0:28",
+      "sec": 28,
+      "vertical": true,
+      "lang": "pt-PT"
+    },
+    {
+      "id": "dOju_Yk-YMM",
+      "ch": "mega",
+      "title": "4 pratos na cabeça! | Aprende a contar",
+      "dur": "1:52",
+      "sec": 112,
+      "vertical": true,
+      "lang": "pt-PT"
+    },
+    {
+      "id": "QG6Zf6F82dA",
+      "ch": "mega",
+      "title": "Aprende a contar até 10 com animais",
+      "dur": "2:36",
+      "sec": 156,
+      "vertical": true,
+      "lang": "pt-PT"
+    },
+    {
+      "id": "iwe6oS2OnVc",
+      "ch": "mega",
+      "title": "Malabarismo com lenços para crianças",
+      "dur": "2:26",
+      "sec": 146,
+      "vertical": true,
+      "lang": "pt-PT"
+    },
+    {
+      "id": "wx4XfYDqDpE",
+      "ch": "mega",
+      "title": "Letra Y | Y de Yoga",
+      "dur": "2:58",
+      "sec": 178,
+      "vertical": true,
+      "lang": "pt-PT"
+    },
+    {
+      "id": "SLVlMWrIOlI",
+      "ch": "mega",
+      "title": "Letra X | Consegues tocar xilofone?",
+      "dur": "1:09",
+      "sec": 69,
+      "vertical": true,
+      "lang": "pt-PT"
+    },
+    {
+      "id": "QV1p02hwUvM",
+      "ch": "mega",
+      "title": "Letra W | W de Waffle",
+      "dur": "1:51",
+      "sec": 111,
+      "vertical": true,
+      "lang": "pt-PT"
+    },
+    {
+      "id": "TJrWnWghLMU",
+      "ch": "mega",
+      "title": "Letra V | Onde está a mamã?",
+      "dur": "1:21",
+      "sec": 81,
+      "vertical": true,
+      "lang": "pt-PT"
+    },
+    {
+      "id": "ELib2VvOk30",
+      "ch": "mega",
+      "title": "Letra U | U de Unicórnio",
+      "dur": "1:36",
+      "sec": 96,
+      "vertical": true,
+      "lang": "pt-PT"
+    },
+    {
+      "id": "p3aKvb9ucaU",
+      "ch": "mega",
+      "title": "Letra T | T de Tambor",
+      "dur": "1:35",
+      "sec": 95,
+      "vertical": true,
+      "lang": "pt-PT"
+    },
+    {
+      "id": "5eABQLbezDc",
+      "ch": "mega",
+      "title": "Letra S | Quantos sapatos?",
+      "dur": "2:03",
+      "sec": 123,
+      "vertical": true,
+      "lang": "pt-PT"
+    },
+    {
+      "id": "MnyGnV_g3VU",
+      "ch": "mega",
+      "title": "Letra R | Quantos números?",
+      "dur": "2:27",
+      "sec": 147,
+      "vertical": true,
+      "lang": "pt-PT"
+    },
+    {
+      "id": "Y4W7RZhLlLk",
+      "ch": "mega",
+      "title": "Letra Q | Descobre os animais",
+      "dur": "0:43",
+      "sec": 43,
+      "vertical": true,
+      "lang": "pt-PT"
+    },
+    {
+      "id": "m71TY15bzQE",
+      "ch": "shaun",
+      "title": "Starry Starry Night 🐑🐑🐑",
+      "dur": "1:02",
+      "sec": 62,
+      "vertical": true,
+      "lang": "sem-dialogo"
+    },
+    {
+      "id": "7gvP5KfAaTs",
+      "ch": "shaun",
+      "title": "Whistle Prank 🐑🐑🐑",
+      "dur": "0:25",
+      "sec": 25,
+      "vertical": true,
+      "lang": "sem-dialogo"
+    },
+    {
+      "id": "hFaYcv9FIfQ",
+      "ch": "shaun",
+      "title": "Is Shaun Sick 🐑🐑🐑",
+      "dur": "0:47",
+      "sec": 47,
+      "vertical": true,
+      "lang": "sem-dialogo"
+    },
+    {
+      "id": "8sXIIL0pCRo",
+      "ch": "shaun",
+      "title": "Power Cut 🐑🐑🐑",
+      "dur": "0:45",
+      "sec": 45,
+      "vertical": true,
+      "lang": "sem-dialogo"
+    },
+    {
+      "id": "X5zmAlHXF4k",
+      "ch": "shaun",
+      "title": "Happy Haloween! 🎃",
+      "dur": "0:21",
+      "sec": 21,
+      "vertical": true,
+      "lang": "sem-dialogo"
+    },
+    {
+      "id": "qhRW3Q4D4oI",
+      "ch": "shaun",
+      "title": "Breaking the fourth wall! See my movie! 🎥",
+      "dur": "0:07",
+      "sec": 7,
+      "vertical": true,
+      "lang": "sem-dialogo"
+    },
+    {
+      "id": "a-_6cJ6fi2I",
+      "ch": "shaun",
+      "title": "A plane over Mossy Bottom ✈️",
+      "dur": "0:11",
+      "sec": 11,
+      "vertical": true,
+      "lang": "sem-dialogo"
+    },
+    {
+      "id": "PijL9AiEx_0",
+      "ch": "shaun",
+      "title": "Beekeeping gone wrong 🐑🐑🐑",
+      "dur": "1:04",
+      "sec": 64,
+      "vertical": true,
+      "lang": "sem-dialogo"
+    },
+    {
+      "id": "CkFCZ9SplNY",
+      "ch": "shaun",
+      "title": "DIY On The Farm 🐑🐑🐑",
+      "dur": "1:01",
+      "sec": 61,
+      "vertical": true,
+      "lang": "sem-dialogo"
+    },
+    {
+      "id": "5rYr587-3BQ",
+      "ch": "shaun",
+      "title": "Baking a Cake 🐑🐑🐑",
+      "dur": "1:23",
+      "sec": 83,
+      "vertical": true,
+      "lang": "sem-dialogo"
+    },
+    {
+      "id": "Y1rkjGfX4Z4",
+      "ch": "pingu",
+      "title": "Flying a Kite! 🐧",
+      "dur": "0:17",
+      "sec": 17,
+      "vertical": true,
+      "lang": "sem-dialogo"
+    },
+    {
+      "id": "NZkhSWJAo0o",
+      "ch": "pingu",
+      "title": "Story Time! 🐧",
+      "dur": "0:19",
+      "sec": 19,
+      "vertical": true,
+      "lang": "sem-dialogo"
+    },
+    {
+      "id": "91jNHnMEGsI",
+      "ch": "pingu",
+      "title": "Endless Laughter! 🐧",
+      "dur": "0:42",
+      "sec": 42,
+      "vertical": true,
+      "lang": "sem-dialogo"
+    },
+    {
+      "id": "OZ9tCtKvr48",
+      "ch": "pingu",
+      "title": "Animal Feeding Time! 🐧",
+      "dur": "0:58",
+      "sec": 58,
+      "vertical": true,
+      "lang": "sem-dialogo"
+    },
+    {
+      "id": "1-uWy9PF1i4",
+      "ch": "pingu",
+      "title": "What Time is It?! 🐧",
+      "dur": "0:32",
+      "sec": 32,
+      "vertical": true,
+      "lang": "sem-dialogo"
+    },
+    {
+      "id": "C-98E7aoHZE",
+      "ch": "pingu",
+      "title": "This is Going to FALL! 🐧",
+      "dur": "0:56",
+      "sec": 56,
+      "vertical": true,
+      "lang": "sem-dialogo"
+    },
+    {
+      "id": "1w42EuvQoBo",
+      "ch": "pingu",
+      "title": "Icecream Day! 🐧",
+      "dur": "0:18",
+      "sec": 18,
+      "vertical": true,
+      "lang": "sem-dialogo"
+    },
+    {
+      "id": "tQ9GxzeJdsM",
+      "ch": "pingu",
+      "title": "A Magnetic Connection! 🐧",
+      "dur": "0:23",
+      "sec": 23,
+      "vertical": true,
+      "lang": "sem-dialogo"
+    },
+    {
+      "id": "Cbm4P5GJ_TA",
+      "ch": "pingu",
+      "title": "So many Accidents! 🐧",
+      "dur": "0:16",
+      "sec": 16,
+      "vertical": true,
+      "lang": "sem-dialogo"
+    },
+    {
+      "id": "A4EUYwKNI8E",
+      "ch": "pingu",
+      "title": "Pingu Saves the Day! 🐧",
+      "dur": "0:16",
+      "sec": 16,
+      "vertical": true,
+      "lang": "sem-dialogo"
+    },
+    {
+      "id": "auZG4WuhV5A",
+      "ch": "peppaen",
+      "title": "Tales VS Toys: Baby Evie & Peppa Pig Become MERMAIDS! 🧜‍♀️",
+      "dur": "0:33",
+      "sec": 33,
+      "vertical": true,
+      "lang": "en"
+    },
+    {
+      "id": "hS2oXvfb78U",
+      "ch": "peppaen",
+      "title": "Peppa Pig & Pedro Pony Build a GIANT Pumpkin Mountain! 🎃",
+      "dur": "0:17",
+      "sec": 17,
+      "vertical": true,
+      "lang": "en"
+    },
+    {
+      "id": "R2GmZlN4X5Y",
+      "ch": "peppaen",
+      "title": "Tales VS Toys: Peppa gives Baby Evie a Duck for Bathtime! 🐥",
+      "dur": "0:25",
+      "sec": 25,
+      "vertical": true,
+      "lang": "en"
+    },
+    {
+      "id": "VHvnXQNPAj0",
+      "ch": "peppaen",
+      "title": "Peppa Pig’s Day in Her Life 🌞",
+      "dur": "0:21",
+      "sec": 21,
+      "vertical": true,
+      "lang": "en"
+    },
+    {
+      "id": "SbUxt1xzA6k",
+      "ch": "peppaen",
+      "title": "Peppa Pig Rescues Baby Evie from Jail",
+      "dur": "0:30",
+      "sec": 30,
+      "vertical": true,
+      "lang": "en"
+    },
+    {
+      "id": "xC9iPgwII2I",
+      "ch": "peppaen",
+      "title": "Can Peppa Pig Make the RIGHT Choice?",
+      "dur": "0:31",
+      "sec": 31,
+      "vertical": true,
+      "lang": "en"
+    },
+    {
+      "id": "wVsXi1BBC4g",
+      "ch": "peppaen",
+      "title": "Is it Baby Evie or Baby Alexander?",
+      "dur": "0:26",
+      "sec": 26,
+      "vertical": true,
+      "lang": "en"
+    },
+    {
+      "id": "tw_ifqMCg6s",
+      "ch": "peppaen",
+      "title": "Peppa Pig & George ESCAPE from a VIDEO Game!",
+      "dur": "0:31",
+      "sec": 31,
+      "vertical": true,
+      "lang": "en"
+    },
+    {
+      "id": "p3AzNK1yZBU",
+      "ch": "peppaen",
+      "title": "Why is Evie Crying at Night?",
+      "dur": "0:30",
+      "sec": 30,
+      "vertical": true,
+      "lang": "en"
+    },
+    {
+      "id": "_EkzI97Bs5k",
+      "ch": "peppaen",
+      "title": "Peppa Pig's FANCY Sparkle Party!",
+      "dur": "0:27",
+      "sec": 27,
+      "vertical": true,
+      "lang": "en"
+    },
+    {
+      "id": "ffKpshNJPto",
+      "ch": "bluey",
+      "title": "Bluey COPIES Bandit! 👯🤣",
+      "dur": "0:30",
+      "sec": 30,
+      "vertical": true,
+      "lang": "en"
+    },
+    {
+      "id": "Qx-Wg-Ppxus",
+      "ch": "bluey",
+      "title": "Why can't we say DUNNY? 🚽🤐",
+      "dur": "0:31",
+      "sec": 31,
+      "vertical": true,
+      "lang": "en"
+    },
+    {
+      "id": "jbagSCvMwg4",
+      "ch": "bluey",
+      "title": "Happy Heelerween from Bluey! 🎃 💙",
+      "dur": "0:38",
+      "sec": 38,
+      "vertical": true,
+      "lang": "en"
+    },
+    {
+      "id": "b6RfT85wjWI",
+      "ch": "bluey",
+      "title": "Bluey Stop Motion Pumpkin! 🎃 👻",
+      "dur": "0:24",
+      "sec": 24,
+      "vertical": true,
+      "lang": "en"
+    },
+    {
+      "id": "bGQz3feLS3U",
+      "ch": "bluey",
+      "title": "There's a BIG WAVE! 💙😲🌊",
+      "dur": "0:26",
+      "sec": 26,
+      "vertical": true,
+      "lang": "en"
+    },
+    {
+      "id": "3uLbtiYDZHE",
+      "ch": "bluey",
+      "title": "We had a BARBIE! 💙🍗",
+      "dur": "0:16",
+      "sec": 16,
+      "vertical": true,
+      "lang": "en"
+    },
+    {
+      "id": "8pfTDp1KGxA",
+      "ch": "bluey",
+      "title": "Watch out, there's a Ghost! 💙😧👻",
+      "dur": "0:43",
+      "sec": 43,
+      "vertical": true,
+      "lang": "en"
+    },
+    {
+      "id": "0tYV9zWBk-g",
+      "ch": "bluey",
+      "title": "Bluey Learns to Play Torchmouse! 💙🔦🐭",
+      "dur": "0:35",
+      "sec": 35,
+      "vertical": true,
+      "lang": "en"
+    },
+    {
+      "id": "CA5ct7h_aaE",
+      "ch": "bluey",
+      "title": "Bandit has NITS! 💙 🤢",
+      "dur": "0:39",
+      "sec": 39,
+      "vertical": true,
+      "lang": "en"
+    },
+    {
+      "id": "5JgW83B4R9I",
+      "ch": "bluey",
+      "title": "Bandit NEEDS his pillow and blanket! 💙🛌",
+      "dur": "0:30",
+      "sec": 30,
+      "vertical": true,
+      "lang": "en"
+    },
+    {
+      "id": "3u0DJVb3CpM",
+      "ch": "duggee",
+      "title": "Why is Hatsu all of us 😭🧡",
+      "dur": "0:39",
+      "sec": 39,
+      "vertical": true,
+      "lang": "en"
+    },
+    {
+      "id": "B6W-BfIX2HA",
+      "ch": "duggee",
+      "title": "Counting, but make it FUN 🔢",
+      "dur": "0:36",
+      "sec": 36,
+      "vertical": true,
+      "lang": "en"
+    },
+    {
+      "id": "8uh9L2Vi98w",
+      "ch": "duggee",
+      "title": "Delivery chipmunks to the rescue!",
+      "dur": "1:47",
+      "sec": 107,
+      "vertical": true,
+      "lang": "en"
+    },
+    {
+      "id": "N3NMdg4cFjs",
+      "ch": "duggee",
+      "title": "This song understood the assignment 💅",
+      "dur": "0:31",
+      "sec": 31,
+      "vertical": true,
+      "lang": "en"
+    },
+    {
+      "id": "SlgPchcRBFo",
+      "ch": "duggee",
+      "title": "A special Duggee at home? 🐶🐾",
+      "dur": "0:20",
+      "sec": 20,
+      "vertical": true,
+      "lang": "en"
+    },
+    {
+      "id": "sMCXJem9i7w",
+      "ch": "duggee",
+      "title": "Where is the lie 🙃",
+      "dur": "0:22",
+      "sec": 22,
+      "vertical": true,
+      "lang": "en"
+    },
+    {
+      "id": "6xIwwLKTVY8",
+      "ch": "duggee",
+      "title": "Looking for your keys like 👾🕹️",
+      "dur": "0:28",
+      "sec": 28,
+      "vertical": true,
+      "lang": "en"
+    },
+    {
+      "id": "C9o94Gn1s0c",
+      "ch": "duggee",
+      "title": "Same, to be honest 😂",
+      "dur": "0:16",
+      "sec": 16,
+      "vertical": true,
+      "lang": "en"
+    },
+    {
+      "id": "0Q3BwsfegkI",
+      "ch": "duggee",
+      "title": "This tune sounds familiar 🤔",
+      "dur": "0:23",
+      "sec": 23,
+      "vertical": true,
+      "lang": "en"
+    },
+    {
+      "id": "uqSEgBz_IQU",
+      "ch": "duggee",
+      "title": "Perfect pause = bragging rights! 🧡",
+      "dur": "0:11",
+      "sec": 11,
+      "vertical": true,
+      "lang": "en"
+    },
+    {
+      "id": "iB2JoKjhOGE",
+      "ch": "supersimple",
+      "title": "Happy Super Simple Day!",
+      "dur": "1:18",
+      "sec": 78,
+      "vertical": true,
+      "lang": "en"
+    },
+    {
+      "id": "NFP_RP7Jh5c",
+      "ch": "supersimple",
+      "title": "Celebrating the World Cup with Head Shoulders Knees and Toes!",
+      "dur": "0:19",
+      "sec": 19,
+      "vertical": true,
+      "lang": "en"
+    },
+    {
+      "id": "p0V1yFG-X_k",
+      "ch": "supersimple",
+      "title": "Merry Christmas from Santa and Super Simple Songs!",
+      "dur": "0:34",
+      "sec": 34,
+      "vertical": true,
+      "lang": "en"
+    },
+    {
+      "id": "LnQA9McSOgA",
+      "ch": "supersimple",
+      "title": "Silliness with Santa! 🎅 Ho ho ho!",
+      "dur": "0:43",
+      "sec": 43,
+      "vertical": true,
+      "lang": "en"
+    },
+    {
+      "id": "EYLaVEYKQ8Y",
+      "ch": "supersimple",
+      "title": "Birds On A Wire Craft",
+      "dur": "0:59",
+      "sec": 59,
+      "vertical": true,
+      "lang": "en"
+    },
+    {
+      "id": "e87xaEjYMtg",
+      "ch": "supersimple",
+      "title": "Peanut Butter And Jelly 🥜 🍇",
+      "dur": "0:50",
+      "sec": 50,
+      "vertical": true,
+      "lang": "en"
+    },
+    {
+      "id": "fJB4riaF-5w",
+      "ch": "supersimple",
+      "title": "Toodly Doodly Doo Play Set",
+      "dur": "1:00",
+      "sec": 60,
+      "vertical": true,
+      "lang": "en"
+    },
+    {
+      "id": "B0J4bDD_9oU",
+      "ch": "supersimple",
+      "title": "One Potato Two Potato!",
+      "dur": "0:46",
+      "sec": 46,
+      "vertical": true,
+      "lang": "en"
+    },
+    {
+      "id": "kD9VhP6Lczc",
+      "ch": "pocoyoes",
+      "title": "🏓 ¿Quién será el CAMPEÓN de PING-PONG?",
+      "dur": "0:46",
+      "sec": 46,
+      "vertical": true,
+      "lang": "es"
+    },
+    {
+      "id": "EgvNrTdpKO4",
+      "ch": "pocoyoes",
+      "title": "🦆 ¡Pato SALVA la FIESTA DE BURBUJAS de Pocoyó! 🫧",
+      "dur": "0:45",
+      "sec": 45,
+      "vertical": true,
+      "lang": "es"
+    },
+    {
+      "id": "YPIoXzoU2-M",
+      "ch": "pocoyoes",
+      "title": "🎤 ¿Puede Cantar el Amigo de Pocoyó?",
+      "dur": "0:34",
+      "sec": 34,
+      "vertical": true,
+      "lang": "es"
+    },
+    {
+      "id": "yPl1pOY_2qA",
+      "ch": "pocoyoes",
+      "title": "🕵️ ¡El MISTERIO del JUGUETE PERDIDO de Pocoyó! 🧸",
+      "dur": "0:22",
+      "sec": 22,
+      "vertical": true,
+      "lang": "es"
+    },
+    {
+      "id": "h7aHpY7wx7I",
+      "ch": "pocoyoes",
+      "title": "🎮 ¡Bea y Pocoyó Descubren un UNIVERSO de VIDEOJUEGOS!",
+      "dur": "0:46",
+      "sec": 46,
+      "vertical": true,
+      "lang": "es"
+    },
+    {
+      "id": "0xiA_VLok88",
+      "ch": "pocoyoes",
+      "title": "🎢 ¡Persecución en la MONTAÑA RUSA con Bea!",
+      "dur": "0:49",
+      "sec": 49,
+      "vertical": true,
+      "lang": "es"
+    },
+    {
+      "id": "TBng1gqishw",
+      "ch": "pocoyoes",
+      "title": "¡¿Podrá Pocoyó curar a Pato?! 🏥",
+      "dur": "0:48",
+      "sec": 48,
+      "vertical": true,
+      "lang": "es"
+    },
+    {
+      "id": "YDQq82FyRX4",
+      "ch": "pocoyoes",
+      "title": "¡La trompeta mágica de Pocoyó! 🎺 ✨",
+      "dur": "0:53",
+      "sec": 53,
+      "vertical": true,
+      "lang": "es"
+    },
+    {
+      "id": "i5g9vWudClA",
+      "ch": "pocoyoes",
+      "title": "¡Bea Quiere Aprender a PATINAR! 🛼",
+      "dur": "0:33",
+      "sec": 33,
+      "vertical": true,
+      "lang": "es"
+    },
+    {
+      "id": "TcGAuiIfpOo",
+      "ch": "pocoyoes",
+      "title": "¡¿Quién quiere ver un TRUCO DE MAGIA?! 🪄✨",
+      "dur": "0:37",
+      "sec": 37,
+      "vertical": true,
+      "lang": "es"
+    },
+    {
+      "id": "5f2DxWSqJh8",
+      "ch": "peppafr",
+      "title": "Peppa Pig et Pedro Pony font une Montagne de Citrouilles GÉANTE 🎃",
+      "dur": "0:17",
+      "sec": 17,
+      "vertical": true,
+      "lang": "fr"
+    },
+    {
+      "id": "8ccaUieUUt8",
+      "ch": "peppafr",
+      "title": "Une Journée dans la Vie de Peppa Pig 🌞",
+      "dur": "0:21",
+      "sec": 21,
+      "vertical": true,
+      "lang": "fr"
+    },
+    {
+      "id": "Y0Jgpp5EBOs",
+      "ch": "peppafr",
+      "title": "Peppa Pig et George choisissent leur CITROUILLE PRÉFÉRÉE ! 🎃🦖",
+      "dur": "0:21",
+      "sec": 21,
+      "vertical": true,
+      "lang": "fr"
+    },
+    {
+      "id": "ysxlxk-TS10",
+      "ch": "peppafr",
+      "title": "Peppa Pig donne un BAIN MOUSSANT à Baby Evie ! 🛁🫧",
+      "dur": "0:15",
+      "sec": 15,
+      "vertical": true,
+      "lang": "fr"
+    },
+    {
+      "id": "gdOXZc1rq2E",
+      "ch": "peppafr",
+      "title": "Peppa Pig essaie de NOURRIR Baby Evie ! 🍼😅",
+      "dur": "0:18",
+      "sec": 18,
+      "vertical": true,
+      "lang": "fr"
+    },
+    {
+      "id": "G67ye9Gpg8E",
+      "ch": "peppafr",
+      "title": "Peppa Pig et George construisent le PLUS GRAND FORT ! 🏰",
+      "dur": "0:18",
+      "sec": 18,
+      "vertical": true,
+      "lang": "fr"
+    },
+    {
+      "id": "0bDE6B3fcNk",
+      "ch": "peppafr",
+      "title": "Pluie, pluie, va-t'en à la Fête Foraine ! 🎡",
+      "dur": "0:17",
+      "sec": 17,
+      "vertical": true,
+      "lang": "fr"
+    },
+    {
+      "id": "v1nvKMVuFn0",
+      "ch": "peppafr",
+      "title": "Boo Boo à la fête foraine ! 🎡",
+      "dur": "0:17",
+      "sec": 17,
+      "vertical": true,
+      "lang": "fr"
+    },
+    {
+      "id": "1YBLlwjk1xc",
+      "ch": "peppafr",
+      "title": "Tunnel secret 🤫🔒",
+      "dur": "0:34",
+      "sec": 34,
+      "vertical": true,
+      "lang": "fr"
+    },
+    {
+      "id": "FcZ_cQSKO5A",
+      "ch": "peppafr",
+      "title": "Restaurant miniature 🔥🧑‍🍳",
+      "dur": "0:29",
+      "sec": 29,
+      "vertical": true,
+      "lang": "fr"
+    }
+  ]
 }

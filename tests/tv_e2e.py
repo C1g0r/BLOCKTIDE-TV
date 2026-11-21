@@ -43,7 +43,7 @@ with sync_playwright() as p:
   pg.on('pageerror', lambda e: errs.append(str(e))); pg.on('console', lambda m: errs.append(m.text) if m.type == 'error' else None)
   pg.goto(URL); pg.wait_for_selector('.card')
   n_cards = pg.locator('.rail .card').count(); rows = pg.locator('section.row').count()
-  check(f'início: {rows} filas (6 canais + Shorts) e {n_cards} cartões', rows == 7 and n_cards == 72)
+  check(f'início: {rows} filas (6 canais + Shorts) e {n_cards} cartões', rows == 7 and n_cards == 79)
   pg.screenshot(path=str(OUT / '40-tv-inicio.png'))
   pg.click('[data-tema="musica"]'); pg.wait_for_timeout(200)
   names = pg.locator('section.row h2').all_inner_texts()

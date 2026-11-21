@@ -30,18 +30,27 @@
   // Canais verificados: ligados até os pais os desligarem. Canais «por confirmar»: desligados até os pais os ligarem.
   const pending = (k) => (catalog.channels[k] || {}).status === 'pendente';
   const intl = (k) => (catalog.channels[k] || {}).status === 'internacional';
-  const channelsOn = () => Object.keys(catalog.channels).filter((k) => (pending(k) ? settings.enabled.includes(k) : !settings.disabled.includes(k)));
+  // O filtro bloqueia metadados de origem brasileira; não substitui auditoria de áudio e proveniência.
+  const fromBrazil = (v) => {
+    const ch = catalog.channels[v.ch] || {};
+    const br = (s) => /^(?:br|bra|brasil|brazil)$/i.test(String(s || '').trim());
+    return br(v.originCountry) || br(v.market) || br(v.country) ||
+      br(ch.originCountry) || br(ch.market) || br(ch.country) ||
+      /^pt[-_]br$/i.test(String(v.lang || '').trim()) || v.blocked === true;
+  };
+  const channelsOn = () => Object.keys(catalog.channels).filter((k) =>
+    !fromBrazil({ ch: k }) && (pending(k) ? settings.enabled.includes(k) : !settings.disabled.includes(k)));
   function videos() {
     const on = new Set(channelsOn());
     const added = settings.added.map((a) => ({ ...a, ch: 'pais' }));
-    return [...catalog.videos.filter((v) => on.has(v.ch)), ...added];
+    return [...catalog.videos.filter((v) => on.has(v.ch) && !fromBrazil(v)), ...added.filter((v) => !fromBrazil(v))];
   }
   // Shorts: só conteúdo infantil dos canais ligados; nunca PT-BR (regra do catálogo, e filtro de segurança aqui)
   function shortsList() {
     if (settings.shortsOn === false) return [];
     const on = new Set(channelsOn());
     // Só Shorts verdadeiros: verticais e até 3 minutos
-    const ok = (catalog.shorts || []).filter((v) => on.has(v.ch) && v.vertical === true && (v.sec || 0) > 0 && v.sec <= 180 && !/^pt-br$/i.test(v.lang || '')
+    const ok = (catalog.shorts || []).filter((v) => on.has(v.ch) && !fromBrazil(v) && v.vertical === true && (v.sec || 0) > 0 && v.sec <= 180
       && (settings.shortsOtherLangs !== false || ['pt-PT', 'sem-dialogo'].includes(v.lang)));
     // Primeiro os portugueses; depois os de outros países, alternando os canais
     const pt = ok.filter((v) => !intl(v.ch)), by = {};
@@ -118,7 +127,7 @@
     const c = catalog.channels[k];
     if (!c || !channelsOn().includes(k)) return '<div class="empty">Canal indisponível.</div>';
     return `<h1 style="display:flex;align-items:center;gap:10px"><span class="dot" style="width:18px;height:18px;border-radius:5px;background:${esc(c.cor)}"></span>${esc(c.name)}</h1>
-      <p class="muted" style="font-weight:800">Canal português verificado · ${videos().filter((v) => v.ch === k).length} vídeos</p>
+      <p class="muted" style="font-weight:800">${pending(k) ? 'Canal por confirmar' : intl(k) ? 'Canal internacional' : 'Canal português verificado'} · ${videos().filter((v) => v.ch === k).length} vídeos</p>
       <div class="grid">${videos().filter((v) => v.ch === k).map(card).join('')}</div>`;
   }
   function searchPage() {
@@ -397,12 +406,12 @@
           <div class="d">${n} Shorts${c.nota ? ` · ${esc(c.nota)}` : ''}</div></div>
           ${seg('ch:' + k, [['on', 'Ligado'], ['off', 'Desligado']], settings.disabled.includes(k) ? 'off' : 'on')}</div>`; }).join('')}
       </div>
-      <div class="panel"><h2>Canais por confirmar</h2><p class="muted" style="font-weight:800;margin:6px 0 0">Canais com identidade confirmada que se apresentam em português de Portugal, mas cujo áudio ainda não foi verificado. Ficam desligados: ouça um ou dois vídeos e ligue só os que forem mesmo em português europeu.</p>
+      <div class="panel"><h2>Canais por confirmar</h2><p class="muted" style="font-weight:800;margin:6px 0 0">Canais com identidade confirmada que se apresentam em português de Portugal, mas cujo áudio ainda não foi verificado. Ficam desligados por defeito: confirme a proveniência e o áudio de cada vídeo antes de ativar o canal.</p>
         ${Object.entries(catalog.channels).filter(([k]) => pending(k)).map(([k, c]) => { const n = catalog.videos.filter((v) => v.ch === k).length; return `<div class="field"><div><span class="dot" style="display:inline-block;width:11px;height:11px;border-radius:3px;background:${esc(c.cor)};margin-right:7px"></span><b>${esc(c.name)}</b>
           <div class="d">${n ? `${n} vídeo${n > 1 ? 's' : ''}` : 'Ainda sem vídeos no catálogo'} · ${esc(TEMAS[c.tema] || '')}${c.nota ? ` · ${esc(c.nota)}` : ''} · <a href="https://www.youtube.com/channel/${esc(c.id)}" target="_blank" rel="noopener">abrir no YouTube</a></div></div>
           ${seg('pch:' + k, [['on', 'Ligado'], ['off', 'Desligado']], settings.enabled.includes(k) ? 'on' : 'off')}</div>`; }).join('')}
       </div>
-      <div class="panel"><h2>Acrescentar um vídeo</h2><p class="muted" style="font-weight:800;margin:6px 0 10px">Um vídeo do YouTube que já viu e sabe que é em português europeu.</p>
+      <div class="panel"><h2>Acrescentar um vídeo</h2><p class="muted" style="font-weight:800;margin:6px 0 10px">Acrescente apenas vídeos que tenha visto e confirmado como apropriados, não brasileiros e em português europeu. Vídeos adicionados manualmente não são verificados automaticamente.</p>
         <div style="display:grid;gap:8px"><input type="url" id="au" placeholder="Endereço do vídeo (youtube.com/watch?v=… ou youtu.be/…)" /><input type="text" id="at" placeholder="Nome para a criança ver" />
         <button class="btn primary" id="addv">Acrescentar</button></div>
         ${settings.added.map((a) => `<div class="field"><div>${esc(a.title)}<div class="d">${esc(a.id)}</div></div><button class="btn danger" data-rm="${esc(a.id)}">Retirar</button></div>`).join('')}

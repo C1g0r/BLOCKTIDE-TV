@@ -17,16 +17,15 @@ Teste (Python + Playwright): `python3 tests/tv_e2e.py`.
 
 © 2026 Igor Serrano. Todos os direitos reservados — ver `LICENSE`. Tipos de letra Nunito e Lilita One sob a licença SIL OFL (`fonts/`).
 
-## Catálogo
+## Catálogo — atualização de 21 de novembro de 2026
 
-- **Shorts** (`catalog.json` → `shorts`): 78 Shorts verdadeiros (verticais, até 3 min, incorporação confirmada): 30 dos canais verificados (RTP zigzag, Canal Panda, Panda e os Caricas) e 48 dos canais por confirmar, que só aparecem quando os pais os ligam. Mais 78 de canais infantis oficiais de outros países, a seguir aos portugueses: sem diálogo (Shaun the Sheep, Pingu), inglês (Peppa Pig, Bluey, Hey Duggee, Super Simple Songs), espanhol de Espanha (Pocoyó) e francês (Peppa Pig). `pt-BR` nunca entra.
+- **65 vídeos normais:** 49 de canais portugueses ativos e 16 de canais pendentes que os pais podem ativar.
+- **156 Shorts:** 78 assinalados PT-PT (30 visíveis por defeito, 48 pendentes) e 78 internacionais, em idiomas diferentes ou sem diálogo.
+- **Novos nesta atualização:** 19 vídeos sem duplicados: 7 do canal oficial Panda e os Caricas (ativos), 7 do Aprender com a MEGA e 5 do Cartoonito Portugal (estes últimos dois continuam desligados por defeito). Mais 11 referências encontradas que já existiam como Shorts e não foram repetidas.
+- **Proveniência:** `docs/curadoria-2026-11-21.csv` contém os IDs, ligações diretas, grau de evidência e estado da auditoria de áudio dos vídeos novos. Fontes: o YouTube oficial de Panda e os Caricas e o diretório Português Portugal para Aprender com a MEGA e Cartoonito Portugal.
+- **Política de exclusão:** não adicionar conteúdos de origem brasileira nem vídeos em português do Brasil. O código rejeita qualquer entrada assinalada com `originCountry`/`market`/`country` = `BR` ou `lang` = `pt-BR`, mesmo que o canal esteja ativado.
+- **Limite importante:** o filtro lê metadados; não analisa áudio nem identifica automaticamente sotaques ou o país de produção. Canais pendentes não aparecem por defeito. Os pais devem confirmar o áudio e a origem antes de os ativar. Vídeos acrescentados manualmente pelos pais são da sua responsabilidade.
 
-- **Verificados** (ligados): RTP zigzag, Panda e os Caricas, Xana Toc Toc, Avô Cantigas, Sónia e as Profissões, Canal Panda — 42 vídeos.
-- **Por confirmar** (desligados até os pais os ligarem): Cartoonito Portugal, Disney Junior PT, Moonbug Portugal,
-  Aprender com a MEGA, Histórias do Guilherme — identidade confirmada, áudio por auditar; 4 vídeos até agora.
-- `docs/pesquisa-2026-11-17/`: a pesquisa original, incluindo 18 canais candidatos ainda sem ID confirmado
-  (vários são brasileiros e não devem entrar). Ficou de fora «Portuguese at Ease» (aulas para adultos).
+A lista anterior de canais candidatos (sem ID confirmado) continua separada em `docs/pesquisa-2026-11-17/`, sem entradas fictícias. Durações que não foram confirmadas ficam vazias, em vez de serem inventadas.
 
-**Limites desta versão:** catálogo fixo (`catalog.json`, 42 vídeos de 6 canais); a seguir, um pequeno
-servidor com a API do YouTube para o manter atualizado. O leitor incorporado não permite escolher a
-faixa de áudio: o catálogo só deve ter vídeos sem dobragens.
+**Validação rápida do catálogo:** `python3 tests/catalog_policy.py`. Teste funcional: `python3 tests/tv_e2e.py`.

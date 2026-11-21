@@ -111,7 +111,7 @@
     const all = videos();
     const recent = watch.recent.map((id) => all.find((v) => v.id === id)).filter(Boolean).slice(0, 10);
     const chs = channelsOn().filter((k) => tema === 'tudo' || catalog.channels[k].tema === tema);
-    return `<div class="chips">${Object.entries(TEMAS).map(([k, n]) => `<button class="tchip ${k === tema ? 'on' : ''}" data-tema="${k}">${n}</button>`).join('')}</div>
+    return `<div style="text-align:center;padding:8px 12px;font-size:12px;font-weight:800;opacity:.8" aria-label="Versão do BLOCKTIDE TV">BLOCKTIDE TV · v0.5.4 · catálogo ${esc(catalog.version || 'desconhecido')}</div><div class="chips">${Object.entries(TEMAS).map(([k, n]) => `<button class="tchip ${k === tema ? 'on' : ''}" data-tema="${k}">${n}</button>`).join('')}</div>
       ${tema === 'tudo' && shortsList().length ? `<section class="row"><div class="row-head"><h2><span class="dot" style="background:var(--red)"></span>Shorts</h2><a href="#shorts">Ver Shorts</a></div>
         <div class="rail shorts-rail">${shortsList().slice(0, 30).map((v) => `<a class="card scard" href="#shorts-${esc(v.id)}"><div class="thumb vert"><img loading="lazy" src="${thumb(v.id)}" alt=""><span class="dur">${esc(v.dur || '')}</span></div><div class="t">${esc(v.title)}</div></a>`).join('')}</div></section>` : ''}
       ${recent.length && tema === 'tudo' ? `<section class="row"><div class="row-head"><h2>Continuar a ver</h2></div><div class="rail">${recent.map(card).join('')}</div></section>` : ''}
@@ -421,7 +421,7 @@
         <div class="field"><div>Sair da área dos pais</div><button class="btn" id="lock">Bloquear</button></div>
         <div class="field"><div>Apagar dados deste aparelho<div class="d">PIN, limites, histórico e vídeos acrescentados.</div></div><button class="btn danger" id="wipe">Apagar</button></div>
       </div>
-      <p class="muted" style="font-size:12px;font-weight:700;text-align:center">BLOCKTIDE TV · versão 0.5.3 · catálogo ${esc(catalog.version || 'desconhecido')} · ${catalog.videos.length} vídeos (${videos().filter((v) => v.ch !== 'pais').length} disponíveis com os filtros atuais) · © 2026 Igor Serrano.</p>`;
+      <p class="muted" style="font-size:12px;font-weight:700;text-align:center">BLOCKTIDE TV · versão 0.5.4 · catálogo ${esc(catalog.version || 'desconhecido')} · ${catalog.videos.length} vídeos (${videos().filter((v) => v.ch !== 'pais').length} disponíveis com os filtros atuais) · © 2026 Igor Serrano.</p>`;
   }
   function bindParents() {
     if (Date.now() > unlockedUntil) { bindGate(); return; }
@@ -504,7 +504,7 @@
     get diagnostics() {
       const visible = videos();
       return {
-        appVersion: '0.5.3',
+        appVersion: '0.5.4',
         catalogVersion: catalog.version || 'desconhecida',
         totalVideos: catalog.videos.length,
         visibleVideos: visible.length,

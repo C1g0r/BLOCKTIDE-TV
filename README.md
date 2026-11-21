@@ -1,7 +1,6 @@
 # BLOCKTIDE TV (web app)
 
-Web app para crianças com **só vídeos em português europeu**, de um catálogo de canais de produção
-portuguesa verificados. Os vídeos tocam no leitor oficial do YouTube (incorporado, `youtube-nocookie.com`,
+Web app para crianças com **vídeos infantis de Portugal e de outros países**. O catálogo editorial exclui produções brasileiras, independentemente do idioma. Os vídeos tocam no leitor oficial do YouTube (incorporado, `youtube-nocookie.com`,
 sem sugestões externas no fim). Interface própria BLOCKTIDE — não imita o YouTube.
 
 - Início por temas, «Continuar a ver», páginas de canal, pesquisa só no catálogo
@@ -27,6 +26,8 @@ Teste (Python + Playwright): `python3 tests/tv_e2e.py`.
 - `docs/pesquisa-2026-11-17/`: a pesquisa original, incluindo 18 canais candidatos ainda sem ID confirmado
   (vários são brasileiros e não devem entrar). Ficou de fora «Portuguese at Ease» (aulas para adultos).
 
-**Limites desta versão:** catálogo fixo (`catalog.json`, 42 vídeos de 6 canais); a seguir, um pequeno
+**Internacionais:** 13 vídeos dos canais oficiais Shaun the Sheep, Pocoyó em espanhol e Super Simple Songs. A origem editorial e o idioma estão registados separadamente em cada nova entrada.
+
+**Limites desta versão:** catálogo fixo (`catalog.json`, 59 vídeos e 156 Shorts); a seguir, um pequeno
 servidor com a API do YouTube para o manter atualizado. O leitor incorporado não permite escolher a
 faixa de áudio: o catálogo só deve ter vídeos sem dobragens.

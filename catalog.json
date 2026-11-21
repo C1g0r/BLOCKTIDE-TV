@@ -1,5 +1,5 @@
 {
- "version": "2026-11-17",
+ "version": "2026-11-21",
  "note": "Canais «verificado»: produção portuguesa confirmada. Canais «pendente»: ID confirmado, idioma por auditar — desligados até os pais os ligarem.",
  "channels": {
   "zigzag": {
@@ -90,7 +90,7 @@
    "tema": "internacional",
    "cor": "#7cb342",
    "status": "internacional",
-   "nota": "Canal oficial, só Shorts (Reino Unido · sem diálogo)."
+   "nota": "Canal oficial, vídeos e Shorts (Reino Unido · sem diálogo)."
   },
   "pingu": {
    "id": "UCM88mtSE0zRTn5ae4EbYcuw",
@@ -130,7 +130,7 @@
    "tema": "internacional",
    "cor": "#26a69a",
    "status": "internacional",
-   "nota": "Canal oficial, só Shorts (Canadá · inglês)."
+   "nota": "Canal oficial, vídeos e Shorts (Canadá · inglês)."
   },
   "pocoyoes": {
    "id": "UCnB5W_ZJgiDFnklejRGADxw",
@@ -138,7 +138,7 @@
    "tema": "internacional",
    "cor": "#29b6f6",
    "status": "internacional",
-   "nota": "Canal oficial, só Shorts (Espanha · espanhol)."
+   "nota": "Canal oficial, vídeos e Shorts (Espanha · espanhol)."
   },
   "peppafr": {
    "id": "UCXptamDYEVcU4JCio30hYTw",
@@ -425,6 +425,97 @@
    "ch": "moonbug",
    "title": "Blippi e Meekah entram num concurso de talentos",
    "dur": ""
+  },
+  {
+   "id": "XyDbboJ7IVg",
+   "ch": "shaun",
+   "title": "Timmy in a Tizzy",
+   "origin": "GB",
+   "lang": "sem-dialogo"
+  },
+  {
+   "id": "O_lznrZJ24k",
+   "ch": "shaun",
+   "title": "The Big Chase",
+   "origin": "GB",
+   "lang": "sem-dialogo"
+  },
+  {
+   "id": "y4PlJDS-xOw",
+   "ch": "shaun",
+   "title": "Super-Sized Timmy and Other Adventures",
+   "origin": "GB",
+   "lang": "sem-dialogo"
+  },
+  {
+   "id": "XBRYTgmLZww",
+   "ch": "shaun",
+   "title": "Is That the Real Farmer? e outros episódios",
+   "origin": "GB",
+   "lang": "sem-dialogo"
+  },
+  {
+   "id": "iGdneuuT9qY",
+   "ch": "pocoyoes",
+   "title": "El baile de Pocoyó",
+   "origin": "ES",
+   "lang": "es"
+  },
+  {
+   "id": "ifqONfM01z8",
+   "ch": "pocoyoes",
+   "title": "Mi primer viaje en avión",
+   "origin": "ES",
+   "lang": "es"
+  },
+  {
+   "id": "Zq0TjKSDztw",
+   "ch": "pocoyoes",
+   "title": "Es hora de merendar",
+   "origin": "ES",
+   "lang": "es"
+  },
+  {
+   "id": "yCjJyiqpAuU",
+   "ch": "supersimple",
+   "title": "Twinkle Twinkle Little Star",
+   "origin": "CA",
+   "lang": "en"
+  },
+  {
+   "id": "pZw9veQ76fo",
+   "ch": "supersimple",
+   "title": "Five Little Ducks",
+   "origin": "CA",
+   "lang": "en"
+  },
+  {
+   "id": "F7t8ElO97yk",
+   "ch": "supersimple",
+   "title": "Walking Walking e outras canções",
+   "origin": "CA",
+   "lang": "en"
+  },
+  {
+   "id": "lMQcwNZVUO8",
+   "ch": "supersimple",
+   "title": "Head Shoulders Knees & Toes (Learn It)",
+   "origin": "CA",
+   "lang": "en"
+  },
+  {
+   "id": "l3Wfm8zRs3g",
+   "ch": "supersimple",
+   "title": "Top 20 Farm Songs",
+   "origin": "CA",
+   "lang": "en"
+  },
+  {
+   "id": "lWhqORImND0",
+   "ch": "supersimple",
+   "title": "Old MacDonald Had a Farm e outras canções",
+   "origin": "CA",
+   "lang": "en"
   }
  ],
  "shorts_rule": "Shorts verdadeiros: vídeos verticais do separador «Shorts» do canal, até 3 minutos, incorporação permitida (verificado com oEmbed em 2026-11-17). Só conteúdo infantil; nunca português do Brasil. Shorts internacionais: só canais infantis oficiais de fora do Brasil (inglês, espanhol de Espanha, francês ou sem diálogo), verificados como verticais, até 3 minutos e incorporáveis; nunca PT-BR.",

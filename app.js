@@ -1,6 +1,6 @@
 /*! BLOCKTIDE TV — © 2026 Igor Serrano. Todos os direitos reservados. Ver LICENSE. */
 /*
- * BLOCKTIDE TV — web app para crianças: só vídeos em português europeu, de um catálogo verificado,
+ * BLOCKTIDE TV — web app para crianças: vídeos infantis de Portugal e de outros países, de um catálogo verificado,
  * reproduzidos no leitor oficial do YouTube (incorporado). Painel dos pais com PIN, limites de tempo,
  * hora de dormir, canais e resumo. Tudo fica neste aparelho (localStorage).
  */
@@ -9,7 +9,7 @@
   const $ = (s, r = document) => r.querySelector(s);
   const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const view = $('#view');
-  const TEMAS = { tudo: 'Tudo', desenhos: 'Desenhos e programas', musica: 'Música', aprender: 'Aprender', historias: 'Histórias' };
+  const TEMAS = { tudo: 'Tudo', desenhos: 'Desenhos e programas', musica: 'Música', aprender: 'Aprender', historias: 'Histórias', internacional: 'Internacional' };
   const NEXT_SECONDS = 6;
 
   // ---------------------------------------------------------------------------
@@ -118,11 +118,11 @@
     const c = catalog.channels[k];
     if (!c || !channelsOn().includes(k)) return '<div class="empty">Canal indisponível.</div>';
     return `<h1 style="display:flex;align-items:center;gap:10px"><span class="dot" style="width:18px;height:18px;border-radius:5px;background:${esc(c.cor)}"></span>${esc(c.name)}</h1>
-      <p class="muted" style="font-weight:800">Canal português verificado · ${videos().filter((v) => v.ch === k).length} vídeos</p>
+      <p class="muted" style="font-weight:800">${intl(k) ? esc(c.nota) : pending(k) ? 'Canal por confirmar' : 'Canal português verificado'} · ${videos().filter((v) => v.ch === k).length} vídeos</p>
       <div class="grid">${videos().filter((v) => v.ch === k).map(card).join('')}</div>`;
   }
   function searchPage() {
-    return `<h1>Procurar</h1><p class="muted" style="font-weight:800">Só nos vídeos em português europeu do BLOCKTIDE.</p>
+    return `<h1>Procurar</h1><p class="muted" style="font-weight:800">Pesquisa nos vídeos do catálogo BLOCKTIDE.</p>
       <input class="search" type="search" id="q" placeholder="O que queres ver?" autocomplete="off" />
       <div class="grid" id="results" style="margin-top:16px"></div>`;
   }
@@ -169,7 +169,7 @@
     return `<div class="watch"><div>
         <div class="stage"><div id="player"></div><div class="cover" id="cover" hidden></div></div>
         <div class="vtitle">${esc(v.title)}</div>
-        <div class="vmeta"><span class="badge-pt">✓ Português europeu</span><span>${esc(ch.name)}</span></div>
+        <div class="vmeta"><span class="badge-pt">${esc(LANG[v.lang] || (ch.status === 'verificado' ? '✓ Português europeu' : 'Idioma por confirmar'))}</span><span>${esc(ch.name)}</span></div>
       </div>
       <aside class="upnext"><h2>A seguir</h2>${upNext(v).map(card).join('')}</aside></div>`;
   }
@@ -392,9 +392,9 @@
         ${Object.entries(catalog.channels).filter(([k]) => !pending(k) && !intl(k)).map(([k, c]) => `<div class="field"><div><span class="dot" style="display:inline-block;width:11px;height:11px;border-radius:3px;background:${esc(c.cor)};margin-right:7px"></span><b>${esc(c.name)}</b><div class="d">${catalog.videos.filter((v) => v.ch === k).length} vídeos · ${esc(TEMAS[c.tema] || '')}</div></div>
           ${seg('ch:' + k, [['on', 'Ligado'], ['off', 'Desligado']], settings.disabled.includes(k) ? 'off' : 'on')}</div>`).join('')}
       </div>
-      <div class="panel"><h2>Shorts de outros países</h2><p class="muted" style="font-weight:800;margin:6px 0 0">Canais infantis oficiais de fora do Brasil, só na secção de Shorts e depois dos Shorts portugueses. Os de inglês, espanhol e francês só aparecem com «Shorts noutros idiomas» em «Permitir»; os sem diálogo aparecem sempre.</p>
+      <div class="panel"><h2>Canais de outros países</h2><p class="muted" style="font-weight:800;margin:6px 0 0">Cada botão controla os vídeos e os Shorts desse canal. Os Shorts portugueses aparecem primeiro. Os Shorts em inglês, espanhol e francês só aparecem com «Shorts noutros idiomas» em «Permitir»; os sem diálogo aparecem sempre.</p>
         ${Object.entries(catalog.channels).filter(([k]) => intl(k)).map(([k, c]) => { const n = (catalog.shorts || []).filter((v) => v.ch === k).length; return `<div class="field"><div><span class="dot" style="display:inline-block;width:11px;height:11px;border-radius:3px;background:${esc(c.cor)};margin-right:7px"></span><b>${esc(c.name)}</b>
-          <div class="d">${n} Shorts${c.nota ? ` · ${esc(c.nota)}` : ''}</div></div>
+          <div class="d">${catalog.videos.filter((v) => v.ch === k).length} vídeos · ${n} Shorts${c.nota ? ` · ${esc(c.nota)}` : ''}</div></div>
           ${seg('ch:' + k, [['on', 'Ligado'], ['off', 'Desligado']], settings.disabled.includes(k) ? 'off' : 'on')}</div>`; }).join('')}
       </div>
       <div class="panel"><h2>Canais por confirmar</h2><p class="muted" style="font-weight:800;margin:6px 0 0">Canais com identidade confirmada que se apresentam em português de Portugal, mas cujo áudio ainda não foi verificado. Ficam desligados: ouça um ou dois vídeos e ligue só os que forem mesmo em português europeu.</p>
@@ -402,7 +402,7 @@
           <div class="d">${n ? `${n} vídeo${n > 1 ? 's' : ''}` : 'Ainda sem vídeos no catálogo'} · ${esc(TEMAS[c.tema] || '')}${c.nota ? ` · ${esc(c.nota)}` : ''} · <a href="https://www.youtube.com/channel/${esc(c.id)}" target="_blank" rel="noopener">abrir no YouTube</a></div></div>
           ${seg('pch:' + k, [['on', 'Ligado'], ['off', 'Desligado']], settings.enabled.includes(k) ? 'on' : 'off')}</div>`; }).join('')}
       </div>
-      <div class="panel"><h2>Acrescentar um vídeo</h2><p class="muted" style="font-weight:800;margin:6px 0 10px">Um vídeo do YouTube que já viu e sabe que é em português europeu.</p>
+      <div class="panel"><h2>Acrescentar um vídeo</h2><p class="muted" style="font-weight:800;margin:6px 0 10px">Escolha um vídeo que já viu, adequado para crianças e produzido fora do Brasil.</p>
         <div style="display:grid;gap:8px"><input type="url" id="au" placeholder="Endereço do vídeo (youtube.com/watch?v=… ou youtu.be/…)" /><input type="text" id="at" placeholder="Nome para a criança ver" />
         <button class="btn primary" id="addv">Acrescentar</button></div>
         ${settings.added.map((a) => `<div class="field"><div>${esc(a.title)}<div class="d">${esc(a.id)}</div></div><button class="btn danger" data-rm="${esc(a.id)}">Retirar</button></div>`).join('')}

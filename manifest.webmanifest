@@ -1,7 +1,7 @@
 {
   "name": "BLOCKTIDE TV",
   "short_name": "BLOCKTIDE",
-  "description": "Vídeos em português europeu para crianças, escolhidos e verificados.",
+  "description": "Vídeos infantis de Portugal e de outros países, com canais escolhidos para a família.",
   "lang": "pt-PT",
   "start_url": "./#inicio",
   "scope": "./",

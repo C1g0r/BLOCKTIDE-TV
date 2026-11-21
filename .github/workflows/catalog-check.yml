@@ -1,0 +1,37 @@
+name: BLOCKTIDE — validar catálogo
+
+on:
+  push:
+    paths:
+      - 'catalog.json'
+      - 'app.js'
+      - 'tests/catalog_policy.py'
+      - '.github/workflows/catalog-check.yml'
+  pull_request:
+    paths:
+      - 'catalog.json'
+      - 'app.js'
+      - 'tests/catalog_policy.py'
+      - '.github/workflows/catalog-check.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  catalog-policy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Obter código
+        uses: actions/checkout@v4
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verificar política editorial, IDs e duplicados
+        run: python3 tests/catalog_policy.py
+      - name: Verificar sintaxe JavaScript
+        run: node --check app.js
+      - name: Verificar JSON
+        run: python3 -m json.tool catalog.json > /dev/null

@@ -29,3 +29,7 @@ Teste (Python + Playwright): `python3 tests/tv_e2e.py`.
 A lista anterior de canais candidatos (sem ID confirmado) continua separada em `docs/pesquisa-2026-11-17/`, sem entradas fictícias. Durações que não foram confirmadas ficam vazias, em vez de serem inventadas.
 
 **Validação rápida do catálogo:** `python3 tests/catalog_policy.py`. Teste funcional: `python3 tests/tv_e2e.py`.
+
+## Qualidade e auditoria
+
+As verificações automáticas do catálogo correm no GitHub Actions a cada alteração relevante. Consultar [critérios editoriais](docs/CRITERIOS-EDITORIAIS.md). A validação estrutural não substitui a audição e revisão humanas dos vídeos.
